@@ -8,6 +8,7 @@ import { syncHistoryWithStore, routerMiddleware } from 'react-router-redux'
 import createRoutes from 'router.js'
 import { createStore, applyMiddleware } from 'redux'
 import reducers from './reducers'
+import App from "./containers/App"
 
 const browserHistory = useRouterHistory(createBrowserHistory)({
   //should add to global env config
@@ -22,10 +23,10 @@ const history = syncHistoryWithStore(browserHistory, store, {
   selectLocationState: (state) => state.router
 })
 
-const routes = makeRoutes(store)
+const routes = createRoutes(store)
 const rootElement = document.getElementById('mount')
 
 ReactDOM.render(
-  <Root history={history} routes={routes} store={store} />,
+  <App history={history} routes={routes} store={store} />,
   rootElement
 )
