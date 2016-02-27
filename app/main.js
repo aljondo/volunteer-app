@@ -10,12 +10,14 @@ import { createStore, applyMiddleware } from 'redux'
 import reducers from './reducers'
 
 const browserHistory = useRouterHistory(createBrowserHistory)({
-  basename: __BASENAME__
+  //should add to global env config
+  basename:  JSON.stringify(process.env.BASENAME || '')
 })
 
 const initialState = window.__INITIAL_STATE__
 const middleware = routerMiddleware(browserHistory)
-const store = middleware(createStore)(reducers, initialState)
+// const store = middleware(createStore)(reducers, initialState)
+const store = applyMiddleware(middleware)(createStore)(reducers, initialState);
 const history = syncHistoryWithStore(browserHistory, store, {
   selectLocationState: (state) => state.router
 })
