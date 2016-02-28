@@ -1,6 +1,7 @@
 var path = require('path')
 var webpack = require('webpack')
 var HtmlWebpackPlugin = require('html-webpack-plugin')
+var autoprefixer = require('autoprefixer');
 
 //move configs elsewhere once we have more
 const config = {
@@ -34,11 +35,27 @@ module.exports = {
         collapseWhitespace: true
       }})
   ],
+  postcss: function () {
+    return [autoprefixer];
+  },
   module: {
-    loaders: [{
-      test: /\.js$/,
-      loaders: ['babel'],
-      exclude: /node_modules/
-    }]
+    loaders: [
+      {
+        test: /\.js$/,
+        loaders: ['babel'],
+        exclude: /node_modules/
+      },
+      {
+        test: /\.scss$/,
+        loaders: [
+          'style?sourceMap',
+          'css?modules&importLoaders=1&localIdentName=[path]___[name]__[local]___[hash:base64:5]',
+          'postcss-loader',
+          // may want to change css-loader to react-css-modules
+          //'resolve-url',
+          'sass?sourceMap'
+        ]
+      }
+    ],
   }
 }
