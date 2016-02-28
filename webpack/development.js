@@ -19,7 +19,9 @@ module.exports = {
     extensions: ['', '.js', '.jsx']
   },
   entry: [
-    path.resolve(config.path_base, config.dir_app) + '/main.js'
+    path.resolve(config.path_base, config.dir_app) + '/main.js',
+    'webpack-dev-server/client?http://0.0.0.0:3000',
+    'webpack/hot/only-dev-server'
   ],
   output: {
     path: path.resolve(config.path_base, config.dir_dist),
@@ -33,7 +35,8 @@ module.exports = {
       inject: 'body',
       minify: {
         collapseWhitespace: true
-      }})
+      }}),
+      new webpack.HotModuleReplacementPlugin()
   ],
   postcss: function () {
     return [autoprefixer];
@@ -42,7 +45,7 @@ module.exports = {
     loaders: [
       {
         test: /\.js$/,
-        loaders: ['babel'],
+        loaders: ['react-hot', 'babel'],
         exclude: /node_modules/
       },
       {
