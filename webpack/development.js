@@ -18,6 +18,7 @@ module.exports = {
     root: path.resolve(config.path_base, config.dir_app),
     extensions: ['', '.js', '.jsx']
   },
+  debug: true,
   entry: [
     path.resolve(config.path_base, config.dir_app) + '/main.js',
     'webpack-dev-server/client?http://0.0.0.0:3000',
@@ -28,6 +29,7 @@ module.exports = {
     filename: 'bundle.js',
   },
   plugins: [
+    new webpack.HotModuleReplacementPlugin(),
     new HtmlWebpackPlugin({
       template: path.resolve(config.path_base, config.dir_app) + '/index.html',
       hash: false,
@@ -35,8 +37,7 @@ module.exports = {
       inject: 'body',
       minify: {
         collapseWhitespace: true
-      }}),
-      new webpack.HotModuleReplacementPlugin()
+      }})
   ],
   postcss: function () {
     return [autoprefixer];
