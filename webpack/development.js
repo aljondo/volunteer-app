@@ -20,9 +20,9 @@ module.exports = {
   },
   debug: true,
   entry: [
-    path.resolve(config.path_base, config.dir_app) + '/main.js',
     'webpack-dev-server/client?http://0.0.0.0:3000',
-    'webpack/hot/only-dev-server'
+    'webpack/hot/only-dev-server',
+    path.resolve(config.path_base, config.dir_app) + '/main.js'
   ],
   output: {
     path: path.resolve(config.path_base, config.dir_dist),
@@ -30,6 +30,7 @@ module.exports = {
   },
   plugins: [
     new webpack.HotModuleReplacementPlugin(),
+    new webpack.NoErrorsPlugin(),
     new HtmlWebpackPlugin({
       template: path.resolve(config.path_base, config.dir_app) + '/index.html',
       hash: false,
