@@ -118,8 +118,13 @@ TODO
 Test
 ---------------
 ### Run
-TODO
-
+```shell
+$ npm test
+```
+To view test coverage: (after running coverage)
+```shell
+$ open coverage/index.html
+```
 ### Tools
 * [Mocha](https://mochajs.org) (test framework)
 * [Karma](https://karma-runner.github.io/0.13/index.html) (test runner)
