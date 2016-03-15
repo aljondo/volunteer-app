@@ -1,6 +1,8 @@
 Volunteer App (CS4500)
 ====================================
 
+[![Build Status](https://travis-ci.org/CS4500/volunteer-app.svg?branch=master)](https://travis-ci.org/CS4500/volunteer-app)
+
 A web application to help municipalities organize and connect volunteer organizations with local volunteers. This is a project for [CS4500 Software Development](http://www.ccs.neu.edu/course/cs4500sp16-mw/) at Northeastern University.
 
 Usage
@@ -120,6 +122,10 @@ Test
 ### Run
 ```shell
 $ npm test
+```
+To lint code:
+```shell
+$ npm run lint
 ```
 To view test coverage: (after running coverage)
 ```shell
