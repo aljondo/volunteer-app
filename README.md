@@ -15,7 +15,7 @@ $ npm install
 $ npm start
 ```
 
-Don't have [npm](https://www.npmjs.com) or (Node)? It is packaged with Node so download [Node](https://nodejs.org) or  download using [Homebrew] on OS X. Check for the latest stable version v5.6.0 (2/29/16).
+Don't have [npm](https://www.npmjs.com) or (Node)? It is packaged with Node so download [Node](https://nodejs.org) or  download using [Homebrew] on OS X. Check for the latest stable version v5.8.0 (3/15/16).
 
 ```shell
 $ brew update
