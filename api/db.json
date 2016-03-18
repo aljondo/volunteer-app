@@ -1,12 +1,69 @@
+
+// GET "api/user"
+// Returns all users
 {
   "users": [
     {
       "id": 0,
-      "name": "Alexander Hamilton"
+      "name": "Alexander Hamilton",
+      "password": "myPassword",
+      "email": "alex@gmail.com",
+      "bio": "This is my bio",
+      "skills": [
+        "teaching",
+        "sports"
+      ],
+      "age": 24,
+      "gender": "male",
+      "verfied_hours": 25,
+      "Unverified_hours": 4,
+      "neighborhood": "North End",
+      "email_from_orgs": true,
+      "history": [
+        {
+          "id": 1111,
+          "name": "Event1",
+          "location": "1 something street, Boston MA",
+          "date": "March 1, 1pm",
+          "attendance": 25,
+          "details": "bring toys!",
+          "shareable": true
+        }
+      ],
+      "photo": "http://i.imgur.com/TLhxnYl.jpg",
+      "phone": "5557779999",
+      "education": "college"
     },
     {
-      "id": 1,
-      "name": "John Adams"
+      "id": 0,
+      "name": "Alexander Hamilton",
+      "password": "myPassword",
+      "email": "alex@gmail.com",
+      "bio": "This is my bio",
+      "skills": [
+        "teaching",
+        "sports"
+      ],
+      "age": 24,
+      "gender": "male",
+      "verfied_hours": 25,
+      "Unverified_hours": 4,
+      "neighborhood": "North End",
+      "email_from_orgs": true,
+      "history": [
+        {
+          "id": 1111,
+          "name": "Event1",
+          "location": "1 something street, Boston MA",
+          "date": "March 1, 1pm",
+          "attendance": 25,
+          "details": "bring toys!",
+          "shareable": true
+        }
+      ],
+      "photo": "http://i.imgur.com/TLhxnYl.jpg",
+      "phone": "5557779999",
+      "education": "college"
     }
   ]
 }
