@@ -1,12 +1,181 @@
 {
-  "users": [
-    {
-      "id": 0,
-      "name": "Alexander Hamilton"
-    },
+  "admin": [
     {
       "id": 1,
-      "name": "John Adams"
+      "username": "Admin4Life",
+      "password": "myAdminPassword"
+    },
+    {
+      "id": 2,
+      "username": "secondInAdmin",
+      "password": "adminSecondPassword"
+    }
+  ],
+  "users": [
+    {
+      "id": 100,
+      "name": "Alexander Hamilton",
+      "password": "myPassword",
+      "email": "alex@gmail.com",
+      "bio": "This is not my bio",
+      "skills": [
+        "teaching",
+        "sports"
+      ],
+      "age": 24,
+      "gender": "male",
+      "neighborhood": "North End",
+      "email_from_orgs": true,
+      "history": [
+        {
+          "id": 1111,
+          "name": "Event1",
+          "hours": 10,
+          "hour_status": "verified",
+          "location": "1 something street, Boston MA",
+          "date": "March 1, 1pm",
+          "attendance": 25,
+          "details": "bring toys!",
+          "shareable": true
+        }
+      ],
+      "photo": "http://i.imgur.com/TLhxnYl.jpg",
+      "phone": 5557779999,
+      "education": "college"
+    },
+    {
+      "id": 111,
+      "name": "Alexander Hamilton",
+      "password": "myPassword",
+      "email": "alex@gmail.com",
+      "bio": "This is my bio",
+      "skills": [
+        "teaching",
+        "sports"
+      ],
+      "age": 24,
+      "gender": "male",
+      "neighborhood": "North End",
+      "email_from_orgs": true,
+      "history": [
+        {
+          "id": 1111,
+          "name": "Event1",
+          "location": "1 something street, Boston MA",
+          "hours": 5,
+          "hour_status": "pending",
+          "date": "March 1, 1pm",
+          "attendance": 25,
+          "details": "bring toys!",
+          "shareable": true
+        }
+      ],
+      "photo": "http://i.imgur.com/TLhxnYl.jpg",
+      "phone": "5557779999",
+      "education": "college"
+    },
+    {
+      "id": 4444,
+      "name": "Alexander Smith",
+      "password": "myyyyPassword",
+      "email": "alex@gmail.com",
+      "bio": "Biooooo",
+      "skills": [
+        "teaching",
+        "sports",
+        "stuff"
+      ],
+      "age": 24,
+      "gender": "male",
+      "neighborhood": "North End",
+      "email_from_orgs": true,
+      "history": [
+        {
+          "id": 1111,
+          "name": "Event1",
+          "location": "1 something street, Boston MA",
+          "hours": 10,
+          "hour_status": "accepted",
+          "date": "March 1, 1pm",
+          "attendance": 25,
+          "details": "bring toys!",
+          "shareable": true
+        },
+        {
+          "id": 222,
+          "name": "Event1",
+          "location": "1 something street, Boston MA",
+          "hours": 8,
+          "hour_status": "rejected",
+          "date": "March 1, 1pm",
+          "attendance": 25,
+          "details": "bring toys!",
+          "shareable": true
+        }
+      ],
+      "photo": "http://i.imgur.com/TLhxnYl.jpg",
+      "phone": 5557779999,
+      "education": "college"
+    }
+  ],
+  "events": [
+    {
+      "id": 1111,
+      "name": "Event1",
+      "location": "1 something street, Boston MA",
+      "date": "March 1, 1pm",
+      "attendance": 25,
+      "details": "bring toys!",
+      "shareable": true
+    },
+    {
+      "id": 2222,
+      "name": "Event2",
+      "location": "2 something else street, Boston MA",
+      "date": "March 2, 5pm",
+      "attendance": 5,
+      "details": "Please use the side door!",
+      "shareable": true
+    }
+  ],
+  "organizations": [
+    {
+      "id": 5432,
+      "name": "Toys For Tots",
+      "password": "1234Password",
+      "contact_point": "amy@yahoo.com",
+      "location": "22 Street, Boston, MA",
+      "verified": true,
+      "mission": "We love the kids",
+      "skills": [
+        "stuff",
+        "things",
+        "tricks"
+      ],
+      "photos": [
+        "http://photo1.jpg",
+        "http://photo2.jpg"
+      ],
+      "last_active": "1 Feb 2016"
+    },
+    {
+      "id": 1234,
+      "name": "Community Place",
+      "password": "Passssssssword",
+      "contact_point": "Bill@gmail.com",
+      "location": "27 Street, Boston, MA",
+      "verified": false,
+      "mission": "We love the kids too",
+      "skills": [
+        "stuff",
+        "things",
+        "tricks"
+      ],
+      "photos": [
+        "http://photo1.jpg",
+        "http://photo2.jpg"
+      ],
+      "last_active": "1 Feb 2016"
     }
   ]
 }
