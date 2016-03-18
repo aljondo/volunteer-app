@@ -2,6 +2,9 @@ import React, { PropTypes, Component } from 'react'
 import { connect } from 'react-redux'
 import { fetchUsers } from '../actions/index'
 
+//  the presentational component could be moved a stateless function in
+// in components, but all is contained here as an example
+
 class UsersHello extends Component {
 
   componentDidMount() {
@@ -27,9 +30,8 @@ UsersHello.propTypes = {
 }
 
 function mapStateToProps(state) {
-  console.log(state)
   return {
-    //maybe change to user
+    //maybe change to user.items
     users: state.users.users }
 }
 

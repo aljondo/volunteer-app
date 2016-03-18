@@ -13,7 +13,6 @@ export function requestUsers() {
 }
 
 function receiveUsers(json) {
-  console.log(json.map(item => item.name))
   return {
     type: RECEIVE_USERS,
     users: json

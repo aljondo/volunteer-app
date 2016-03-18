@@ -134,6 +134,14 @@ $ npm run opencov
 ```
 All generated coverage files are in the `coverage` directory.
 
+The backend API is stubbed with a mock API using JSON server. The JSON server runs when using `npm start`.
+
+The server can be ran separately as follows: (Note: runs on different port than our server serving our assets)
+```shell
+$ json-server --watch api/db.json --port 3004
+```
+To troubleshoot you can view the resources and endpoints by opening `http://localhost:3004` in your browser.
+
 ### Tools
 * [Mocha](https://mochajs.org) (test framework)
 * [Karma](https://karma-runner.github.io/0.13/index.html) (test runner)
