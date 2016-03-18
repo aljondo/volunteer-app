@@ -2,6 +2,7 @@ Volunteer App (CS4500)
 ====================================
 
 [![Build Status](https://travis-ci.org/CS4500/volunteer-app.svg?branch=master)](https://travis-ci.org/CS4500/volunteer-app)
+[![codecov.io](https://codecov.io/github/CS4500/volunteer-app/coverage.svg?branch=master)](https://codecov.io/github/CS4500/volunteer-app?branch=master)
 
 A web application to help municipalities organize and connect volunteer organizations with local volunteers. This is a project for [CS4500 Software Development](http://www.ccs.neu.edu/course/cs4500sp16-mw/) at Northeastern University.
 
@@ -140,6 +141,8 @@ All generated coverage files are in the `coverage` directory.
 * [Sinon](http://sinonjs.org) (test spies, stubs and mocks)
 * [Istanbul](https://github.com/gotwarlost/istanbul) (test coverage)
 * [JSON Server](https://github.com/typicode/json-server) (mock API)
+
+Test coverage reports are published [here](https://codecov.io/github/CS4500/volunteer-app?branch=master).
 
 Contributing
 ---------------

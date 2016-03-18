@@ -16,8 +16,8 @@ install:
 script:
   # - npm run lint
   - npm test
+
+after_success:
+  - npm run report-coverage
   # ADD DEPLOY
   # - NODE_ENV=production npm run deploy
-
-# after_success:
-#   - npm run ADD COVERAGE

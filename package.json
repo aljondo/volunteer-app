@@ -8,7 +8,8 @@
     "start": "node server.js",
     "test": "BABEL_ENV=production ./node_modules/.bin/karma start",
     "lint": "eslint -c .eslintrc app",
-    "opencov": "open coverage/index.html"
+    "opencov": "open coverage/index.html",
+    "report-coverage": "codecov"
   },
   "author": "Team6",
   "license": "ISC",
@@ -36,6 +37,7 @@
     "babel-preset-stage-0": "^6.5.0",
     "babel-register": "^6.5.2",
     "chai": "^3.5.0",
+    "codecov": "^1.0.1",
     "css-loader": "^0.23.1",
     "eslint": "^2.2.0",
     "eslint-config-airbnb": "^6.0.2",
