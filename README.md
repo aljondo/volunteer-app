@@ -127,10 +127,12 @@ To lint code:
 ```shell
 $ npm run lint
 ```
-To view test coverage: (after running coverage)
+To view test coverage: (after running tests)
 ```shell
-$ open coverage/index.html
+$ npm run opencov
 ```
+All generated coverage files are in the `coverage` directory.
+
 ### Tools
 * [Mocha](https://mochajs.org) (test framework)
 * [Karma](https://karma-runner.github.io/0.13/index.html) (test runner)

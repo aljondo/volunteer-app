@@ -3,7 +3,8 @@ var webpack = require('webpack');
 module.exports = function (config) {
   config.set({
     browsers: ['PhantomJS'],
-    singleRun: !!process.env.CI,
+    //only single run in travis, set env vars
+    singleRun: true,
     frameworks: [ 'mocha' ],
     files: [
       './node_modules/phantomjs-polyfill/bind-polyfill.js',
@@ -12,10 +13,12 @@ module.exports = function (config) {
     preprocessors: {
         'webpack/test.js': [ 'webpack', 'sourcemap' ]
     },
-    reporters: [ 'mocha' ],
+    reporters: [ 'mocha', 'coverage' ],
     plugins: [
       'karma-webpack',
       'karma-mocha',
+      'karma-coverage',
+      'karma-chai',
       'karma-mocha-reporter',
       'karma-phantomjs-launcher',
       'karma-sourcemap-loader'
@@ -37,7 +40,11 @@ module.exports = function (config) {
               'sass?sourceMap'
             ]
           }
-        ]
+        ],
+        postLoaders: [ {
+          test: /\.js$/,
+          exclude: /(test|node_modules)\//,
+          loader: 'istanbul-instrumenter' } ]
       },
       resolve: {
         modulesDirectories: [
@@ -53,6 +60,11 @@ module.exports = function (config) {
     },
     webpackServer: {
       noInfo: true
+    },
+    coverageReporter: {
+     reporters: [
+         {type:'html', subdir: '.'}
+     ]
     }
   });
 };
