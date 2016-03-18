@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Hello from '../components/Hello'
+import UsersHello from '../containers/UsersHello'
 
 class IndexView extends Component {
   render() {
@@ -7,6 +8,7 @@ class IndexView extends Component {
       <div>
         <p> This is an index page</p>
         <Hello />
+        <UsersHello />
       </div>
     );
   }

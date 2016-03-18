@@ -1,4 +1,5 @@
 import { createStore, applyMiddleware, compose } from 'redux';
+import thunkMiddleware from 'redux-thunk'
 import { persistState } from 'redux-devtools';
 import rootReducer from '../reducers';
 import DevTools from '../containers/DevTools';
@@ -12,7 +13,7 @@ function getDebugSessionKey() {
 export default function configureStore(initialState = {}, history) {
 
   let enhancer = compose(
-    applyMiddleware(routerMiddleware(history)),
+    applyMiddleware(routerMiddleware(history), thunkMiddleware),
     // Required! Enable Redux DevTools with the monitors you chose
     DevTools.instrument(),
     // wire ?debug_session=<key> in address bar to persist debug sessions
