@@ -7,9 +7,7 @@ import { Router } from 'react-router'
 const App = ({ history, routes, store}) => {
   return (
     <Provider store={store}>
-      <Router history={history}>
-        {routes}
-      </Router>
+      <Router history={history} route={routes} />
     </Provider>
   )
 }

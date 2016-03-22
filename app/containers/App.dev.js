@@ -9,9 +9,7 @@ const App = ({ history, routes, store}) => {
   return (
     <Provider store={store}>
       <div>
-        <Router history={history}>
-          {routes}
-          </Router>
+        <Router history={history} routes={routes} />
         <DevTools />
       </div>
     </Provider>
