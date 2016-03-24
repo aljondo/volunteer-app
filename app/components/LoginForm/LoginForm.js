@@ -13,7 +13,7 @@ class LoginForm extends Component {
                         <form className="form-horizontal" >
                             <Row>
                                 <Input type="email" id="email" label="Email:" placeholder="Enter Email"/>
-                                <Input type="password" id="password" label="Password:" />
+                                <Input type="password" id="password" label="Password:" placeholder="Enter Password" />
                             </Row>
                             <Row className="form-group">
                                 <Col sm={12} className="text-center">
