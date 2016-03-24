@@ -1,11 +1,16 @@
-import { REQUEST_USERS, RECEIVE_USERS} from '../actions'
+import { FETCH_USERS_REQUEST,
+         FETCH_USERS_SUCCESS,
+         FETCH_USERES_FAILURE } from '../actions/users'
+
+// add failure error handling case
+// add request state, for example so a loading ui event can be shown
 
 export default (state = {users: []}, action) => {
   switch (action.type) {
-    case REQUEST_USERS:
+    case FETCH_USERS_REQUEST:
       return Object.assign({}, state, {})
-    case RECEIVE_USERS:
-      return Object.assign({}, state, {users: action.users.map(item => item.name)})
+    case FETCH_USERS_SUCCESS:
+      return Object.assign({}, state, {users: action.response.map(item => item.name)})
     default:
       return state
   }

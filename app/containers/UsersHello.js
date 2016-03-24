@@ -1,6 +1,6 @@
 import React, { PropTypes, Component } from 'react'
 import { connect } from 'react-redux'
-import { fetchUsers } from '../actions/index'
+import { fetchUsers } from '../actions/users'
 
 //  the presentational component could be moved a stateless function in
 // in components, but all is contained here as an example
@@ -8,7 +8,6 @@ import { fetchUsers } from '../actions/index'
 class UsersHello extends Component {
 
   componentDidMount() {
-    console.log('hello')
     this.props.dispatch(
       fetchUsers()
     );
