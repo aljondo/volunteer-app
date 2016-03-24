@@ -3,12 +3,13 @@
  */
 import React, { Component } from 'react';
 import {Link} from 'react-router'
+import styles from './homeview.scss'
 
 class HomePage extends Component {
     render() {
         return (
             <div>
-                <h2> Welcome to Americorps Home page</h2>
+                <h2 className={styles.header}> Welcome to Americorps Home page</h2>
             </div>
         );
     }

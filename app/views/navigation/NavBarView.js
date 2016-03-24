@@ -17,7 +17,7 @@ class NavBar extends Component {
                         <div className={styles.links}>
                             <div>
                                 <Link className={styles.link} to="#">Register</Link>
-                                <Link className={styles.link} to="#">Login</Link>
+                                <Link className={styles.link} to="login">Login</Link>
                                 <Link className={styles.link} to="#">About</Link>
                             </div>
                             <div className={styles.icons}>
