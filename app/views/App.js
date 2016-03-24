@@ -2,6 +2,7 @@
 import React, { Component } from 'react';
 import {Link} from 'react-router'
 import NavBar from './navigation/NavBarView'
+require('bootstrap/dist/css/bootstrap.css');
 
 class App extends Component {
     render() {
