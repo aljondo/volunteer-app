@@ -2,6 +2,7 @@ Volunteer App (CS4500)
 ====================================
 
 [![Build Status](https://travis-ci.org/CS4500/volunteer-app.svg?branch=master)](https://travis-ci.org/CS4500/volunteer-app)
+[![codecov.io](https://codecov.io/github/CS4500/volunteer-app/coverage.svg?branch=master)](https://codecov.io/github/CS4500/volunteer-app?branch=master)
 
 A web application to help municipalities organize and connect volunteer organizations with local volunteers. This is a project for [CS4500 Software Development](http://www.ccs.neu.edu/course/cs4500sp16-mw/) at Northeastern University.
 
@@ -127,10 +128,20 @@ To lint code:
 ```shell
 $ npm run lint
 ```
-To view test coverage: (after running coverage)
+To view test coverage: (after running tests)
 ```shell
-$ open coverage/index.html
+$ npm run opencov
 ```
+All generated coverage files are in the `coverage` directory.
+
+The backend API is stubbed with a mock API using JSON server. The JSON server runs when using `npm start`.
+
+The server can be ran separately as follows: (Note: runs on different port than our server serving our assets)
+```shell
+$ json-server --watch api/db.json --port 3004
+```
+To troubleshoot you can view the resources and endpoints by opening `http://localhost:3004` in your browser.
+
 ### Tools
 * [Mocha](https://mochajs.org) (test framework)
 * [Karma](https://karma-runner.github.io/0.13/index.html) (test runner)
@@ -138,6 +149,8 @@ $ open coverage/index.html
 * [Sinon](http://sinonjs.org) (test spies, stubs and mocks)
 * [Istanbul](https://github.com/gotwarlost/istanbul) (test coverage)
 * [JSON Server](https://github.com/typicode/json-server) (mock API)
+
+Test coverage reports are published [here](https://codecov.io/github/CS4500/volunteer-app?branch=master).
 
 Contributing
 ---------------

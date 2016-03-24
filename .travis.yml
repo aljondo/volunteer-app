@@ -11,11 +11,13 @@ cache:
 install:
   - npm install
 
+# should single run test when building production, but should
+#  multi run tests when developmen, add relevant env variables
 script:
-  - npm run lint
+  # - npm run lint
   - npm test
+
+after_success:
+  - npm run report-coverage
   # ADD DEPLOY
   # - NODE_ENV=production npm run deploy
-
-# after_success:
-#   - npm run ADD COVERAGE
