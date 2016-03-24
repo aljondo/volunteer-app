@@ -4,6 +4,7 @@ import App from 'views/App'
 import ProfileView from 'views/profile/ProfileView'
 import HomeView from 'views/home/HomeView'
 import SearchView from 'views/search/SearchView'
+import LoginView from 'views/login/LoginView'
 
 
 const routes = (
@@ -11,6 +12,7 @@ const routes = (
         <IndexRoute component={HomeView}/>
         <Route path="profile" component={ProfileView}/>
         <Route path="search" component={SearchView}/>
+        <Route path="login" component={LoginView}/>
     </Route>
 )
 
