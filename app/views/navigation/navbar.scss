@@ -1,68 +1,58 @@
-header{
+header {
   height: 150px;
   border-top: 5px solid #06317c;
-}
-
-header .top{
-  background-color: #e9e6e6;
-  height: 100px;
-  width: 100%;
-}
-
-header .top .logo{
-  float: left;
-  color: black;
-  font-size: 40px;
-  margin-left: 15px;
-  top: 50%;
-  position: relative;
-  transform: translateY(-50%);
-}
-
-header .top .links{
-  float: right;
-  top: 50%;
-  position: relative;
-  transform: translateY(-50%);
-}
-
-header .top .links .link{
-  color: black;
-  margin-right: 15px;
-  font-size: 20px;
-  border-bottom: 1px solid black;
-  text-decoration: none;
-}
-
-header .top .links .icons{
-  text-align: center;
-}
-
-header .top .links .icon{
-  height: 30px;
-  margin: 10px 8px 0 0;
-}
-
-header .bottom{
-  background-color: #06317c;
-  height: 50px;
-  color: #ffffff;
-  width: 100%;
-  clear: both;
-}
-
-
-header .bottom .links{
-  top: 50%;
-  position: relative;
-  transform: translateY(-50%);
-}
-
-header .bottom .links .link{
-  color: white;
-  text-decoration: none;
-  font-size: 25px;
-  padding: 0 10px 0 10px;
+  .top {
+    background-color: #e9e6e6;
+    height: 100px;
+    width: 100%;
+    .logo {
+      float: left;
+      color: black;
+      font-size: 40px;
+      margin-left: 15px;
+      top: 50%;
+      position: relative;
+      transform: translateY(-50%);
+    }
+    .links {
+      float: right;
+      top: 50%;
+      position: relative;
+      transform: translateY(-50%);
+      .link {
+        color: black;
+        margin-right: 15px;
+        font-size: 20px;
+        border-bottom: 1px solid black;
+        text-decoration: none;
+      }
+      .icons {
+        text-align: center;
+      }
+      .icon {
+        height: 30px;
+        margin: 10px 8px 0 0;
+      }
+    }
+  }
+  .bottom{
+    background-color: #06317c;
+    height: 50px;
+    color: #ffffff;
+    width: 100%;
+    clear: both;
+    .links {
+      top: 50%;
+      position: relative;
+      transform: translateY(-50%);
+      .link {
+        color: white;
+        text-decoration: none;
+        font-size: 25px;
+        padding: 0 10px 0 10px;
+      }
+    }
+  }
 }
 
 
