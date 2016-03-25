@@ -49,7 +49,7 @@ function callApi(endpoint, method, data) {
 // may want to use Normalizr: https://github.com/gaearon/normalizr if  we
 // have nested responses
 
-export const CALL_API = Symbol('Call API')
+export const CALL_API = 'Call API'
 
 // A redux middleware, interpets a given CALL_API action, consumes
 // actions of the following of form:
