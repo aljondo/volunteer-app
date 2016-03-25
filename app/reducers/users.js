@@ -13,27 +13,30 @@ import { FETCH_USERS_REQUEST,
 // to specify how each action modifies the app state, will also need to add
 // addtional state
 
-export default (state = {users: []}, action) => {
+const emptyState = { isReq: false,
+                     users: []}
+
+export default (state = emptyState, action) => {
   switch (action.type) {
     case FETCH_USERS_REQUEST:
-      return state
+      return Object.assign({}, state, {isReq: true})
     case FETCH_USERS_SUCCESS:
       // a small example of just adding an array user names to the app state
-      return Object.assign({}, state, {users: action.response.map(item => item.name)})
+      return Object.assign({}, state, {isReq: false, users: action.response})
     case FETCH_USERS_FAILURE:
-      return state
+      return Object.assign({}, state, {isReq: false})
     case FETCH_USER_REQUEST:
-      return state
+      return Object.assign({}, state, {isReq: true})
     case FETCH_USER_SUCCESS:
-      return state
+      return Object.assign({}, state, {isReq: false})
     case FETCH_USER_FAILURE:
-      return state
+      return Object.assign({}, state, {isReq: false})
     case SAVE_USER_REQUEST:
-      return state
+      return Object.assign({}, state, {isReq: true})
     case SAVE_USER_SUCCESS:
-      return state
+      return Object.assign({}, state, {isReq: false})
     case SAVE_USER_FAILURE:
-      return state
+      return Object.assign({}, state, {isReq: false})
     default:
       return state
   }

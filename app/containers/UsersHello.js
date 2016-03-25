@@ -17,7 +17,7 @@ class UsersHello extends Component {
     return (
       <ul>
         {this.props.users.map((user, i) =>
-          <li key={i}>{user}</li>
+          <li key={i}>{user.name}</li>
         )}
       </ul>
     )

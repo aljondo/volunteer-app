@@ -13,26 +13,29 @@ import { FETCH_EVENTS_REQUEST,
 // to specify how each action modifies the app state, will also need to add
 // addtional state
 
-export default (state = {EVENTS: []}, action) => {
+const emptyState = { isReq: false,
+                     events: []}
+
+export default (state = emptyState, action) => {
   switch (action.type) {
     case FETCH_EVENTS_REQUEST:
-      return state
+      return Object.assign({}, state, {isReq: true})
     case FETCH_EVENTS_SUCCESS:
-      return state
+      return Object.assign({}, state, {isReq: false, events: action.response})
     case FETCH_EVENTS_FAILURE:
-      return state
+      return Object.assign({}, state, {isReq: false})
     case FETCH_EVENT_REQUEST:
-      return state
+      return Object.assign({}, state, {isReq: true})
     case FETCH_EVENT_SUCCESS:
-      return state
+      return Object.assign({}, state, {isReq: false})
     case FETCH_EVENT_FAILURE:
-      return state
+      return Object.assign({}, state, {isReq: false})
     case SAVE_EVENT_REQUEST:
-      return state
+      return Object.assign({}, state, {isReq: true})
     case SAVE_EVENT_SUCCESS:
-      return state
+      return Object.assign({}, state, {isReq: false})
     case SAVE_EVENT_FAILURE:
-      return state
+      return Object.assign({}, state, {isReq: false})
     default:
       return state
   }
