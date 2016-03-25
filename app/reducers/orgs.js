@@ -12,27 +12,29 @@ import { FETCH_ORGS_REQUEST,
 // this is a template, currently returns same state for for each action, will have
 // to specify how each action modifies the app state, will also need to add
 // addtional state
+const emptyState = { isReq: false,
+                     orgs: []}
 
 export default (state = {orgs: []}, action) => {
   switch (action.type) {
     case FETCH_ORGS_REQUEST:
-      return state
+      return Object.assign({}, state, {isReq: true})
     case FETCH_ORGS_SUCCESS:
-      return state
+      return Object.assign({}, state, {isReq: false, orgs: action.response})
     case FETCH_ORGS_FAILURE:
-      return state
+      return Object.assign({}, state, {isReq: false})
     case FETCH_ORG_REQUEST:
-      return state
+      return Object.assign({}, state, {isReq: true})
     case FETCH_ORG_SUCCESS:
-      return state
+      return Object.assign({}, state, {isReq: false})
     case FETCH_ORG_FAILURE:
-      return state
+      return Object.assign({}, state, {isReq: false})
     case SAVE_ORG_REQUEST:
-      return state
+      return Object.assign({}, state, {isReq: true})
     case SAVE_ORG_SUCCESS:
-      return state
+      return Object.assign({}, state, {isReq: false})
     case SAVE_ORG_FAILURE:
-      return state
+      return Object.assign({}, state, {isReq: false})
     default:
       return state
   }
