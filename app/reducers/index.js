@@ -5,6 +5,8 @@ import users from './users'
 import events from './events'
 import orgs from './orgs'
 
+//add an error reducer as well with actions ADD_ERROR, REMOVE_ERROR
+
 //combine all reducers in this folder here
 export default combineReducers({
   router,
