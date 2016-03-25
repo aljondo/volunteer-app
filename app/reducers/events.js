@@ -1,3 +1,4 @@
+import merge from 'lodash/merge'
 import { FETCH_EVENTS_REQUEST,
          FETCH_EVENTS_SUCCESS,
          FETCH_EVENTS_FAILURE,
@@ -19,23 +20,23 @@ const emptyState = { isReq: false,
 export default (state = emptyState, action) => {
   switch (action.type) {
     case FETCH_EVENTS_REQUEST:
-      return Object.assign({}, state, {isReq: true})
+      return merge({}, state, {isReq: true})
     case FETCH_EVENTS_SUCCESS:
-      return Object.assign({}, state, {isReq: false, events: action.response})
+      return merge({}, state, {isReq: false, events: action.response})
     case FETCH_EVENTS_FAILURE:
-      return Object.assign({}, state, {isReq: false})
+      return merge({}, state, {isReq: false})
     case FETCH_EVENT_REQUEST:
-      return Object.assign({}, state, {isReq: true})
+      return merge({}, state, {isReq: true})
     case FETCH_EVENT_SUCCESS:
-      return Object.assign({}, state, {isReq: false})
+      return merge({}, state, {isReq: false})
     case FETCH_EVENT_FAILURE:
-      return Object.assign({}, state, {isReq: false})
+      return merge({}, state, {isReq: false})
     case SAVE_EVENT_REQUEST:
-      return Object.assign({}, state, {isReq: true})
+      return merge({}, state, {isReq: true})
     case SAVE_EVENT_SUCCESS:
-      return Object.assign({}, state, {isReq: false})
+      return merge({}, state, {isReq: false})
     case SAVE_EVENT_FAILURE:
-      return Object.assign({}, state, {isReq: false})
+      return merge({}, state, {isReq: false})
     default:
       return state
   }

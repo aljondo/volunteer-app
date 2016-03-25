@@ -1,3 +1,4 @@
+import merge from 'lodash/merge'
 import { FETCH_USERS_REQUEST,
          FETCH_USERS_SUCCESS,
          FETCH_USERS_FAILURE,
@@ -19,24 +20,24 @@ const emptyState = { isReq: false,
 export default (state = emptyState, action) => {
   switch (action.type) {
     case FETCH_USERS_REQUEST:
-      return Object.assign({}, state, {isReq: true})
+      return merge({}, state, {isReq: true})
     case FETCH_USERS_SUCCESS:
       // a small example of just adding an array user names to the app state
-      return Object.assign({}, state, {isReq: false, users: action.response})
+      return merge({}, state, {isReq: false, users: action.response})
     case FETCH_USERS_FAILURE:
-      return Object.assign({}, state, {isReq: false})
+      return merge({}, state, {isReq: false})
     case FETCH_USER_REQUEST:
-      return Object.assign({}, state, {isReq: true})
+      return merge({}, state, {isReq: true})
     case FETCH_USER_SUCCESS:
-      return Object.assign({}, state, {isReq: false})
+      return merge({}, state, {isReq: false})
     case FETCH_USER_FAILURE:
-      return Object.assign({}, state, {isReq: false})
+      return merge({}, state, {isReq: false})
     case SAVE_USER_REQUEST:
-      return Object.assign({}, state, {isReq: true})
+      return merge({}, state, {isReq: true})
     case SAVE_USER_SUCCESS:
-      return Object.assign({}, state, {isReq: false})
+      return merge({}, state, {isReq: false})
     case SAVE_USER_FAILURE:
-      return Object.assign({}, state, {isReq: false})
+      return merge({}, state, {isReq: false})
     default:
       return state
   }
