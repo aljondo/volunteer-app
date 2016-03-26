@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Grid, Col, Row, Input, Button  } from 'react-bootstrap'
 import { Link } from 'react-router'
-import styles from './RegisterSwitch.scss'
+import styles from './registerSwitch.scss'
 
 // a Login Form component
 class RegisterSwitch extends Component {
