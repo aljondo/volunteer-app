@@ -1,0 +1,34 @@
+
+.userButton {
+  background-color: #339933;
+  border: 2px solid #b37700;
+  height: 200px;
+  border-radius: 10px;
+  font-size: 25px;
+  color: #ffffff;
+  padding: 50px;
+  margin: 20px 0 20px 0;
+  white-space: normal;
+}
+
+.userButton:hover {
+  background-color: #339933;
+  color: black;
+}
+
+.orgButton {
+  background-color: #b37700;
+  border: 2px solid #339933;
+  height: 200px;
+  border-radius: 10px;
+  font-size: 25px;
+  color: #ffffff;
+  padding: 50px;
+  margin: 20px 0 20px 0;
+  white-space: normal;
+}
+
+.orgButton:hover {
+  background-color: #b37700;
+  color: black;
+}
