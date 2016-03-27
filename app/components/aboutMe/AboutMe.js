@@ -1,7 +1,8 @@
 ﻿import React, { Component } from 'react';
-import { Button } from 'react-bootstrap';
+import {Col, Button, Popover, ButtonToolbar, OverlayTrigger, Overlay} from 'react-bootstrap';
 import List from './List.js';
 import Popup from './Popup.js';
+require('bootstrap/dist/css/bootstrap.css');
 
 const skills = [
        "Math",
@@ -37,25 +38,24 @@ class AboutMe extends Component {
     renderActionSection() {
         if(this.state.isEditing) {
             return(
-                <div>
-                    <Popup  
-                        name = {this.state.name}
-                        about = {this.state.about}
-                        phone = {this.state.phone}
-                        email = {this.state.email}
-                        onSaveClick = {this.onSaveClick.bind(this)}   
-                        onCancelClick = {this.onCancelClick.bind(this)} 
-                    />
-                </div>
+                <Popup   
+                    name = {this.state.name}
+                    about = {this.state.about}
+                    phone = {this.state.phone}
+                    email = {this.state.email}
+                    onSaveClick = {this.onSaveClick.bind(this)}   
+                    onCancelClick = {this.onCancelClick.bind(this)}                     
+                />
                 )
         };
-        return (<Button onClick={this.onEditClick.bind(this)}>Edit</Button>)
+        return;
     }
 
         render() {
         return (
             <div>
                 <img src={'https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcSEKgew92pwh3t6IaIj3PazmaN3yia21164I6mvCkFTTr96s5mG'}  alt="user" className="img-responsive"/>
+                <Button className="btn btn-primary">Upload new photo</Button>
                 <h1>{this.state.name}</h1>
                 <div>
                     <h2>Profile</h2>
@@ -72,8 +72,12 @@ class AboutMe extends Component {
                     <p>
                         <strong>Email: </strong>
                         <span>{this.state.email}</span>
-                    </p>
-                        {this.renderActionSection()}
+                    </p>                  
+                    <ButtonToolbar>
+                        <OverlayTrigger trigger="click" onClick={this.onEditClick.bind(this)} placement="right" overlay={<Popover id="editing">{this.renderActionSection()}</Popover>}>
+                            <Button className="btn btn-primary">Edit</Button>
+                        </OverlayTrigger>
+                    </ButtonToolbar>
                 </div>
             </div>
 
@@ -83,7 +87,7 @@ class AboutMe extends Component {
                 onEditClick() {
                     this.setState({ isEditing: true });
                 }
-                
+                //This is not working and waiting for redux
                 onSaveClick(event) {
                     this.setState({ 
                         isEditing: false,
