@@ -18,10 +18,10 @@
 
     var LogHoursButton = React.createClass({ 
         render: function(){ 
-          
+
             return (
 
-                <OverlayTrigger trigger='click' placement='right' onHide={() => this.setState({ show: false })} overlay={LogHoursPopover}>
+                <OverlayTrigger trigger='click' placement='right' overlay={LogHoursPopover}>
                 <Button bsStyle='primary' bsSize='large' active> Log Hours </Button>
                 </OverlayTrigger>
 
