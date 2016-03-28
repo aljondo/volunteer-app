@@ -16,8 +16,8 @@ class NavBar extends Component {
                         </div>
                         <div className={styles.links}>
                             <div>
-                                <Link className={styles.link} to="#">Register</Link>
-                                <Link className={styles.link} to="login">Login</Link>
+                                <Link className={styles.link} to="/register">Register</Link>
+                                <Link className={styles.link} to="/login">Login</Link>
                                 <Link className={styles.link} to="#">About</Link>
                             </div>
                             <div className={styles.icons}>
@@ -42,8 +42,8 @@ class NavBar extends Component {
                     <div className={styles.bottom}>
                         <div className={styles.links}>
                             <Link className={styles.link} to="/">Home</Link>
-                            <Link className={styles.link} to="profile">Profile</Link>
-                            <Link className={styles.link} to="search">Search</Link>
+                            <Link className={styles.link} to="/profile">Profile</Link>
+                            <Link className={styles.link} to="/search">Search</Link>
                         </div>
                     </div>
                 </header>
