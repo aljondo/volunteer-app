@@ -3,7 +3,7 @@ import Hello from '../../components/Hello';
 import UsersHello from '../../containers/UsersHello';
 import {Link} from 'react-router';
 import AboutMe from '../../components/aboutMe/AboutMe';
-import ProfileChart from '../../components/chart/ProfileChart';
+import ProfileChart from '../../components/profileChart/ProfileChart';
 import FeaturedEvents from '../../components/featuredEvents/FeaturedEvents'
 require('bootstrap/dist/css/bootstrap.css');
 

@@ -1,7 +1,7 @@
 ﻿import React, { Component } from 'react';
 import {Col, Button, Popover, ButtonToolbar, OverlayTrigger, Overlay} from 'react-bootstrap';
 import List from './List.js';
-import Popup from './Popup.js';
+import EditingPopup from './EditingPopup.js';
 require('bootstrap/dist/css/bootstrap.css');
 
 const skills = [
@@ -38,7 +38,7 @@ class AboutMe extends Component {
     renderActionSection() {
         if(this.state.isEditing) {
             return(
-                <Popup   
+                <EditingPopup   
                     name = {this.state.name}
                     about = {this.state.about}
                     phone = {this.state.phone}
@@ -79,6 +79,7 @@ class AboutMe extends Component {
                         </OverlayTrigger>
                     </ButtonToolbar>
                 </div>
+                <br />
             </div>
 
         );
