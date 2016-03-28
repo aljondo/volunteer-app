@@ -38,7 +38,7 @@ export function fetchEvent(id) {
 export function saveEvent(data) {
   return {
     [CALL_API]: {
-      types: [ SAVE_EVENTS_REQUEST, SAVE_EVENTS_SUCCESS, SAVE_EVENTS_FAILURE ],
+      types: [ SAVE_EVENT_REQUEST, SAVE_EVENT_SUCCESS, SAVE_EVENT_FAILURE ],
       endpoint: `events`,
       method: POST,
       data: data

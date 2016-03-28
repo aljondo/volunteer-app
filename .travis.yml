@@ -1,23 +1,21 @@
 language: node_js
 node_js:
-  - "5"
-
+- '5'
 sudo: false
-
 cache:
   directories:
-    - node_modules
-
+  - node_modules
 install:
-  - npm install
-
-# should single run test when building production, but should
-#  multi run tests when developmen, add relevant env variables
+- npm install
 script:
-  # - npm run lint
-  - npm test
-
+- npm test
+- npm run build
 after_success:
-  - npm run report-coverage
-  # ADD DEPLOY
-  # - NODE_ENV=production npm run deploy
+- npm run report-coverage
+deploy:
+  provider: s3
+  skip_cleanup: true
+  access_key_id: AKIAJHYXGOIPWOCK5R4Q
+  secret_access_key: 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
+  bucket: volunteer-app
+  local-dir: static/dist
