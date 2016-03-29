@@ -1,0 +1,12 @@
+.search {
+	border: 2px solid #dadada;
+	border-radius: 15px;
+	transition: all .1s linear;
+}
+
+.search:focus {
+	border-radius: 15px;
+	outline: none;
+	border-color: #00A9A5;
+	box-shadow: 0 0 10px #00A9A5;
+}

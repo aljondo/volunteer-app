@@ -1,4 +1,20 @@
-
-.header {
-  text-align: center;
+.home {
+  .buttons {
+  	float: right;
+  }
+  .homeblurb {
+  	padding-top: 20vh;
+  	margin-right: auto;
+  	margin-left: auto;
+  	width: 40vw;
+  	.prompt {
+  	  .clprompt {
+  	  	display: inline-block;
+  	  	padding-right: 4px;
+  	  }
+  	  .searchbutton {
+  	  	display: inline-block;
+  	  }
+  	}
+  }
 }
