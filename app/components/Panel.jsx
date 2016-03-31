@@ -1,6 +1,6 @@
   import React from 'react';
   import ReactDOM from 'react-dom';
-  import {Panel, Table} from 'react-bootstrap';
+  import {Panel, Table, Accordion} from 'react-bootstrap';
   var LogHoursButton = require('./Button.jsx')
 
   var EventTable = React.createClass({ 
@@ -27,15 +27,17 @@
    }
 
  });
+  // <div class="col-sm-3 col-xs-12" id="righttoc"></div>  
+
   var EventPanel = React.createClass({
     render: function(){ 
 
       return (
-        <div class="row">
-        <div className="col-sm-2 col-xs-12" id="lefttoc"></div>
-        <div className="col-sm-7 col-xs-12" id="maptoc">
-        <div className="row">
-        <div className="col-lg-10 col-md-11 col-sm-2 col-xs-12">
+        //<div className="col-sm-2 col-xs-12" id="lefttoc"></div>
+        // <div className="col-sm-7 col-xs-12" id="maptoc">
+        // <div className="row">
+        // <div className="col-lg-10 col-md-11 col-sm-2 col-xs-12">
+       <div>
         <div className="panel panel-primary">
 
         <div className="panel-heading">
@@ -54,12 +56,40 @@
         </div>
         </div>
         </div>
-        <div class="col-sm-3 col-xs-12" id="righttoc"></div>  
-        </div>
-        </div>
-        </div>
-
+        
         );
       }
     });
-    module.exports = EventPanel; 
+
+    var ColEvent = React.createClass({
+    render: function(){ 
+
+      return ( 
+      <div> 
+      <Panel collapsible header="Event #1" eventKey="2" bsStyle="primary">
+      <EventTable /> 
+    </Panel>
+      <Panel collapsible header="Event #2" eventKey="2" bsStyle="primary">
+      <EventTable /> 
+    </Panel>
+    </div>
+
+    )
+  }
+});
+    var EventAccord = React.createClass({
+    render: function(){ 
+
+      return (
+  <Accordion>
+    <ColEvent />
+  </Accordion>
+);
+}
+});
+
+
+module.exports = {
+    EventPanel,
+    EventAccord
+}
