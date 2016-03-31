@@ -1,5 +1,5 @@
 import { connect } from 'react-redux'
-import FeaturedEvents from "../components/FeaturedEvents/FeaturedEvents";
+import FeaturedEventsTable from "../components/FeaturedEventsTable/FeaturedEventsTable";
 
 function mapStateToProps(state) {
     return {
