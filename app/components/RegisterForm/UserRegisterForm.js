@@ -1,6 +1,4 @@
 import React, { Component, PropTypes } from 'react';
-import { connect } from 'react-redux'
-import { saveUser } from '../../actions/users'
 import styles from './register.scss'
 import { Grid, Col, Row, Input, Button, FormControls } from 'react-bootstrap'
 
@@ -9,31 +7,99 @@ class UserRegisterForm extends Component {
 
     constructor(props) {
         super(props);
-
+        this.state = {
+            formData: {
+                "email": null,
+                "password": null,
+                "password2": null,
+                "gender": null,
+                "age": null,
+                "location": null,
+                "skills": [],
+                "interests": [],
+                "bio": null,
+                "contact": true
+            },
+            errorMessage: null
+        };
         // Bind callback methods to make `this` the correct context.
         this.handleRegister = this.handleRegister.bind(this);
         this.emailChange = this.emailChange.bind(this);
+        this.passwordChange = this.passwordChange.bind(this);
+        this.verifyPasswordChange = this.verifyPasswordChange.bind(this);
+    }
+
+    componentDidMount() {
+        this.setState({
+            errorMessage: null
+        });
+    }
+
+    checkForm() {
+        if (!this.state.formData.email) {
+            this.setState({
+                errorMessage: "please enter an email"
+            });
+            console.log(this.state);
+            return false;
+        }
+        if (!this.state.formData.password) {
+            this.setState({
+                errorMessage: "please enter a password"
+            });
+            return false;
+        }
+        if (!this.state.formData.password2) {
+            this.setState({
+                errorMessage: "please verify your password"
+            });
+            return false;
+        }
+        if (this.state.formData.password !== this.state.formData.password2) {
+            this.setState({
+                errorMessage: "passwords do not match"
+            });
+            return false;
+        }
+        return true;
     }
 
     handleRegister() {
-        this.props.formData.id = 3121213;
-        this.props.saveUser(this.props.formData)
-            .then(function(response){
-                if(response.response.type == 'SAVE_USER_SUCCESS'){
-                    //do something
-                }
-                else {
-                    //do something else
-                }
-            });
+        this.setState({
+            errorMessage: null
+        });
+        if (this.checkForm()) {
+            var newUser = Object.assign({}, this.state.formData);
+            delete newUser.password2;
+            this.props.saveUser(newUser)
+                .then(function (response) {
+                    if (response.type == 'SAVE_USER_SUCCESS') {
+                        console.log("successful request");
+                        this.props.pushRoute('/profile');
+                    }
+                    else {
+                        console.log("Request to saveUser failed");
+                    }
+                }.bind(this));
+        }
     }
 
-    emailChange(e){
-        this.props.formData.email = e.target.value;
+    emailChange(e) {
+        var newState = this.state;
+        newState.formData.email = e.target.value;
+        this.setState(newState);
     }
 
-    passwordChange(e){
-        this.props.formData.password = e.target.value;
+    passwordChange(e) {
+        var newState = this.state;
+        newState.formData.password = e.target.value;
+        this.setState(newState);
+    }
+
+    verifyPasswordChange(e) {
+        var newState = this.state;
+        newState.formData.password2 = e.target.value;
+        this.setState(newState);
     }
 
     render() {
@@ -46,9 +112,9 @@ class UserRegisterForm extends Component {
                     <Col xs={10} xsOffset={1}>
                         <form className="form-horizontal" >
                             <Row>
-                                <Input type="email" ref="email" label="Email:" onChange={this.emailChange.bind(this)} placeholder="Enter Email" labelClassName="col-sm-3" wrapperClassName="col-sm-9"/>
-                                <Input type="password" ref="password" label="Password:" onChange={this.passwordChange.bind(this)} placeholder="Enter Password" labelClassName="col-sm-3" wrapperClassName="col-sm-9"/>
-                                <Input type="password" ref="password2" label="Verify Password:" placeholder="Verify Password" labelClassName="col-sm-3" wrapperClassName="col-sm-9"/>
+                                <Input type="email" label="Email:" onChange={this.emailChange} placeholder="Enter Email" labelClassName="col-sm-3" wrapperClassName="col-sm-9"/>
+                                <Input type="password" label="Password:" onChange={this.passwordChange} placeholder="Enter Password" labelClassName="col-sm-3" wrapperClassName="col-sm-9"/>
+                                <Input type="password" label="Verify Password:" onChange={this.verifyPasswordChange} placeholder="Verify Password" labelClassName="col-sm-3" wrapperClassName="col-sm-9"/>
                                 <Input type="select" label="Gender:" placeholder="Select Gender" labelClassName="col-sm-3" wrapperClassName="col-sm-3">
                                     <option value="male:">Male</option>
                                     <option value="female">Female</option>
@@ -104,6 +170,9 @@ class UserRegisterForm extends Component {
                                 </Col>
                             </Row>
                             <Row className="form-group">
+                                {this.state.errorMessage ?
+                                    <Col sm={12} className="text-center">{this.state.errorMessage}</Col>
+                                    : null}
                                 <Col sm={12} className="text-center">
                                     <Button bsSize="large" onClick={this.handleRegister} bsStyle="primary">Register</Button>
                                 </Col>
@@ -115,14 +184,6 @@ class UserRegisterForm extends Component {
         );
     }
 }
-
-UserRegisterForm.propTypes = {
-    formData: PropTypes.object.isRequired
-};
-
-UserRegisterForm.defaultProps = {
-    formData: {}
-};
 
 export default UserRegisterForm
 

@@ -1,19 +1,12 @@
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
 import { saveUser } from '../actions/users'
+import { push as pushRoute} from 'react-router-redux';
 import UserRegisterForm from '../components/RegisterForm/UserRegisterForm'
 
 
-
-//function mapDispatchToProps(dispatch) {
-//    return {
-//        dispatch,
-//        onRegisterClick: (user) => dispatch(saveUser(user))
-//    };
-//}
-
 function mapDispatchToProps(dispatch) {
-    return bindActionCreators({ saveUser }, dispatch)
+    return bindActionCreators({ saveUser, pushRoute }, dispatch)
 }
 
 function mapStateToProps(state) {
