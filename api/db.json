@@ -151,6 +151,44 @@
       "attendance": 5,
       "details": "Please use the side door!",
       "shareable": true
+    },
+    {
+      "id": 3333,
+      "name": "Event3",
+      "location": "2 something else street, Boston MA",
+      "date": "March 2, 5pm",
+      "attendance": 5,
+      "details": "Please use the side door!",
+      "shareable": true
+    }
+  ],
+  "featured-events": [
+    {
+      "id": 1111,
+      "name": "Event1 featured",
+      "location": "1 something street, Boston MA",
+      "date": "March 1, 1pm",
+      "attendance": 25,
+      "details": "bring toys!",
+      "shareable": true
+    },
+    {
+      "id": 2222,
+      "name": "Event2 featured",
+      "location": "2 something else street, Boston MA",
+      "date": "March 2, 5pm",
+      "attendance": 5,
+      "details": "Please use the side door!",
+      "shareable": true
+    },
+    {
+      "id": 3333,
+      "name": "Our favorite Event3 featured",
+      "location": "2 something else street, Boston MA",
+      "date": "March 2, 5pm",
+      "attendance": 5,
+      "details": "Please use the side door!",
+      "shareable": true
     }
   ],
   "organizations": [
