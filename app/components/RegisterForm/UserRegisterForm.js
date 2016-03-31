@@ -1,12 +1,43 @@
-import React, { Component } from 'react';
+import React, { Component, PropTypes } from 'react';
+import { connect } from 'react-redux'
+import { saveUser } from '../../actions/users'
 import styles from './register.scss'
 import { Grid, Col, Row, Input, Button, FormControls } from 'react-bootstrap'
 
 // a Login Form component
 class UserRegisterForm extends Component {
+
+    constructor(props) {
+        super(props);
+
+        // Bind callback methods to make `this` the correct context.
+        this.handleRegister = this.handleRegister.bind(this);
+        this.emailChange = this.emailChange.bind(this);
+    }
+
+    handleRegister() {
+        this.props.formData.id = 3121213;
+        this.props.saveUser(this.props.formData)
+            .then(function(response){
+                if(response.response.type == 'SAVE_USER_SUCCESS'){
+                    //do something
+                }
+                else {
+                    //do something else
+                }
+            });
+    }
+
+    emailChange(e){
+        this.props.formData.email = e.target.value;
+    }
+
+    passwordChange(e){
+        this.props.formData.password = e.target.value;
+    }
+
     render() {
         return (
-
             <Grid>
                 <div className={styles.title}>
                     Create New Volunteer Account
@@ -15,9 +46,9 @@ class UserRegisterForm extends Component {
                     <Col xs={10} xsOffset={1}>
                         <form className="form-horizontal" >
                             <Row>
-                                <Input type="email" id="email" label="Email:" placeholder="Enter Email" labelClassName="col-sm-3" wrapperClassName="col-sm-9"/>
-                                <Input type="password" id="password" label="Password:" placeholder="Enter Password" labelClassName="col-sm-3" wrapperClassName="col-sm-9"/>
-                                <Input type="password" id="password2" label="Verify Password:" placeholder="Verify Password" labelClassName="col-sm-3" wrapperClassName="col-sm-9"/>
+                                <Input type="email" ref="email" label="Email:" onChange={this.emailChange.bind(this)} placeholder="Enter Email" labelClassName="col-sm-3" wrapperClassName="col-sm-9"/>
+                                <Input type="password" ref="password" label="Password:" onChange={this.passwordChange.bind(this)} placeholder="Enter Password" labelClassName="col-sm-3" wrapperClassName="col-sm-9"/>
+                                <Input type="password" ref="password2" label="Verify Password:" placeholder="Verify Password" labelClassName="col-sm-3" wrapperClassName="col-sm-9"/>
                                 <Input type="select" label="Gender:" placeholder="Select Gender" labelClassName="col-sm-3" wrapperClassName="col-sm-3">
                                     <option value="male:">Male</option>
                                     <option value="female">Female</option>
@@ -74,7 +105,7 @@ class UserRegisterForm extends Component {
                             </Row>
                             <Row className="form-group">
                                 <Col sm={12} className="text-center">
-                                    <Button bsSize="large" bsStyle="primary" type="submit">Register</Button>
+                                    <Button bsSize="large" onClick={this.handleRegister} bsStyle="primary">Register</Button>
                                 </Col>
                             </Row>
                         </form>
@@ -85,4 +116,13 @@ class UserRegisterForm extends Component {
     }
 }
 
+UserRegisterForm.propTypes = {
+    formData: PropTypes.object.isRequired
+};
+
+UserRegisterForm.defaultProps = {
+    formData: {}
+};
+
 export default UserRegisterForm
+
