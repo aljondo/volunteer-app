@@ -1,6 +1,5 @@
 import React, { PropTypes, Component } from 'react'
 import { Grid, Col, Row, Input, Button  } from 'react-bootstrap'
-import styles from './featuredEvents.scss'
 import {fetchFeaturedEvents} from "../../actions/events";
 
 // a Login Form component
