@@ -31,6 +31,7 @@ class HomeButton extends Component {
 		    	<div className={styles.button}>
 		    		<OverlayTrigger trigger="click" onClick={this.onLoginClick.bind(this)} placement="bottom" overlay={<Popover id="login">{this.renderActionSection()}</Popover>}>
 	                    <Button bsStyle="primary">Login</Button>
+                       
 	                </OverlayTrigger>
 		    	</div>
 		    	<div className={styles.button}>
