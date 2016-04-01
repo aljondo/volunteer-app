@@ -4,6 +4,7 @@ import { routerReducer as router } from 'react-router-redux'
 import users from './users'
 import events from './events'
 import orgs from './orgs'
+import registration from './registration'
 
 //add an error reducer as well with actions ADD_ERROR, REMOVE_ERROR
 
@@ -12,5 +13,6 @@ export default combineReducers({
   router,
   users,
   events,
-  orgs
+  orgs,
+  registration
 })
