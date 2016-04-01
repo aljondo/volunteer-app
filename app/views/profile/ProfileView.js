@@ -7,7 +7,7 @@ import './divBox.css'
 import {Link} from 'react-router';
 import AboutMe from '../../components/aboutMe/AboutMe';
 import ProfileChart from '../../components/profileChart/ProfileChart';
-import FeaturedEventsTable from '../../components/FeaturedEventsTable/FeaturedEventsTable'
+import FeaturedEvents from '../../containers/FeaturedEventsContainer';
 require('bootstrap/dist/css/bootstrap.css');
   /// <div className="col-sm-2">
           //     <br/>
@@ -42,7 +42,7 @@ require('bootstrap/dist/css/bootstrap.css');
 
                 
                 <br/>
-                <FeaturedEventsTable />
+                <FeaturedEvents />
                 <h3>Hours</h3>
                 <br/>
                 <h3>All Time: 32</h3>
