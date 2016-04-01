@@ -15,7 +15,8 @@ import { FETCH_USERS_REQUEST,
 // addtional state
 
 const emptyState = { isReq: false,
-                     users: []}
+                     users: [],
+                     currentUser: {}}
 
 export default (state = emptyState, action) => {
   switch (action.type) {
@@ -35,7 +36,7 @@ export default (state = emptyState, action) => {
     case SAVE_USER_REQUEST:
       return merge({}, state, {isReq: true})
     case SAVE_USER_SUCCESS:
-      return merge({}, state, {isReq: false})
+      return merge({}, state, {isReq: false, currentUser: action.response})
     case SAVE_USER_FAILURE:
       return merge({}, state, {isReq: false})
     default:

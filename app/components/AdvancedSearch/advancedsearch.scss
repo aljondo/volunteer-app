@@ -1,0 +1,19 @@
+.advancedsearch {
+	border-style: solid;
+	width: 60vw;
+	overflow: hidden;
+	padding: 10px;
+	.searchcheckboxes {
+		margin-right: auto;
+		margin-left: auto;
+		width: 45vw;
+    	.checklist {
+			display: inline-block;
+			vertical-align:top;
+			padding-right: 7vw;
+		}
+	}	
+	.button {
+		float: right;
+	}
+}
