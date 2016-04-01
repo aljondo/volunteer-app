@@ -5,7 +5,7 @@ import React, { Component } from 'react';
 import {Link} from 'react-router'
 import { Button } from 'react-bootstrap'
 import HomeBlurb from '../../components/HomeBlurb/HomeBlurb'
-import CLPrompt from '../../components/CLPrompt/CLPrompt'
+import CategoryLocationForm from '../../components/CategoryLocationForm/CategoryLocationForm'
 import SearchButton from '../../components/SearchButton/SearchButton'
 import HomeButtons from '../../components/HomeButtons/HomeButtons'
 import styles from './homeview.scss'
@@ -20,9 +20,7 @@ class HomePage extends Component {
 	            <div className={styles.homeblurb}>
 	        		<HomeBlurb />
 	        		<div className={styles.prompt}>
-	        			<div className={styles.clprompt}>
-	        				<CLPrompt />
-	        			</div>
+	        			<CategoryLocationForm />
 	        			<div className={styles.searchbutton}>
 	        				<SearchButton />
 	        			</div>
