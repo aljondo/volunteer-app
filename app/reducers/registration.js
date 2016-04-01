@@ -43,7 +43,7 @@ export default (state = emptyState, action) => {
     case SAVE_USER_SUCCESS:
       return merge({}, state, {isSaving: false, success: true})
     case SAVE_USER_FAILURE:
-      return merge({}, state, {isReq: false, error: "Failed to complete registration"})
+      return merge({}, state, {isSaving: false, error: "Failed to complete registration"})
     default:
       return state
   }
