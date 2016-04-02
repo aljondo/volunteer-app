@@ -1,22 +1,16 @@
 import React, { Component } from 'react';
-import Hello from '../../components/Hello'
 import EventList from '../../components/Event'
 import {EventPanel, EventAccord} from '../../components/Panel'
-import UsersHello from '../../containers/UsersHello'
 import './divBox.css'
 import {Link} from 'react-router';
 import AboutMe from '../../components/aboutMe/AboutMe';
 import ProfileChart from '../../components/profileChart/ProfileChart';
 import FeaturedEvents from '../../containers/FeaturedEventsContainer';
-require('bootstrap/dist/css/bootstrap.css');
-  /// <div className="col-sm-2">
-          //     <br/>
-          //     <AboutMe/>
-          // </div>
+import VolCarousel from '../../components/VolunteerApproval/VolunteerAppro'
           class ProfileView extends Component {
             render() {
               return (
-                <div> 
+                
                 <div id="outer"> 
                 <div className="col-sm-2 col-xs-12" id="lefttoc"><AboutMe/></div>
                 <div className="col-sm-8 col-xs-12" id="maptoc">
@@ -31,10 +25,12 @@ require('bootstrap/dist/css/bootstrap.css');
                 <EventAccord /> 
                 </div> 
                 </div> 
+                 <div className='clearfix'></div> 
                 <div id="bottom">
                 <h1> Event History </h1> 
                 <EventPanel /> 
-                </div> 
+            
+                 </div>
                 </div> 
 
                 <div className= "col-sm-2 col-xs-12" id="righttoc">
@@ -51,8 +47,8 @@ require('bootstrap/dist/css/bootstrap.css');
                 <ProfileChart />
           
                 </div>
+
                 </div>
-                </div> 
 
                 );
               }

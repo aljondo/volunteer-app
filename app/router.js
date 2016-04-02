@@ -7,6 +7,7 @@ import HomeView from 'views/home/HomeView'
 import SearchView from 'views/search/SearchView'
 import LoginView from 'views/login/loginView'
 import RegisterView from 'views/register/RegisterView'
+import ApprovalView from 'views/approval/ApprovalView'
 
 // Authentication Wrappers
 // in the future these may need to be nested, and we may want to provide
@@ -39,6 +40,7 @@ const routes = (
         <Route path="search" component={SearchView}/>
         <Route path="login" component={LoginView}/>
         <Route path="register" component={RegisterView}/>
+        <Route path="approval" component={ApprovalView}/>
     </Route>
 )
 
