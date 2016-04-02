@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import NavBarSearch from '../../components/NavBarSearch/NavBarSearch'
-import CLPrompt from '../../components/CLPrompt/CLPrompt'
+import CategoryLocationForm from '../../components/CategoryLocationForm/CategoryLocationForm'
 import AdvancedSearch from '../../components/AdvancedSearch/AdvancedSearch'
 import SearchResult from '../../components/SearchResult/SearchResult'
 import SearchButton from '../../components/SearchButton/SearchButton'
@@ -31,9 +31,7 @@ class SearchView extends Component {
             <div className={styles.search}>
                 <h1 className={styles.title}>Find an Event</h1>
                 <div className={styles.clprompt}>
-                    <div className={styles.prompt}>
-                        <CLPrompt />
-                    </div>
+                    <CategoryLocationForm />
                     <div className={styles.prompt}>
                         <SearchButton />
                     </div>
