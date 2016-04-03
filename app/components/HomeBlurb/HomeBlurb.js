@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import styles from './homeblurb.scss'
 
-// a hello world component
 class HomeBlurb extends Component {
   render() {
     return (
