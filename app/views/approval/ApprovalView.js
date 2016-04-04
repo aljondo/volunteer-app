@@ -1,22 +1,15 @@
 import React, { Component } from 'react';
-import VolCarousel from '../../components/VolunteerApproval/VolunteerAppro'
+import VolunteerApproval from '../../components/VolunteerApproval/VolunteerApproval'
 import {Link} from 'react-router';
-require('bootstrap/dist/css/bootstrap.css');
-  /// <div className="col-sm-2">
-          //     <br/>
-          //     <AboutMe/>
-          // </div>
-          class ApprovalView extends Component {
-            render() {
-              return (
-                
-                <div id="outer"> 
-                <VolCarousel /> 
-                </div>
-                
 
-                );
-              }
-            }
+class ApprovalView extends Component {
+  render() {
+      return (
+          <div id="outer">
+            <VolunteerApproval />
+          </div>
+      );
+  }
+}
 
-            export default ApprovalView
+export default ApprovalView
