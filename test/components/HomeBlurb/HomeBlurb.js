@@ -8,7 +8,9 @@ import TestUtils from "react-addons-test-utils"
 
 describe('HomeBlurb Component', () => {
     const renderedComponent = TestUtils.renderIntoDocument(
-        <HomeBlurb />
+        <div>
+            <HomeBlurb />
+        </div>
     );
 
     const dom = ReactDOM.findDOMNode(renderedComponent);

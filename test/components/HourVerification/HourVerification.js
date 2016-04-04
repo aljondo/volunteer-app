@@ -8,7 +8,9 @@ import TestUtils from "react-addons-test-utils"
 
 describe('HourVerification Component', () => {
     const renderedComponent = TestUtils.renderIntoDocument(
-        <HourVerification />
+        <div>
+            <HourVerification />
+        </div>
     );
 
     const dom = ReactDOM.findDOMNode(renderedComponent);
