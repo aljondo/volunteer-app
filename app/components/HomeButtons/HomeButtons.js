@@ -4,7 +4,6 @@ import {Button, OverlayTrigger, Overlay, Popover} from 'react-bootstrap'
 import LoginPopup from '../../components/HomeButtons/LoginPopup'
 import styles from './homebutton.scss'
 
-// CLPrompt stands for Category Location Prompt. the dropdowns dont really work
 class HomeButton extends Component {
 
   	constructor(props) {

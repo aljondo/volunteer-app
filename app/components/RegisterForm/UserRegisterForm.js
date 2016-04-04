@@ -80,6 +80,6 @@ const UserRegisterForm = (props) => (
           </Col>
       </Row>
   </Grid>
-)
+);
 
 export default UserRegisterForm
