@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import {Link} from 'react-router';
 import InternalAbout from '../../components/Organization/InternalAbout.js';
-import {EventPanel, EventAccord} from '../../components/Panel';
+import UpcomingEvents from '../../components/EventDashboard/UpcomingEvents';
+import PastEvents from '../../components/EventDashboard/PastEvents'
 import ProfileChart from '../../components/Organization/ProfileChart';
 class Internal_Profile_view extends Component {
     render() {
@@ -13,11 +14,11 @@ class Internal_Profile_view extends Component {
 	            <div className="col-sm-6"> 
                     <div >
                         <h1> Upcoming Events</h1> 
-                        <EventAccord />
+                        <UpcomingEvents />
                     </div> 
                     <div> 
                         <h1> Past Events </h1> 
-                        <EventAccord /> 
+                        <PastEvents /> 
                     </div> 
                 </div>
                 <div className= "col-sm-3">
