@@ -7,14 +7,16 @@ import TestUtils from "react-addons-test-utils"
 
 
 describe('LoginForm Component', () => {
-    //const renderedComponent = TestUtils.renderIntoDocument(
-    //    <LoginForm />
-    //);
+    const renderedComponent = TestUtils.renderIntoDocument(
+        <div>
+            <LoginForm />
+        </div>
+    );
 
-    //const dom = ReactDOM.findDOMNode(renderedComponent);
+    const dom = ReactDOM.findDOMNode(renderedComponent);
 
 
     it('it renders correctly', () => {
-       // return assert.isOk(renderedComponent);
+        return assert.isOk(renderedComponent);
     });
 });
