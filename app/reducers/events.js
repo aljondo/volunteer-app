@@ -19,6 +19,7 @@ import { FETCH_EVENTS_REQUEST,
 
 const emptyState = { isReq: false,
                      events: [],
+                     event: {},
                      featuredEvents: []}
 
 export default (state = emptyState, action) => {
@@ -38,7 +39,7 @@ export default (state = emptyState, action) => {
     case FETCH_EVENT_REQUEST:
       return merge({}, state, {isReq: true})
     case FETCH_EVENT_SUCCESS:
-      return merge({}, state, {isReq: false})
+      return merge({}, state, {isReq: false, event: action.response})
     case FETCH_EVENT_FAILURE:
       return merge({}, state, {isReq: false})
     case SAVE_EVENT_REQUEST:
