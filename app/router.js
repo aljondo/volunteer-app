@@ -44,6 +44,6 @@ const routes = (
         <Route path="approval" component={ApprovalView}/>
         <Route path="event/:eventId" component={EventDetailsView}/>
     </Route>
-)
+);
 
 export default routes;
