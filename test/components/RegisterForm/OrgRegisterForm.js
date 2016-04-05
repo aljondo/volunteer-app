@@ -8,7 +8,9 @@ import TestUtils from "react-addons-test-utils"
 
 describe('OrgRegisterForm Component', () => {
     const renderedComponent = TestUtils.renderIntoDocument(
-        <OrgRegisterForm />
+        <div>
+            <OrgRegisterForm />
+        </div>
     );
 
     const dom = ReactDOM.findDOMNode(renderedComponent);

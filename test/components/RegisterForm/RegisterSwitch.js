@@ -13,7 +13,9 @@ describe('RegisterSwitch Component', () => {
     }
 
     const renderedComponent = TestUtils.renderIntoDocument(
-        <RegisterSwitch onSelection={fakeMethod}/>
+        <div>
+            <RegisterSwitch onSelection={fakeMethod}/>
+        </div>
     );
 
     const dom = ReactDOM.findDOMNode(renderedComponent);
