@@ -4,10 +4,7 @@ import SearchButton from '../../components/SearchButton/SearchButton'
 import KeywordForm from '../../components/KeywordForm/KeywordForm'
 import styles from './advancedsearch.scss'
 
-// CLPrompt stands for Category Location Prompt. the dropdowns dont really work
-class AdvancedSearch extends Component {
-  render() {
-    return (
+const AdvancedSearch = (props) => (
     	<div className={styles.advancedsearch}>
 	    	<div className={styles.searchcheckboxes}>
 	    		<form className={styles.checklist}>
@@ -45,8 +42,6 @@ class AdvancedSearch extends Component {
 		    	<SearchButton />
 		    </div>
 		</div>
-    );
-  }
-}
+);
 
 export default AdvancedSearch

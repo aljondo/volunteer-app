@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import {Input} from 'react-bootstrap'
 //import styles from './searchbutton.scss'
 
-// CLPrompt stands for Category Location Prompt. the dropdowns dont really work
 class KeywordForm extends Component {
   handleChange() {
     // This could also be done using ReactLink:

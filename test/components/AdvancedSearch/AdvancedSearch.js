@@ -8,7 +8,9 @@ import TestUtils from "react-addons-test-utils"
 
 describe('AdvancedSearch Component', () => {
     const renderedComponent = TestUtils.renderIntoDocument(
-        <AdvancedSearch />
+        <div>
+            <AdvancedSearch />
+        </div>
     );
 
     const dom = ReactDOM.findDOMNode(renderedComponent);
