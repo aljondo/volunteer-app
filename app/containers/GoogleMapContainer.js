@@ -1,7 +1,7 @@
 import React, { PropTypes, Component } from 'react'
 import { connect } from 'react-redux'
-import GoogleMap from '../../components/GoogleMap/GoogleMap'
-import GoogleMapMessage from '../../components/GoogleMap/GoogleMapMessage'
+import GoogleMap from '../components/GoogleMap/GoogleMap'
+import GoogleMapMessage from '../components/GoogleMap/GoogleMapMessage'
 var geocoder = new google.maps.Geocoder();
 
 class GoogleMapContainer extends Component {

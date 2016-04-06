@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './eventdetails.css';
 import { Button, Grid, Row, Col, Panel } from 'react-bootstrap'
-import GoogleMapContainer from '../../containers/GoogleMapContainer/GoogleMapContainer'
+import GoogleMapContainer from '../../containers/GoogleMapContainer'
 
 
 const EventDetails = (props) => (
