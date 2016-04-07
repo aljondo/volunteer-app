@@ -1,7 +1,7 @@
 //Will be a view wrapper if any compents which are the same through out the application.
 import React, { Component } from 'react';
 import {Link} from 'react-router'
-import NavBar from './navigation/NavBarView'
+import NavBar from '../components/NavBar/NavBar'
 require('bootstrap/dist/css/bootstrap.css');
 
 class App extends Component {
