@@ -52,7 +52,7 @@ const mapStateToProps = (state) => (
     password: state.auth.user.password,
     error: state.auth.error,
     isFetching: state.auth.isFetching,
-    isAuthenticated: state.auth.isAuthenticated,
+    isAuthenticated: state.auth.isAuthenticated
   }
 );
 
