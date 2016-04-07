@@ -1,7 +1,7 @@
 import React, { Component, PropTypes } from 'react';
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
-import { fetchEvent } from '../actions/events'
+import { fetchEvent } from '../actions/events/eventActions'
 import { push as pushRoute } from 'react-router-redux';
 import EventDetails from '../components/EventDetails/EventDetails'
 
@@ -28,7 +28,7 @@ EventDetailsContainer.propTypes = {
 
 const mapStateToProps = (state) => (
     {
-        event: state.events.event
+        event: state.event.event
     }
 );
 

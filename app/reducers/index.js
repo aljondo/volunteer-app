@@ -2,7 +2,9 @@ import { combineReducers } from 'redux'
 //move to top of the app
 import { routerReducer as router } from 'react-router-redux'
 import users from './users'
-import events from './events'
+import event from './events/eventReducer'
+import searchEvents from './events/searchEventsReducer'
+import featuredEvents from './events/featuredEventsReducer'
 import orgs from './orgs'
 import registration from './registration'
 import auth from './auth'
@@ -13,7 +15,9 @@ import auth from './auth'
 export default combineReducers({
   router,
   users,
-  events,
+  event,
+  searchEvents,
+  featuredEvents,
   orgs,
   registration,
   auth
