@@ -16,14 +16,9 @@ const NavBar = (props) => (<div>
                 <Col sm={4} className={styles.topRightCol}>
                     <div>
                         <div className={styles.topRightLinks}>
-                            <Link className={styles.link} to="/register">Register</Link>
-                            {(() => {
-                                if (props.isAuthenticated) {
-                                    return <Link className={styles.link} onClick={props.logoutUser} to="/">Logout</Link>;
-                                } else {
-                                    return <Link className={styles.link} to="/login">Login</Link>;
-                                }
-                            })()}
+                            { props.isAuthenticated ? null : <Link className={styles.link} to="/register">Register</Link> }
+                            { props.isAuthenticated ? <Link className={styles.link} onClick={props.logoutUser} to="/">Logout</Link> : null }
+                            { props.isAuthenticated ? null : <Link className={styles.link} to="/login">Login</Link> }
                             <Link className={styles.link} to="#">About</Link>
                         </div>
                         <div className={styles.topRightIcons}>
