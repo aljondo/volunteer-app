@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import {Input} from 'react-bootstrap'
-//import styles from './searchbutton.scss'
 
 class KeywordForm extends Component {
   handleChange() {
