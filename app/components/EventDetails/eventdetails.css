@@ -110,9 +110,15 @@
 }
 
 #map {
-  height: 200px;
-  width: 300px;
+  padding: 0;
+  height: 300px;
+  width: 350px;
   border: 2px solid black;
+}
+
+#map .mapContainer {
+  height: 100%;
+  width: 100%;
 }
 
 #button {

@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import './eventdetails.css';
 import { Button, Grid, Row, Col, Panel } from 'react-bootstrap'
+import GoogleMapContainer from '../../containers/GoogleMapContainer'
+
 
 const EventDetails = (props) => (
     <Grid id="wrapper">
@@ -39,7 +41,9 @@ const EventDetails = (props) => (
                         <div className="locationValue">{props.event.location}</div>
                     </Col>
                     <Col xs={12} id="map">
-                        <div>MAP GOES HERE</div>
+                        <div className="mapContainer">
+                            <GoogleMapContainer address={props.event.location} />
+                        </div>
                     </Col>
                     <Col xs={12} id="button">
                         <Button bsStyle="primary" bsSize="large">RSVP</Button>

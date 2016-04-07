@@ -1,9 +1,9 @@
 import React, { Component, PropTypes } from 'react';
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
-import { fetchEvent } from '../../actions/events'
+import { fetchEvent } from '../actions/events'
 import { push as pushRoute } from 'react-router-redux';
-import EventDetails from '../../components/EventDetails/EventDetails'
+import EventDetails from '../components/EventDetails/EventDetails'
 
 
 class EventDetailsContainer extends Component {
