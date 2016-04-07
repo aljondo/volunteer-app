@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './approview.css';
-import VolunteerApprovalContainer from '../../containers/VolunteerApprovalContainer/VolunteerApprovalContainer';
+import VolunteerApprovalContainer from '../../containers/VolunteerApprovalContainer';
+import HourVerificationContainer from '../../containers/HourVerificationContainer';
 import {Link} from 'react-router';
 
 class ApprovalView extends Component {
@@ -13,7 +14,7 @@ class ApprovalView extends Component {
             </div> 
             <div id ="hours">
             <h1> Hour Approval </h1> 
-           		HOUR APPROVAL GOES HERE
+           		<HourVerificationContainer />
             </div>
           </div>
       );

@@ -2,9 +2,11 @@ import React, { Component } from 'react';
 import styles from './hourverification.scss';
 var classNames = require('classnames');
 import { Button, Grid, Row, Col, Panel } from 'react-bootstrap'
+import MultiItemCarousel from '../MultiItemCarousel/MultiItemCarousel';
+
 
 const HourVerification = (props) => (
-    <div className={styles.wrapper}>
+    <div className={styles.hourApprovalWrapper}>
        <Grid>
            <Row>
                <Panel className={classNames(styles.topLeft, 'col-xs-offset-1 col-xs-10 col-sm-offset-0 col-sm-8')}>
@@ -28,7 +30,9 @@ const HourVerification = (props) => (
                    </Row>
                </Panel>
                <Panel className={classNames(styles.bottom, 'col-xs-offset-1 col-xs-10 col-sm-offset-0 col-sm-12')}>
-                   Bottom Carousel
+                   <div>
+                       <MultiItemCarousel items={props.volunteers}/>
+                   </div>
                </Panel>
            </Row>
        </Grid>
