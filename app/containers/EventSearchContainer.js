@@ -2,7 +2,7 @@ import React, { Component, PropTypes } from 'react';
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
 import { Button, Col, Row, Grid } from 'react-bootstrap'
-import { fetchEvents, reset } from "../actions/events";
+import { fetchSearchEvents, resetSearchEvents } from "../actions/events/searchEventsActions";
 import { push as pushRoute } from 'react-router-redux';
 import EventSearchForm from '../components/EventSearchForm/EventSearchForm'
 import AdvancedSearch from '../components/AdvancedSearch/AdvancedSearch'
@@ -20,16 +20,16 @@ class EventSearchContainer extends Component {
 
     componentDidMount() {
         if (this.props.events.length > 0){
-            this.props.fetchEvents();
+            this.props.fetchSearchEvents();
         }
     }
 
     componentWillUnmount(){
-        this.props.reset();
+        this.props.resetSearchEvents();
     }
 
     searchForEvents() {
-        this.props.fetchEvents();
+        this.props.fetchSearchEvents();
     }
 
     onAdvancedClick() {
@@ -80,11 +80,11 @@ EventSearchContainer.defaultProps = {
 };
 
 const mapDispatchToProps = (dispatch) => (
-    bindActionCreators({ fetchEvents, reset, pushRoute }, dispatch)
+    bindActionCreators({ fetchSearchEvents, resetSearchEvents, pushRoute }, dispatch)
 );
 
 const mapStateToProps = (state) => (
-    {events: state.events.events}
+    {events: state.searchEvents.events}
 );
 
 export default connect(mapStateToProps, mapDispatchToProps)(EventSearchContainer)
