@@ -1,9 +1,40 @@
 import React, { Component } from 'react';
 import {Link} from 'react-router';
-import FeaturedEvents from '../../containers/FeaturedEventsContainer';
+import UpcomingEvents from '../../components/EventDashboard/UpcomingEvents';
 
+const About = (props) => (
+        <div className="container">
+            <h2>{this.state.name}</h2>
+            <img src={this.state.photo}  alt="user" className="img-responsive"/>
+            <div className="container">
+                <h3>Mission</h3>
+                <p className="container">{this.state.mission}</p>
+            </div>
+            <div className="container">
+                <h3>Location</h3>
+                <div className="container">
+                    <h4>{this.state.address}</h4> 
+                    <h4>{this.state.city} {this.state.state} {this.state.zipCode}</h4>
+                </div>
+            </div>
+            <div className="container">
+                <h3>Upcoming Events</h3>
+                <div>
+                    <UpcomingEvents/>
+                </div>
+            </div>
+            <div className="container">
+                <h3>Contact Us</h3>
+                <div className="container">
+                    <p>{this.state.contacter}</p>
+                    <p>{this.state.email}</p>
+                    <p>{this.state.phone}</p>
+                </div>
+            </div>
+        </div>
+    );
 
-class About extends Component {
+/*class About extends Component {
 
     constructor(props) {
         super(props); 
@@ -23,38 +54,41 @@ class About extends Component {
 
     render() {
         return (
-            <div className="container">
-                <h2>{this.state.name}</h2>
-                <img src={this.state.photo}  alt="user" className="img-responsive"/>
+            <div>
+                <Carousel/>
                 <div className="container">
-                    <h3>Mission</h3>
-                    <p className="container">{this.state.mission}</p>
-                </div>
-                <div className="container">
-                    <h3>Location</h3>
+                    <h2>{this.state.name}</h2>
+                    <img src={this.state.photo}  alt="user" className="img-responsive"/>
                     <div className="container">
-                        <h4>{this.state.address}</h4> 
-                        <h4>{this.state.city} {this.state.state} {this.state.zipCode}</h4>
+                        <h3>Mission</h3>
+                        <p className="container">{this.state.mission}</p>
                     </div>
-                </div>
-                <div className="container">
-                    <h3>Upcoming Events</h3>
-                    <div>
-                        <FeaturedEvents/>
-                    </div>
-                </div>
-                <div className="container">
-                    <h3>Contact Us</h3>
                     <div className="container">
-                        <p>{this.state.contacter}</p>
-                        <p>{this.state.email}</p>
-                        <p>{this.state.phone}</p>
+                        <h3>Location</h3>
+                        <div className="container">
+                            <h4>{this.state.address}</h4> 
+                            <h4>{this.state.city} {this.state.state} {this.state.zipCode}</h4>
+                        </div>
                     </div>
-                </div>
-  			</div>
+                    <div className="container">
+                        <h3>Upcoming Events</h3>
+                        <div>
+                            <FeaturedEvents/>
+                        </div>
+                    </div>
+                    <div className="container">
+                        <h3>Contact Us</h3>
+                        <div className="container">
+                            <p>{this.state.contacter}</p>
+                            <p>{this.state.email}</p>
+                            <p>{this.state.phone}</p>
+                        </div>
+                    </div>
+      			</div>
+            </div>
         );
     }
-};
+};*/
 
 export default About;
 

@@ -1,15 +1,13 @@
 import React, { Component } from 'react';
 import {Link} from 'react-router';
-import Carousel from '../../components/Organization/Carousel.js';
-import About from '../../components/Organization/About.js';
-import {} from 'react-bootstrap';
-
+import ExternalOrganizationContainer from '../../containers/OrganizationContainer/ExternalOrganizationContainer.js';
+import Carousel from '../../components/Organization/Carousel.js'
 class External_Profile_view extends Component {
     render() {
         return (
             <div >
-                <div ><Carousel/></div>
-                <div ><About/></div>
+            	<div><Carousel/></div>
+                <div><ExternalOrganizationContainer/></div>
             </div>
             );
         }

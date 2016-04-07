@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import {Link} from 'react-router';
 import InternalAbout from '../../components/Organization/InternalAbout.js';
 import UpcomingEvents from '../../components/EventDashboard/UpcomingEvents';
-import PastEvents from '../../components/EventDashboard/PastEvents'
+import PastEvents from '../../components/EventDashboard/EventHistory'
 import ProfileChart from '../../components/Organization/ProfileChart';
 class Internal_Profile_view extends Component {
     render() {
