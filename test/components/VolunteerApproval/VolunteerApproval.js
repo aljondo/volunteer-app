@@ -3,13 +3,13 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { assert }  from "chai";
 import TestUtils from "react-addons-test-utils"
-import HourVerification from '../../../app/components/HourVerification/HourVerification';
+import VolunteerApproval from '../../../app/components/VolunteerApproval/VolunteerApproval';
 
 
-describe('HourVerification Component', () => {
+describe('VolunteerApproval Component', () => {
     const renderedComponent = TestUtils.renderIntoDocument(
         <div>
-            <HourVerification event={{name: "test"}} volunteers={[<div>user 1</div>,<div>user 2</div>]}/>
+            <VolunteerApproval event={{name: "test"}} volunteers={[<div>user 1</div>,<div>user 2</div>]}/>
         </div>
     );
 

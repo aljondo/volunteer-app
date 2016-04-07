@@ -42,7 +42,7 @@ const EventDetails = (props) => (
                     </Col>
                     <Col xs={12} id="map">
                         <div className="mapContainer">
-                            <GoogleMapContainer address={props.event.location} />
+                            <GoogleMapContainer address={props.event.location}/>
                         </div>
                     </Col>
                     <Col xs={12} id="button">

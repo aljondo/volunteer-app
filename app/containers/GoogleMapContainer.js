@@ -14,7 +14,16 @@ class GoogleMapContainer extends Component {
     }
 
     componentDidMount() {
-        geocoder.geocode({"address": this.props.address}, function(results) {
+        this.updateMap(this.props.address);
+    }
+
+    // Sometimes the props are empty the first time this component is called
+    componentWillReceiveProps(nextProps){
+        this.updateMap(nextProps.address);
+    }
+
+    updateMap(address){
+        geocoder.geocode({"address": address}, function(results) {
             if (results[0]) {
                 this.setState({
                     display: <GoogleMap
@@ -35,7 +44,7 @@ class GoogleMapContainer extends Component {
 }
 
 GoogleMapContainer.propTypes = {
-    address: PropTypes.string
+    address: PropTypes.string.isRequired
 };
 
 GoogleMapContainer.defaultProps = {

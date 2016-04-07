@@ -1,15 +1,15 @@
 // add paths from route not relative
 import React from 'react';
 import ReactDOM from 'react-dom';
+import GoogleMapMessage from '../../../app/components/GoogleMap/GoogleMapMessage';
 import { assert }  from "chai";
 import TestUtils from "react-addons-test-utils"
-import HourVerification from '../../../app/components/HourVerification/HourVerification';
 
 
-describe('HourVerification Component', () => {
+describe('GoogleMapMessage Component', () => {
     const renderedComponent = TestUtils.renderIntoDocument(
         <div>
-            <HourVerification event={{name: "test"}} volunteers={[<div>user 1</div>,<div>user 2</div>]}/>
+            <GoogleMapMessage />
         </div>
     );
 

@@ -2,6 +2,7 @@ import merge from 'lodash/merge'
 import { FETCH_EVENTS_REQUEST,
          FETCH_EVENTS_SUCCESS,
          FETCH_EVENTS_FAILURE,
+         RESET_EVENTS,
          FETCH_FEATURED_EVENTS_REQUEST,
          FETCH_FEATURED_EVENTS_SUCCESS,
          FETCH_FEATURED_EVENTS_FAILURE,
@@ -30,6 +31,8 @@ export default (state = emptyState, action) => {
       return merge({}, state, {isReq: false, events: action.response})
     case FETCH_EVENTS_FAILURE:
       return merge({}, state, {isReq: false})
+    case RESET_EVENTS:
+      return merge({}, emptyState)
     case FETCH_FEATURED_EVENTS_REQUEST:
       return merge({}, state, {isReq: true})
     case FETCH_FEATURED_EVENTS_SUCCESS:
