@@ -103,6 +103,8 @@ class AboutMe extends Component {
                     about = {this.state.about}
                     phone = {this.state.phone}
                     email = {this.state.email}
+                    skills = {this.state.skills}
+                    interests = {this.state.interests}
                     onSaveClick = {this.onSaveClick.bind(this)}
                     onCancelClick = {this.onCancelClick.bind(this)}
                 />

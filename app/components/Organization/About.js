@@ -2,7 +2,6 @@
  * Created by Shiyu on 4/2/2016.
  */
 import React, { Component } from 'react';
-import {Link} from 'react-router';
 import UpcomingEvents from '../../components/EventDashboard/UpcomingEvents';
 
 const About = (props) => (
@@ -22,7 +21,7 @@ const About = (props) => (
             </div>
             <div className="container">
                 <h3>Upcoming Events</h3>
-                <div>
+                    <div>
                     <UpcomingEvents/>
                 </div>
             </div>
