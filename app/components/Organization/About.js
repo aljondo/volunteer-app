@@ -4,17 +4,17 @@ import UpcomingEvents from '../../components/EventDashboard/UpcomingEvents';
 
 const About = (props) => (
         <div className="container">
-            <h2>{this.state.name}</h2>
-            <img src={this.state.photo}  alt="user" className="img-responsive"/>
+            <h2>{props.name}</h2>
+            <img src={props.photo}  alt="user" className="img-responsive"/>
             <div className="container">
                 <h3>Mission</h3>
-                <p className="container">{this.state.mission}</p>
+                <p className="container">{props.mission}</p>
             </div>
             <div className="container">
                 <h3>Location</h3>
                 <div className="container">
-                    <h4>{this.state.address}</h4> 
-                    <h4>{this.state.city} {this.state.state} {this.state.zipCode}</h4>
+                    <h4>{props.address}</h4>
+                    <h4>{props.city} {props.state} {props.zipCode}</h4>
                 </div>
             </div>
             <div className="container">
@@ -26,9 +26,9 @@ const About = (props) => (
             <div className="container">
                 <h3>Contact Us</h3>
                 <div className="container">
-                    <p>{this.state.contacter}</p>
-                    <p>{this.state.email}</p>
-                    <p>{this.state.phone}</p>
+                    <p>{props.contacter}</p>
+                    <p>{props.email}</p>
+                    <p>{props.phone}</p>
                 </div>
             </div>
         </div>

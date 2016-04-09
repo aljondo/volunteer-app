@@ -3,9 +3,9 @@ import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
 import { fetchOrg } from '../../actions/orgs'
 import { push as pushRoute } from 'react-router-redux';
-import ExternalOrganization from '../../components/Organization/About'
+import About from '../../components/Organization/About'
 
-class ExternalOrganizationContainer extends Component {
+class AboutContainer extends Component {
 
     componentDidMount() {
         this.props.dispatch(
@@ -15,12 +15,12 @@ class ExternalOrganizationContainer extends Component {
 
     render() {
         return (
-            <ExternalOrganization event={this.props.org}/>
+            <About org={this.props.org}/>
         )
     }
 }
 
-ExternalOrganizationContainer.propTypes = {
+AboutContainer.propTypes = {
     orgId: PropTypes.string,
     org: PropTypes.object.isRequired
 };
@@ -31,4 +31,4 @@ const mapStateToProps = (state) => (
     }
 );
 
-export default connect(mapStateToProps)(ExternalOrganizationContainer)
+export default connect(mapStateToProps)(AboutContainer)

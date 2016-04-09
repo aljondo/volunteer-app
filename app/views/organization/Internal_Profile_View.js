@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import {Link} from 'react-router';
-import InternalAbout from '../../components/Organization/InternalAbout.js';
+import AboutContainer from '../../containers/OrganizationContainer/AboutContainer.js';
 import UpcomingEvents from '../../components/EventDashboard/UpcomingEvents';
 import PastEvents from '../../components/EventDashboard/EventHistory'
 import ProfileChart from '../../components/Organization/ProfileChart';
@@ -9,7 +9,7 @@ class Internal_Profile_view extends Component {
         return (
         	<div>
 	            <div className="col-sm-3">
-	                <InternalAbout />
+	                <AboutContainer />
 	            </div>
 	            <div className="col-sm-6"> 
                     <div >
