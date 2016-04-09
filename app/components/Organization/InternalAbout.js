@@ -1,3 +1,6 @@
+/**
+ * Created by Shiyu on 4/2/2016.
+ */
 import React, { Component } from 'react';
 import {Link} from 'react-router';
 import {Button, Popover, ButtonToolbar, OverlayTrigger} from 'react-bootstrap';

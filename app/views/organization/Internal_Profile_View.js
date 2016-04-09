@@ -1,9 +1,12 @@
+/**
+ * Created by Shiyu on 4/2/2016.
+ */
 import React, { Component } from 'react';
 import {Link} from 'react-router';
 import AboutContainer from '../../containers/OrganizationContainer/AboutContainer.js';
 import UpcomingEvents from '../../components/EventDashboard/UpcomingEvents';
 import PastEvents from '../../components/EventDashboard/EventHistory'
-import ProfileChart from '../../components/Organization/ProfileChart';
+import ProfileChart from '../../containers/OrganizationContainer/ProfileChartContainer';
 class Internal_Profile_view extends Component {
     render() {
         return (

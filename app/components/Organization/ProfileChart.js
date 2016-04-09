@@ -1,9 +1,13 @@
+/**
+ * Created by Shiyu on 4/2/2016.
+ */
 import React, { Component } from 'react';
 import {Link} from 'react-router';
 var LineChart = require("react-chartjs").Line;
 var PieChart = require("react-chartjs").Pie;
 
-var data = {
+/* fake data
+ var data = {
     labels: ["January", "February", "March", "April", "May", "June", "July"],
     datasets: [
         {
@@ -48,7 +52,7 @@ var data2 = [
         highlight: "#FFC870",
         label: "Yellow"
     }
-]
+]*/
 
 var options = {
 
@@ -126,22 +130,30 @@ var options2 = {
 
     //String - A legend template
     legendTemplate : "<ul class=\"<%=name.toLowerCase()%>-legend\"><% for (var i=0; i<segments.length; i++){%><li><span style=\"background-color:<%=segments[i].fillColor%>\"></span><%if(segments[i].label){%><%=segments[i].label%><%}%></li><%}%></ul>"
-
 }
-class ProfileChart extends Component {
+// class ProfileChart extends Component {
+//
+//
+//     render() {
+//         return (
+//             <div>
+//                 <div>
+//                     <PieChart data={data2} options={options2}/>
+//                     <LineChart data={data} options={options}/>
+//                 </div>
+//
+//             </div>
+//         );
+//     }
+// }
 
-
-    render() {
-        return (
-            <div>
-                <div>
-                    <PieChart data={data2} options={options2}/>
-                    <LineChart data={data} options={options}/>
-                </div>
-               
-            </div>
-        );
-    }
-}
+const ProfileChart = (props) => (
+    <div>
+        <div>
+            <PieChart data={props.data2} options={options2}/>
+            <LineChart data={props.data} options={options}/>
+        </div>
+    </div>
+);
 
 export default ProfileChart

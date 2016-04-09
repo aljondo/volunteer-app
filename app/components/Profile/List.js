@@ -1,4 +1,7 @@
-﻿import React, { Component } from 'react';
+﻿/**
+ * Created by Shiyu on 3/15/2016.
+ */
+import React, { Component } from 'react';
 
 class ProfileChart extends Component {
     render() {
