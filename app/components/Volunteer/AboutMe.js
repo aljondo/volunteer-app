@@ -17,11 +17,72 @@ const interests = [
        "Sleep"
 ];
 
+/*var isEditing = false;
+
+function onEditClick() {
+    this.isEditing = true;
+}
+function onSaveClick(event) {
+    this.isEditing = false;
+}
+
+function onCancelClick() {
+    this.isEditing = false;
+}
+
+function renderActionSection(props) {
+    if(this.isEditing) {
+        return(
+            <EditingPopup
+                name = {props.name}
+                about = {props.about}
+                phone = {props.phone}
+                email = {props.email}
+                onSaveClick = {this.onSaveClick}
+                onCancelClick = {this.onCancelClick}
+            />
+        )
+    }
+    return;
+}
+
+const AboutMe = (props) => {
+    <div>
+        <img src={'https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcSEKgew92pwh3t6IaIj3PazmaN3yia21164I6mvCkFTTr96s5mG'}  alt="user" className="img-responsive"/>
+        <Button className="btn btn-primary">Upload new photo</Button>
+        <h1>{props.name}</h1>
+        <div>
+            <h2>Profile</h2>
+            <strong>About</strong>
+            <p>{props.about}</p>
+            <strong>Skills</strong>
+            <List members = {props.skills}/>
+            <strong>Interests</strong>
+            <List members = {props.interests}/>
+            <p>
+                <strong>Phone #: </strong>
+                <span>{props.phone}</span>
+            </p>
+            <p>
+                <strong>Email: </strong>
+                <span>{props.email}</span>
+            </p>
+            <ButtonToolbar>
+                <OverlayTrigger trigger="click" onClick={this.onEditClick} placement="right" overlay={<Popover id="editing">{this.renderActionSection()}</Popover>}>
+                    <Button className="btn btn-primary">Edit</Button>
+                </OverlayTrigger>
+            </ButtonToolbar>
+        </div>
+        <br />
+    </div>
+}*/
+
+
 class AboutMe extends Component {
 
     constructor(props) {
         super(props);
-        
+
         this.state = {
             isEditing : false,
             name : "Shiyu Wang",
@@ -37,16 +98,16 @@ class AboutMe extends Component {
     renderActionSection() {
         if(this.state.isEditing) {
             return(
-                <EditingPopup   
+                <EditingPopup
                     name = {this.state.name}
                     about = {this.state.about}
                     phone = {this.state.phone}
                     email = {this.state.email}
-                    onSaveClick = {this.onSaveClick.bind(this)}   
-                    onCancelClick = {this.onCancelClick.bind(this)}                     
+                    onSaveClick = {this.onSaveClick.bind(this)}
+                    onCancelClick = {this.onCancelClick.bind(this)}
                 />
                 )
-        };
+        }
         return;
     }
 
@@ -71,7 +132,7 @@ class AboutMe extends Component {
                     <p>
                         <strong>Email: </strong>
                         <span>{this.state.email}</span>
-                    </p>                  
+                    </p>
                     <ButtonToolbar>
                         <OverlayTrigger trigger="click" onClick={this.onEditClick.bind(this)} placement="right" overlay={<Popover id="editing">{this.renderActionSection()}</Popover>}>
                             <Button className="btn btn-primary">Edit</Button>
@@ -89,15 +150,16 @@ class AboutMe extends Component {
                 }
                 //This is not working and waiting for redux
                 onSaveClick(event) {
-                    this.setState({ 
+                    this.setState({
                         isEditing: false,
                     });
                 }
-                
+
                 onCancelClick() {
                     this.setState({ isEditing: false });
                 }
-                
+
 }
+
 
 export default AboutMe;
