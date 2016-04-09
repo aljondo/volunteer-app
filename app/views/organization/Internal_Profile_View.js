@@ -1,15 +1,18 @@
+/**
+ * Created by Shiyu on 4/2/2016.
+ */
 import React, { Component } from 'react';
 import {Link} from 'react-router';
-import InternalAbout from '../../components/Organization/InternalAbout.js';
+import AboutContainer from '../../containers/OrganizationContainer/AboutContainer.js';
 import UpcomingEvents from '../../components/EventDashboard/UpcomingEvents';
-import PastEvents from '../../components/EventDashboard/PastEvents'
-import ProfileChart from '../../components/Organization/ProfileChart';
+import PastEvents from '../../components/EventDashboard/EventHistory'
+import ProfileChart from '../../containers/OrganizationContainer/ProfileChartContainer';
 class Internal_Profile_view extends Component {
     render() {
         return (
         	<div>
 	            <div className="col-sm-3">
-	                <InternalAbout />
+	                <AboutContainer />
 	            </div>
 	            <div className="col-sm-6"> 
                     <div >

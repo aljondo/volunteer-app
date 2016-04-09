@@ -1,4 +1,7 @@
-﻿import React, { Component } from 'react';
+﻿/**
+ * Created by Shiyu on 4/2/2016.
+ */
+import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 import { Modal, form, Button, Input } from 'react-bootstrap';
 

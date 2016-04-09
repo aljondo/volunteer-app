@@ -1,4 +1,7 @@
-﻿import React, { Component } from 'react';
+﻿/**
+ * Created by Shiyu on 3/9/2016.
+ */
+import React, { Component } from 'react';
 import {Button, Popover, ButtonToolbar, OverlayTrigger} from 'react-bootstrap';
 import List from './List.js';
 import EditingPopup from './EditingPopup.js';

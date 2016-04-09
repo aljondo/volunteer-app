@@ -1,15 +1,16 @@
+/**
+ * Created by Shiyu on 4/2/2016.
+ */
 import React, { Component } from 'react';
 import {Link} from 'react-router';
-import Carousel from '../../components/Organization/Carousel.js';
-import About from '../../components/Organization/About.js';
-import {} from 'react-bootstrap';
-
+import AboutContainer from '../../containers/OrganizationContainer/AboutContainer.js';
+import Carousel from '../../components/Organization/Carousel.js'
 class External_Profile_view extends Component {
     render() {
         return (
             <div >
-                <div ><Carousel/></div>
-                <div ><About/></div>
+            	<div><Carousel/></div>
+                <div><AboutContainer/></div>
             </div>
             );
         }

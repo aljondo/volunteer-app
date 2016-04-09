@@ -1,7 +1,7 @@
 // add paths from route not relative
 import React from 'react';
 import ReactDOM from 'react-dom';
-import AboutMe from '../../../app/components/AboutMe/AboutMe';
+import AboutMe from '../../../app/components/Volunteer/AboutMe';
 import { assert }  from "chai";
 import TestUtils from "react-addons-test-utils"
 

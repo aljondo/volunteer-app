@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import {Link} from 'react-router';
-import EventDetailsContainer from '../../containers/EventDetailsContainer/EventDetailsContainer';
+import EventDetailsContainer from '../../containers/EventDetailsContainer';
 
 class EventDetailsView extends Component {
     render() {

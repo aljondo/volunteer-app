@@ -1,5 +1,4 @@
 import React from 'react'
-import { Grid, Col, Row, Input, Button  } from 'react-bootstrap'
 
 const FeaturedEvents = (props) => (
     <table className = "table">

@@ -41,19 +41,19 @@ LoginFormContainer.propTypes = {
   email: PropTypes.string,
   password: PropTypes.string,
   error: PropTypes.string
-}
+};
 
 const mapDispatchToProps = (dispatch) => (
     bindActionCreators({pushRoute, loginRequest, setEmail, setPassword }, dispatch)
-)
+);
 
 const mapStateToProps = (state) => (
   { email: state.auth.user.email,
     password: state.auth.user.password,
     error: state.auth.error,
     isFetching: state.auth.isFetching,
-    isAuthenticated: state.auth.isAuthenticated,
+    isAuthenticated: state.auth.isAuthenticated
   }
-)
+);
 
 export default connect(mapStateToProps, mapDispatchToProps)(LoginFormContainer)

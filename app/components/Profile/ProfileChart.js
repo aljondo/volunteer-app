@@ -1,4 +1,7 @@
-﻿import React, { Component } from 'react';
+﻿/**
+ * Created by Shiyu on 3/15/2016.
+ */
+import React, { Component } from 'react';
 import {Link} from 'react-router';
 var LineChart = require("react-chartjs").Line;
 var PieChart = require("react-chartjs").Pie;

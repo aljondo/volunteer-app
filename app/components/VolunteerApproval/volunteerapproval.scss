@@ -1,0 +1,42 @@
+
+.volApprovalWrapper {
+  margin-top: 20px;
+  .topLeft {
+    height: 75px;
+    @media(max-width: 767px) {
+      height: auto;
+      margin-bottom: 0;
+    }
+    .topLeftTop {
+      font-size: 20px;
+    }
+    .topLeftBottom {
+
+    }
+  }
+
+  .topRight {
+    height: 75px;
+    font-size: 20px;
+    text-align: center;
+    background: #e0ebeb;
+    @media(max-width: 767px) {
+      height: auto;
+      margin-top: 0;
+    }
+    .topRightTop {
+
+    }
+    .topRightBottom {
+
+    }
+  }
+
+  .bottom {
+    background: #6699ff;
+  }
+}
+
+.carouselImg {
+  width: 90%;
+}

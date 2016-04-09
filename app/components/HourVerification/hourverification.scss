@@ -1,5 +1,5 @@
 
-.wrapper {
+.hourApprovalWrapper {
   margin-top: 20px;
   .topLeft {
     height: 75px;
@@ -32,7 +32,11 @@
     }
   }
 
-  .bottom {
-    height: 75px;
+  .bottom{
+    background: #6699ff;
   }
+}
+
+.carouselImg {
+  width: 90%;
 }
