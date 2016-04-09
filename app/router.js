@@ -46,6 +46,6 @@ const routes = (
         <Route path="ExternalOrg" component={External_Profile_View}/>
         <Route path="InternalOrg" component={Internal_Profile_View}/>
     </Route>
-)
+);
 
 export default routes;

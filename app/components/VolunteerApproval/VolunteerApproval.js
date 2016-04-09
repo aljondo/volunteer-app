@@ -1,43 +1,43 @@
 import React, { Component } from 'react';
-import './appro.css';
-import { Panel } from 'react-bootstrap';
-import MultiCarousel from '../MultiItemCarousel/MultiItemCarousel';
-
-class EventInfo extends Component {
-
-	render() {
-		return(
-			<div id="top"> 
-				<div id="eventinfo">
-					<Panel>
-						<h3> EVENT NAME THO </h3> <br/>
-						<h5> Location &#47;&#47; date </h5>
-					</Panel>
-				</div>
-				<div id="hourinfo">
-					<Panel>
-						<h3> # &#47; # </h3> <br/>
-						<h5> Volunteers approved </h5>
-					</Panel>
-				</div>
-			</div>
-		);
-	}
-}
+import styles from './volunteerapproval.scss';
+import { Button, Grid, Row, Col, Panel } from 'react-bootstrap';
+var classNames = require('classnames');
+import MultiItemCarousel from '../MultiItemCarousel/MultiItemCarousel';
 
 
-class VolunteerApproval extends Component {
+const VolunteerApproval = (props) => (
 
-	render() {
-		return (
-			<div>
-				<EventInfo />
-				<div id="carousel">
-					<MultiCarousel />
-				</div>
-			</div>
-		);
-	}
-}
+    <div className={styles.volApprovalWrapper}>
+        <Grid>
+            <Row>
+                <Panel bsSize="large" className={classNames(styles.topLeft, 'col-xs-offset-1 col-xs-10 col-sm-offset-0 col-sm-8')}>
+                    <Row>
+                        <Col xs={12} className={styles.topLeftTop}>
+                            Cat Sitting for cats in need
+                        </Col>
+                        <Col xs={12}>
+                            {props.event.name}
+                        </Col>
+                    </Row>
+                </Panel>
+                <Panel className={classNames(styles.topRight, 'col-xs-offset-1 col-xs-10 col-sm-offset-0 col-sm-4')}>
+                    <Row>
+                        <Col xs={12}>
+                            2/10
+                        </Col>
+                        <Col xs={12}>
+                            Volunteers Approved
+                        </Col>
+                    </Row>
+                </Panel>
+                <Panel className={classNames(styles.bottom,'col-xs-offset-1 col-xs-10 col-sm-offset-0 col-sm-12')}>
+                    <div>
+                        <MultiItemCarousel items={props.volunteers}/>
+                    </div>
+                </Panel>
+            </Row>
+        </Grid>
+    </div>
+);
 
-export default VolunteerApproval;
+export default VolunteerApproval

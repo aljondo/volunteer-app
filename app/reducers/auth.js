@@ -39,7 +39,7 @@ export default (state = emptyState, action) => {
     case LOGIN_FAILURE:
       // may want to just set failed flag and define error message else where
       // may want to pass up error from middleware action.response.error
-      return merge({}, state, {error: "Login Failed", isFetching: false}, {user: {password: null}})
+      return merge({}, state, {error: "Login Failed", isFetching: false}, {user: {password: null}});
     case LOGOUT:
       return merge({}, emptyState)
     default:

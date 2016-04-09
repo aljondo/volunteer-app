@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import {Button, Input, Col, center} from 'react-bootstrap'
-import SearchButton from '../../components/SearchButton/SearchButton'
 import KeywordForm from '../../components/KeywordForm/KeywordForm'
 import styles from './advancedsearch.scss'
 
@@ -39,7 +38,7 @@ const AdvancedSearch = (props) => (
 		    	<KeywordForm />
 		    </div>
 		    <div className={styles.button}>
-		    	<SearchButton />
+				<Button bsStyle="primary">Search</Button>
 		    </div>
 		</div>
 );

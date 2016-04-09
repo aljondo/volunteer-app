@@ -1,30 +1,27 @@
 import React, { Component } from 'react';
 import Slider from 'react-slick';
-import RequestingHours from './../VolunteerApproval/RequestingHours';
-import RequestingAttend from './../VolunteerApproval/RequestingAttend';
+import styles from './carousel.scss';
 
-class MultiItemCarousel extends Component {
-
-    render() {
+const MultiItemCarousel = (props) => {
         var settings = {
             dots: true,
-            infinite: false,
+            infinite: true,
             speed: 500,
-            slidesToShow: 4,
-            slidesToScroll:3
+            slidesToShow: 3,
+            slidesToScroll: 3
         };
         return (
-            <div className='container'>
+            <div className={styles.container}>
                 <Slider {...settings}>
-                    <RequestingAttend />
-                    <RequestingAttend />
-                    <RequestingAttend />
-                    <RequestingHours />
+                    {
+                        props.items.map(function(item, index) {
+                            return (<div key={index}>{item}</div>);
+                        })
+                    }
                 </Slider>
             </div>
-        );
-    }
-}
+        )
+};
 
 export default MultiItemCarousel
 
