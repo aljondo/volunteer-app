@@ -116,6 +116,32 @@
       "photo": "http://i.imgur.com/TLhxnYl.jpg",
       "phone": 5557779999,
       "education": "college"
+    },
+    {
+      "email": "volunteer@volunteer.com",
+      "password": "volunteer",
+      "passwordVerify": "volunteer",
+      "gender": null,
+      "age": null,
+      "location": null,
+      "skills": [],
+      "interests": [],
+      "bio": null,
+      "contact": true,
+      "id": 4445
+    },
+    {
+      "email": "cliff316912991@gmail.com",
+      "password": 111,
+      "passwordVerify": 111,
+      "gender": null,
+      "age": null,
+      "location": null,
+      "skills": [],
+      "interests": [],
+      "bio": null,
+      "contact": true,
+      "id": 4446
     }
   ],
   "events": [

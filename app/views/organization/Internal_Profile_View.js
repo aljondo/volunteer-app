@@ -1,0 +1,42 @@
+/**
+ * Created by Shiyu on 4/2/2016.
+ */
+import React, { Component } from 'react';
+import {Link} from 'react-router';
+import AboutContainer from '../../containers/OrganizationContainer/AboutContainer.js';
+import UpcomingEvents from '../../components/EventDashboard/UpcomingEvents';
+import PastEvents from '../../components/EventDashboard/EventHistory'
+import ProfileChart from '../../containers/OrganizationContainer/ProfileChartContainer';
+class Internal_Profile_view extends Component {
+    render() {
+        return (
+        	<div>
+	            <div className="col-sm-3">
+	                <AboutContainer />
+	            </div>
+	            <div className="col-sm-6"> 
+                    <div >
+                        <h1> Upcoming Events</h1> 
+                        <UpcomingEvents />
+                    </div> 
+                    <div> 
+                        <h1> Past Events </h1> 
+                        <PastEvents /> 
+                    </div> 
+                </div>
+                <div className= "col-sm-3">
+                    <h3>Hour Allocation</h3>
+                    <br/>
+                    <h3>Year to Date</h3>
+                    <h3>350</h3>
+                    <br/>
+                    <h3>Average volunteers / Event</h3>
+                    <h3>200</h3>
+                    <br/>
+                    <ProfileChart />     
+                </div> 
+            </div>
+            );
+        }
+    };
+export default Internal_Profile_view;
