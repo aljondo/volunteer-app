@@ -2,8 +2,28 @@
  * Created by Shiyu on 4/2/2016.
  */
 import React, { Component } from 'react';
-import {Link} from 'react-router';
 import {Carousel, CarouselItem} from 'react-bootstrap';
+
+
+/*const carousel = (props) => (
+    <div>
+        <Carousel>
+            {genCarouselItem(props.images)}
+        </Carousel>
+    </div>
+);
+
+const genCarouselItem = (images) => (
+    images.map((image, index) => (
+        <CarouselItem key={ index }>
+            <img className="center-block" width={500} height={200} alt="900x500" src={image.src}/>
+            <div className="carousel-caption">
+                <h3>{image.title}</h3>
+                <p>{image.about}</p>
+            </div>
+        </CarouselItem>
+    ))
+);*/
 
 class carousel extends Component {
     render() {
