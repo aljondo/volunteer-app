@@ -20,8 +20,6 @@ const EventCreation = React.createClass({
 
         return (
             <div>
-                <p>Click to get the full Modal experience!</p>
-
                 <Button bsStyle="primary" bsSize="small" onClick={this.open}>
                     Create Event
                 </Button>
