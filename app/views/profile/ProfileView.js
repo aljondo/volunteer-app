@@ -6,8 +6,6 @@ import UpcomingEvents from '../../components/EventDashboard/UpcomingEvents'
 import AboutMe from '../../components/Volunteer/AboutMe';
 import ProfileChart from '../../components/Volunteer/ProfileChart';
 import EventHistory from '../../components/EventDashboard/EventHistory';
-
-
 import UpcomingEvents from '../../components/EventDashboard/UpcomingEvents';
 import AboutMe from '../../components/AboutMe/AboutMe';
 import ProfileChart from '../../components/ProfileChart/ProfileChart';
@@ -25,7 +23,7 @@ class ProfileView extends Component {
                             <h1> Confirmed Events</h1>
                             <UpcomingEvents />
                         </div>
-                        <div id="box2">
+                        <div id="box2">git
                             <h1> Unconfirmed Events </h1>
                             <UpcomingEvents />
                         </div>
