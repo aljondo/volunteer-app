@@ -20,6 +20,11 @@ const EventCreation = React.createClass({
 
         return (
             <div>
+                <p>Click to get the full Modal experience!</p>
+
+                <Button bsStyle="primary" bsSize="small" onClick={this.open}>
+                    Create Event
+                </Button>
                 <Modal show={this.state.showModal} onHide={this.close}>
                     <Modal.Header closeButton>
                         <Modal.Title>Modal heading</Modal.Title>
