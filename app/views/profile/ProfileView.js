@@ -5,6 +5,12 @@ import EventHistory from '../../components/EventDashboard/EventHistory'
 import UpcomingEvents from '../../components/EventDashboard/UpcomingEvents'
 import AboutMe from '../../components/Volunteer/AboutMe';
 import ProfileChart from '../../components/Volunteer/ProfileChart';
+import EventHistory from '../../components/EventDashboard/EventHistory';
+
+
+import UpcomingEvents from '../../components/EventDashboard/UpcomingEvents';
+import AboutMe from '../../components/AboutMe/AboutMe';
+import ProfileChart from '../../components/ProfileChart/ProfileChart';
 import FeaturedEvents from '../../containers/FeaturedEventsContainer';
 
 class ProfileView extends Component {
