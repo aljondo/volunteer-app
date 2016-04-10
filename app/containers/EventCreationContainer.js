@@ -9,7 +9,7 @@ import { setName,
     setError,
     removeError,
     reset,
-    saveEvent} from '../actions/eventcreation'
+    saveEvent} from '../actions/eventcreation';
 import { push as pushRoute} from 'react-router-redux';
 import EventCreation from '../components/EventCreation/EventCreation.js'
 
@@ -104,10 +104,10 @@ const mapDispatchToProps = (dispatch) => (
 )
 
 const mapStateToProps = (state) => (
-{ event: state.eventCreation.event,
-    error: state.eventCreation.error,
-    isSaving: state.eventCreation.isSaving,
-    success: state.eventCreation.success
+{ event: state.eventcreation.event,
+    error: state.eventcreation.error,
+    isSaving: state.eventcreation.isSaving,
+    success: state.eventcreation.success
 }
 )
 
