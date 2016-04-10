@@ -5,6 +5,7 @@ import App from 'views/App'
 import ProfileView from 'views/profile/ProfileView'
 import HomeView from 'views/home/HomeView'
 import SearchView from 'views/search/SearchView'
+import HoursView from 'views/hours/HoursView'
 import LoginView from 'views/login/LoginView'
 import RegisterView from 'views/register/RegisterView'
 import ApprovalView from 'views/approval/ApprovalView'
@@ -38,7 +39,8 @@ const isAuthAdmin = UserAuthWrapper({
 const routes = (
     <Route path="/" component={App}>
         <IndexRoute component={HomeView}/>
-        <Route path="profile" component={isAuthUser(ProfileView)}/>
+        <Route path="profile" component={ProfileView}/>
+        <Route path="hours" component={HoursView}/>
         <Route path="search" component={SearchView}/>
         <Route path="login" component={LoginView}/>
         <Route path="register" component={RegisterView}/>
