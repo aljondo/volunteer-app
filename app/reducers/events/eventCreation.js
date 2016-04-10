@@ -1,4 +1,4 @@
-import merge from 'lodash/merge'
+import merge from '../../../node_modules/sass-graph/node_modules/lodash/merge'
 import { SET_NAME,
     SET_ADDRESS,
     SET_ZIPCODE,
@@ -9,8 +9,10 @@ import { SET_NAME,
     RESET,
     SAVE_EVENT_REQUEST,
     SAVE_EVENT_SUCCESS,
-    SAVE_EVENT_FAILURE
-} from '../actions/eventcreation'
+    SAVE_EVENT_FAILURE,
+    SHOW_EVENT_CREATION_MODAL,
+    HIDE_EVENT_CREATION_MODAL
+} from '../../actions/events/eventcreation'
 
 const emptyState = {event: { name: null,
                             timecommitment: null,
@@ -27,7 +29,8 @@ const emptyState = {event: { name: null,
                             description: null },
                         error: null,
                         isSaving: false,
-                        success: false}
+                        success: false,
+                        isEditing: false};
 
 export default (state = emptyState, action) => {
     switch (action.type) {
@@ -53,6 +56,12 @@ export default (state = emptyState, action) => {
             return merge({}, state, {isSaving: false, success: true})
         case SAVE_EVENT_FAILURE:
             return merge({}, state, {isSaving: false, error: "Failed to complete registration"})
+        case SHOW_EVENT_CREATION_MODAL:
+            console.log("We did SHOW_EVENT_CREATION_MODAL");
+            return merge({}, state, {isEditing: true});
+        case HIDE_EVENT_CREATION_MODAL:
+            console.log("We did HIDE_EVENT_CREATION_MODAL");
+            return merge({}, state, {isEditing: false});
         default:
             return state
     }
