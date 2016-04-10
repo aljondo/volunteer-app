@@ -18,19 +18,19 @@ class AboutContainer extends Component {
 
     render() {
         return (
-            <About org={this.props.org}/>
+            <About orgs={this.props.orgs}/>
         )
     }
 }
 
 AboutContainer.propTypes = {
     orgId: PropTypes.string,
-    org: PropTypes.object.isRequired
+    orgs: PropTypes.object.isRequired
 };
 
 const mapStateToProps = (state) => (
     {
-        org: state.orgs.org
+        orgs: state.orgs.orgs
     }
 );
 
