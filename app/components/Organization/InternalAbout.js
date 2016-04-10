@@ -79,7 +79,6 @@ class InternalAbout extends Component {
                 </ButtonToolbar>
   			</div>
         );
-
     }
 
      onEditClick() {

@@ -12,7 +12,7 @@ class AboutContainer extends Component {
 
     componentDidMount() {
         this.props.dispatch(
-            fetchEvent(this.props.orgId)
+            fetchOrg(this.props.orgId)
         );
     }
 

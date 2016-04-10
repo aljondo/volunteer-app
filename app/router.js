@@ -43,7 +43,7 @@ const routes = (
         <Route path="login" component={LoginView}/>
         <Route path="register" component={RegisterView}/>
         <Route path="approval" component={ApprovalView}/>
-        <Route path="ExternalOrg" component={External_Profile_View}/>
+        <Route path="/organization/:orgId" component={External_Profile_View}/>
         <Route path="InternalOrg" component={Internal_Profile_View}/>
     </Route>
 );
