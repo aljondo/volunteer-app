@@ -3,8 +3,8 @@ import styles from './register.scss'
 import {Link} from 'react-router'
 import { Button } from 'react-bootstrap'
 import RegisterSwitch from '../../components/RegisterForm/RegisterSwitch'
-import UserRegisterForm from '../../containers/UserRegisterFormContainer'
-import OrgRegisterForm from '../../components/RegisterForm/OrgRegisterForm'
+import UserRegisterFormContainer from '../../containers/UserRegisterFormContainer'
+import OrgRegisterFormContainer from '../../containers/OrgRegisterFormContainer'
 
 class RegisterView extends Component {
 
@@ -35,10 +35,10 @@ class RegisterView extends Component {
         var pageContent;
 
         if(this.state.userType == "user") {
-            pageContent = <UserRegisterForm />;
+            pageContent = <UserRegisterFormContainer />;
         }
         else if (this.state.userType == "org"){
-            pageContent = <OrgRegisterForm />
+            pageContent = <OrgRegisterFormContainer />
         }
         else {
             pageContent = <RegisterSwitch onSelection={this.handleSwitchClick}/>;
