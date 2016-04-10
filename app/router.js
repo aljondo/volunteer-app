@@ -39,7 +39,7 @@ const isAuthAdmin = UserAuthWrapper({
 const routes = (
     <Route path="/" component={App}>
         <IndexRoute component={HomeView}/>
-        <Route path="profile" component={ProfileView}/>
+        <Route path="profile" component={isAuthUser(ProfileView)}/>
         <Route path="hours" component={HoursView}/>
         <Route path="search" component={SearchView}/>
         <Route path="login" component={LoginView}/>
