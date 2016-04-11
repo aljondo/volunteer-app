@@ -4,19 +4,31 @@ import * as actions from '../../app/actions/registration'
 
 describe('Registration Reducer', () => {
 
-  let registrationState = { user: { email: null,
-                              password: null,
-                              passwordVerify: null,
-                              gender: null,
-                              age: null,
-                              location: null,
-                              skills: [],
-                              interests: [],
-                              bio: null,
-                              contact: true },
-                      error: null,
-                      isSaving: false,
-                      success: false}
+  let registrationState = {
+    user: {
+      name: {value: null, valid: false, error: "Enter a name"},
+      email: {value: null, valid: false, error: "Enter an email"},
+      password: {value: null, valid: false, error: "Enter a password"},
+      passwordVerify: {value: null, valid: false, error: "Verify password"},
+      phone: {value: null, valid: false, error: "Enter a phone number"},
+      gender: {value: null, valid: true, error: null},
+      birthdate: {value: null, valid: true, error: null},
+      location: {value: null, valid: true, error: null},
+      education: {value: null, valid: true, error: null},
+      address: {value: null, valid: true, error: null},
+      city: {value: null, valid: true, error: null},
+      state: {value: null, valid: true, error: null},
+      zip: {value: null, valid: true, error: null},
+      skills: {value: [], valid: true, error: null},
+      interests: {value: [], valid: true, error: null},
+      bio: {value: null, valid: true, error: null},
+      mission: {value: null, valid: true, error: null},
+      contact: {value: true, valid: true, error: null},
+    },
+    error: null,
+    isSaving: false,
+    success: false
+  };
 
   let unknownAction = {type:'Unknown'}
 
@@ -54,28 +66,28 @@ describe('Registration Reducer', () => {
 
   it('returns state with give user email given SET_EMAIL', () => {
     let email = "what@up.com"
-    let action = {type: actions.SET_EMAIL, email}
-    let result = reducer(registrationState, action)
-    expect(result.user.email).to.equal(email)
+    let action = {type: actions.SET_EMAIL, email: {value: email, valid: true, error: null}};
+    let result = reducer(registrationState, action);
+    expect(result.user.email.value).to.equal(email)
   })
 
   it('returns state with given user password given SET_PASSWORD', () => {
     let password = "word"
-    let action = {type: actions.SET_PASSWORD, password}
-    let result = reducer(registrationState, action)
-    expect(result.user.password).to.equal(password)
+    let action = {type: actions.SET_PASSWORD, password: {value: password, valid: true, error: null}};
+    let result = reducer(registrationState, action);
+    expect(result.user.password.value).to.equal(password)
   })
 
   it('returns state with given user passwordVerify given SET_PASSWORDVERIFY', () => {
     let passwordVerify = "word"
-    let action = {type: actions.SET_PASSWORDVERIFY, passwordVerify}
-    let result = reducer(registrationState, action)
-    expect(result.user.passwordVerify).to.equal(passwordVerify)
+    let action = {type: actions.SET_PASSWORDVERIFY, passwordVerify: {value: passwordVerify, valid: true, error: null}};
+    let result = reducer(registrationState, action);
+    expect(result.user.passwordVerify.value).to.equal(passwordVerify)
   })
 
   it('returns state with error if FAILURE action', () => {
-    let action = {type: actions.SAVE_USER_FAILURE}
-    let result = reducer(registrationState, action)
+    let action = {type: actions.SAVE_USER_FAILURE};
+    let result = reducer(registrationState, action);
     expect(result.error).to.not.be.null
   })
 
