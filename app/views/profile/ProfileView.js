@@ -7,11 +7,13 @@ import UpcomingEvents from '../../components/EventDashboard/UpcomingEvents';
 import AboutMe from '../../components/Volunteer/AboutMe';
 import ProfileChart from '../../components/Volunteer/ProfileChart';
 import FeaturedEvents from '../../containers/FeaturedEventsContainer';
+import NavBarContainer from '../../containers/NavBarContainer';
 
 class ProfileView extends Component {
     render() {
         return (
             <div id="outer">
+                <NavBarContainer />
                 <div className="col-sm-2 col-xs-12" id="lefttoc"><AboutMe/></div>
                 <div className="col-sm-8 col-xs-12" id="maptoc">
                     <h2> Hello there! </h2>

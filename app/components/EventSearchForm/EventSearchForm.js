@@ -1,33 +1,25 @@
 import React, { Component } from 'react';
 import { Input, Grid, Row, Col } from 'react-bootstrap'
-
+import styles from './eventsearchform.scss'
 
 const CategoryLocationForm = () => {
     const categories = ['Tutoring', 'Pet stuff', 'Tutoring', 'Construction'];
     const neighborhoods = ['Roxbury', 'Beacon Hill', 'Back Bay', 'South Boston'];
     return(
-        <Grid>
             <Row>
-                <Col xs={12}>
+                <Col md={12} className={styles.search}>
                     <form>
-                        <h3>
-                            <Col xs={3}>I am looking for</Col>
-                            <Col xs={2}>
-                                <Input type="select" placeholder="Category">
-                                    {genCategoryDropdown(categories)}
-                                </Input>
-                            </Col>
-                            <Col xs={1}> in </Col>
-                            <Col xs={2}>
-                                <Input type="select" placeholder="Neighborhood">
-                                    {genNeighborhoodDropdown(neighborhoods)}
-                                </Input>
-                            </Col>
-                        </h3>
+                        <h3>I am looking for</h3>
+                        <Input type="select" placeholder="Category">
+                          {genCategoryDropdown(categories)}
+                        </Input>
+                        <h3> in </h3>
+                        <Input type="select" placeholder="Neighborhood">
+                          {genNeighborhoodDropdown(neighborhoods)}
+                        </Input>
                     </form>
                 </Col>
             </Row>
-        </Grid>
     )
 };
 
