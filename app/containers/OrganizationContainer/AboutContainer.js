@@ -12,25 +12,25 @@ class AboutContainer extends Component {
 
     componentDidMount() {
         this.props.dispatch(
-            fetchEvent(this.props.orgId)
+            fetchOrg(this.props.orgId)
         );
     }
 
     render() {
         return (
-            <About org={this.props.org}/>
+            <About orgs={this.props.orgs}/>
         )
     }
 }
 
 AboutContainer.propTypes = {
     orgId: PropTypes.string,
-    org: PropTypes.object.isRequired
+    orgs: PropTypes.object.isRequired
 };
 
 const mapStateToProps = (state) => (
     {
-        org: state.orgs.org
+        orgs: state.orgs.orgs
     }
 );
 

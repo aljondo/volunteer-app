@@ -202,7 +202,7 @@
       "shareable": true
     }
   ],
-  "organizations": [
+  "orgs": [
     {
       "id": 5432,
       "name": "Toys For Tots",

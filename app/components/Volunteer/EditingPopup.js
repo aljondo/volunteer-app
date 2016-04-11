@@ -1,9 +1,7 @@
 ﻿import React, { Component } from 'react';
-import AboutMe from './AboutMe.js';
-import ReactDOM from 'react-dom';
-import { Modal, form, Button, Input } from 'react-bootstrap';
+import { Modal, form, Button, Input, } from 'react-bootstrap';
 
-class Popup extends Component {
+class EditingPopup extends Component {
     render() {                   
         return  (
             <div className="static-modal">  
@@ -58,4 +56,4 @@ class Popup extends Component {
                             
 }
 
-export default Popup
+export default EditingPopup

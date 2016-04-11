@@ -4,8 +4,8 @@ import {Link} from 'react-router';
 import EventHistory from '../../components/EventDashboard/EventHistory';
 import EventCreation from '../../containers/EventCreationContainer';
 import UpcomingEvents from '../../components/EventDashboard/UpcomingEvents';
-import AboutMe from '../../components/Profile/AboutMe';
-import ProfileChart from '../../components/Profile/ProfileChart';
+import AboutMe from '../../components/Volunteer/AboutMe';
+import ProfileChart from '../../components/Volunteer/ProfileChart';
 import FeaturedEvents from '../../containers/FeaturedEventsContainer';
 
 class ProfileView extends Component {
