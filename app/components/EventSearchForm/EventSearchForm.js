@@ -1,27 +1,31 @@
 import React, { Component } from 'react';
 import { Input, Grid, Row, Col } from 'react-bootstrap'
+import styles from './eventsearchform.scss'
 
 
-const CategoryLocationForm = () => {
+const CategoryLocationForm = (props) => {
     const categories = ['Tutoring', 'Pet stuff', 'Tutoring', 'Construction'];
     const neighborhoods = ['Roxbury', 'Beacon Hill', 'Back Bay', 'South Boston'];
     return(
         <Grid>
             <Row>
-                <Col xs={12}>
+                <Col xs={10} className={styles.bigBox}>
                     <form>
                         <h3>
                             <Col xs={3}>I am looking for</Col>
-                            <Col xs={2}>
-                                <Input type="select" placeholder="Category">
+                            <Col xs={3}>
+                                <Input type="select" placeholder="Category" className={styles.dropdown}>
                                     {genCategoryDropdown(categories)}
                                 </Input>
                             </Col>
                             <Col xs={1}> in </Col>
-                            <Col xs={2}>
-                                <Input type="select" placeholder="Neighborhood">
+                            <Col xs={3}>
+                                <Input type="select" placeholder="Neighborhood" className={styles.dropdown}>
                                     {genNeighborhoodDropdown(neighborhoods)}
                                 </Input>
+                            </Col>
+                            <Col xs={2} className={styles.button}>
+                                <Button onClick={this.props.searchForEvents}> Go </Button>
                             </Col>
                         </h3>
                     </form>

@@ -50,7 +50,7 @@ class EventSearchContainer extends Component {
                     </Col>
                     <Col xs={12}>
                         <div>
-                            <EventSearchForm />
+                            <EventSearchForm searchForEvents={this.searchForEvents.bind(this)} />
                         </div>
                     </Col>
                     <Col xs={12}>
@@ -59,7 +59,7 @@ class EventSearchContainer extends Component {
                     </Col>
                     <Col xs={12}>
                         <div>
-                            <Button onClick={this.searchForEvents.bind(this)} bsStyle="primary">Search</Button>
+                            <Button bsStyle="primary">Search</Button>
                         </div>
                     </Col>
                 </Row>

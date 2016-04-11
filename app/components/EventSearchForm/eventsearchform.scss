@@ -1,0 +1,28 @@
+@import '../../styles/colors.scss';
+
+.bigBox {
+	text-align: center;
+	color: $white;
+	background: $green-accent;
+	width: 70%;
+	height: 11vh;
+	overflow: hidden;
+    position: relative;
+    .dropdown {
+    	height: 70%;
+    	border-style: none;
+    	color: $white;
+    	font-size: 3vh;
+    	background: $green-accent;
+    }
+	.button {
+		height: 100%;
+		width: 15%;
+		position: absolute;
+    	right: 0;
+    	top: 0;
+    	border-left-style: solid;
+    	border-left-color: darken( $green-accent, 10% );
+		background: darken( $green-accent, 4% );
+	}
+}

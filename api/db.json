@@ -142,6 +142,25 @@
       "bio": null,
       "contact": true,
       "id": 4446
+    },
+    {
+      "name": "Ryan",
+      "email": "pls@plsmail.com",
+      "passwordhash": "PLEASE",
+      "phone": 7816541671,
+      "gender": null,
+      "permissions": "volunteer",
+      "birthdate": null,
+      "education": null,
+      "neighborhoods": [
+        null
+      ],
+      "skills": [],
+      "interests": [],
+      "bio": null,
+      "contact": true,
+      "master": false,
+      "id": 4447
     }
   ],
   "events": [
