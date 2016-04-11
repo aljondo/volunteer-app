@@ -3,8 +3,9 @@ import styles from './register.scss'
 import {Link} from 'react-router'
 import { Button } from 'react-bootstrap'
 import RegisterSwitch from '../../components/RegisterForm/RegisterSwitch'
-import UserRegisterFormContainer from '../../containers/UserRegisterFormContainer'
-import OrgRegisterFormContainer from '../../containers/OrgRegisterFormContainer'
+import UserRegisterForm from '../../containers/UserRegisterFormContainer'
+import OrgRegisterForm from '../../components/RegisterForm/OrgRegisterForm'
+import NavBarContainer from '../../containers/NavBarContainer';
 
 class RegisterView extends Component {
 
@@ -46,6 +47,7 @@ class RegisterView extends Component {
 
         return (
             <div className={styles.viewWrapper}>
+                <NavBarContainer/>
                 <div className={styles.header}>
                     { this.state.userType ? <Button className={styles.backButton} onClick={this.backToSwitch}>Back</Button> : null  }
                     { this.state.userType ? null : <div>Register</div> }

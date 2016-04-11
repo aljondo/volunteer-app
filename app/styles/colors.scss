@@ -2,11 +2,12 @@
 // http://sass-lang.com/documentation/Sass/Script/Functions.html
 
 // Be sure to add any colors in the app here
-
+$blue-dark-overlay:   rgb(15, 30, 59); ;; // background, text
 $blue-primary:   rgb(38, 51, 77); ;; // background, text
 $blue-secondary: rgb(67, 81, 98);    // background, text
 $grey-dark:      rgb(162, 172, 189); // gray border (darker background), sub heading text
 $grey-light:     rgb(236, 237, 238); // background, border for white, or text
 $white:          rgb(245, 247, 249); // white, background or text
+$white-light: rgb(251, 251, 251); // for background
 $green-accent:   rgb(43, 175, 138);  // accent color
 $blue-accent:    rgb(57, 140, 236);  // accent color
