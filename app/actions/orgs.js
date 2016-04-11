@@ -22,7 +22,7 @@ export function fetchOrgs() {
     }
   }
 }
-
+7
 export function fetchOrg(id) {
   return {
     [CALL_API]: {

@@ -10,7 +10,7 @@ class External_Profile_view extends Component {
         return (
             <div >
             	<div><Carousel/></div>
-                <div><AboutContainer/></div>
+                <div><AboutContainer orgId={this.props.params.orgId}/></div>
             </div>
             );
         }
