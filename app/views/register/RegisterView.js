@@ -45,10 +45,10 @@ class RegisterView extends Component {
         }
 
         return (
-            <div>
+            <div className={styles.viewWrapper}>
                 <div className={styles.header}>
                     { this.state.userType ? <Button className={styles.backButton} onClick={this.backToSwitch}>Back</Button> : null  }
-                    Register
+                    { this.state.userType ? null : <div>Register</div> }
                 </div>
                 <div>
                     {pageContent}

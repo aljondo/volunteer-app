@@ -4,12 +4,12 @@ import styles from './register.scss'
 
 const OrgRegisterForm = (props) => (
     <Grid>
-        <div className={styles.title}>
-            Create New Organization
-            <span className={styles.requiredFields}>required fields</span>
-        </div>
         <Row>
-            <Col xs={10} xsOffset={1}>
+            <Col xsOffset={1} xs={9} className={styles.formWrapper}>
+                <div className={styles.title}>
+                    Create New Organization
+                    <span className={styles.requiredFields}>required fields</span>
+                </div>
                 <form className="form-horizontal" >
                     <Row>
                         {props.errorMessage ?
@@ -17,21 +17,21 @@ const OrgRegisterForm = (props) => (
                                 <h4>{props.errorMessage}</h4>
                             </Alert>
                             : null}
-                        <Input type="text" label="Organization Name:"  placeholder="Enter Name" labelClassName="col-sm-3" wrapperClassName="col-sm-9"
+                        <Input type="text" label="Organization Name:"  placeholder="Enter Name" labelClassName="col-sm-3 col-xs-10 col-xs-offset-1 col-sm-offset-0" wrapperClassName="col-sm-6 col-xs-10 col-xs-offset-1 col-sm-offset-0"
                                onChange={props.nameChange} bsStyle={props.userData.name.valid ? 'success' : 'error'} />
-                        <Input type="email" label="Email:"  placeholder="Enter Email" labelClassName="col-sm-3" wrapperClassName="col-sm-9"
+                        <Input type="email" label="Email:"  placeholder="Enter Email" labelClassName="col-sm-3 col-xs-10 col-xs-offset-1 col-sm-offset-0" wrapperClassName="col-sm-6 col-xs-10 col-xs-offset-1 col-sm-offset-0"
                                onChange={props.emailChange} bsStyle={props.userData.email.valid ? 'success' : 'error'} />
-                        <Input type="password" label="Password:" placeholder="Enter Password" labelClassName="col-sm-3" wrapperClassName="col-sm-9"
+                        <Input type="password" label="Password:" placeholder="Enter Password" labelClassName="col-sm-3 col-xs-10 col-xs-offset-1 col-sm-offset-0" wrapperClassName="col-sm-6 col-xs-10 col-xs-offset-1 col-sm-offset-0"
                                onChange={props.passwordChange} bsStyle={props.userData.password.valid ? 'success' : 'error'} />
-                        <Input type="password" label="Verify Password:" placeholder="Verify Password" labelClassName="col-sm-3" wrapperClassName="col-sm-9"
+                        <Input type="password" label="Verify Password:" placeholder="Verify Password" labelClassName="col-sm-3 col-xs-10 col-xs-offset-1 col-sm-offset-0" wrapperClassName="col-sm-6 col-xs-10 col-xs-offset-1 col-sm-offset-0"
                                onChange={props.verifyPasswordChange} bsStyle={props.userData.passwordVerify.valid ? 'success' : 'error'} />
-                        <Input type="text" label="Phone:" placeholder="Enter phone number" labelClassName="col-sm-3" wrapperClassName="col-sm-9"
+                        <Input type="text" label="Phone:" placeholder="Enter phone number" labelClassName="col-sm-3 col-xs-10 col-xs-offset-1 col-sm-offset-0" wrapperClassName="col-sm-6 col-xs-10 col-xs-offset-1 col-sm-offset-0"
                                onChange={props.phoneChange} bsStyle={props.userData.phone.valid ? 'success' : 'error'} />
-                        <Input type="text" label="Address:" placeholder="Enter Address" labelClassName="col-sm-3" wrapperClassName="col-sm-9"
+                        <Input type="text" label="Address:" placeholder="Enter Address" labelClassName="col-sm-3 col-xs-10 col-xs-offset-1 col-sm-offset-0" wrapperClassName="col-sm-6 col-xs-10 col-xs-offset-1 col-sm-offset-0"
                                onChange={props.addressChange} bsStyle={props.userData.address.valid ? null : 'error'} />
-                        <Input type="text" label="City:" placeholder="Enter City" labelClassName="col-sm-3" wrapperClassName="col-sm-9"
+                        <Input type="text" label="City:" placeholder="Enter City" labelClassName="col-sm-3 col-xs-10 col-xs-offset-1 col-sm-offset-0" wrapperClassName="col-sm-6 col-xs-10 col-xs-offset-1 col-sm-offset-0"
                                onChange={props.cityChange} bsStyle={props.userData.city.valid ? null : 'error'} />
-                        <Input type="select" label="State:" defaultValue="MA" onChange={props.stateChange} labelClassName="col-sm-3" wrapperClassName="col-sm-3">
+                        <Input type="select" label="State:" defaultValue="MA" onChange={props.stateChange} labelClassName="col-sm-3 col-xs-10 col-xs-offset-1 col-sm-offset-0" wrapperClassName="col-sm-6 col-xs-10 col-xs-offset-1 col-sm-offset-0">
                             <option value="AL">AL</option>
                             <option value="AK">AK</option>
                             <option value="AZ">AZ</option>
@@ -83,15 +83,15 @@ const OrgRegisterForm = (props) => (
                             <option value="WI">WI</option>
                             <option value="WY">WY</option>
                         </Input>
-                        <Input type="text" label="Zip Code:"  placeholder="Enter Zip Code" labelClassName="col-sm-3" wrapperClassName="col-sm-3"
+                        <Input type="text" label="Zip Code:"  placeholder="Enter Zip Code" labelClassName="col-sm-3 col-xs-10 col-xs-offset-1 col-sm-offset-0" wrapperClassName="col-sm-6 col-xs-10 col-xs-offset-1 col-sm-offset-0"
                                onChange={props.zipChange} bsStyle={props.userData.zip.valid ? null : 'error'} />
-                        <Input type="textarea" label="Mission:" placeholder="Enter company mission" labelClassName="col-sm-3" wrapperClassName="col-sm-9"
+                        <Input type="textarea" label="Mission:" placeholder="Enter company mission" labelClassName="col-sm-3 col-xs-10 col-xs-offset-1 col-sm-offset-0" wrapperClassName="col-sm-6 col-xs-10 col-xs-offset-1 col-sm-offset-0"
                                onBlur={props.missionChange}/>
-                        <Input type="file" label="Images:" help="Images to appear on your profile" labelClassName="col-sm-3" wrapperClassName="col-sm-9"/>
+                        <Input type="file" label="Images:" help="Images to appear on your profile" labelClassName="col-sm-3 col-xs-10 col-xs-offset-1 col-sm-offset-0" wrapperClassName="col-sm-6 col-xs-10 col-xs-offset-1 col-sm-offset-0"/>
                     </Row>
                     <Row className="form-group">
                         <Col sm={12} className="text-center">
-                            <Button bsSize="large" bsStyle="primary" onClick={props.handleRegister} >Register</Button>
+                            <Button bsSize="large" className={styles.button} onClick={props.handleRegister} >Register</Button>
                         </Col>
                     </Row>
                 </form>

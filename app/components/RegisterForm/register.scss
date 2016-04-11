@@ -1,18 +1,33 @@
+@import '../../styles/colors';
 
-@media(min-width:768px){
-  .checkboxLabel {
+.checkboxLabel {
+  @media(min-width:768px) {
     text-align: right;
     padding-right: 40px;
   }
+  @media(max-width:767px){
+    height:20px;
+  }
+}
+
+
+.formWrapper {
+  border: 2px solid black;
+  background: white;
+  border-radius: 3px;
 }
 
 .title{
-  margin: 5px 0 10px 20px;
-  border-top: 2px solid black;
+  padding: 5px 0 10px 20px;
   font-size: 20px;
   .requiredFields{
     margin-left: 15px;
     color: #a94442;
     font-size: 15px;
   }
+}
+
+.button {
+  color: white;
+  background: $green-accent;
 }
