@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import styles from './register.scss'
 import {Link} from 'react-router'
-import { Button } from 'react-bootstrap'
+import { Grid, Col, Row, Button  } from 'react-bootstrap'
 import RegisterSwitch from '../../components/RegisterForm/RegisterSwitch';
 import UserRegisterFormContainer from '../../containers/UserRegisterFormContainer';
 import OrgRegisterFormContainer from '../../containers/OrgRegisterFormContainer';
@@ -47,15 +47,33 @@ class RegisterView extends Component {
         }
 
         return (
-            <div className={styles.viewWrapper}>
-                <NavBarContainer/>
-                <div className={styles.header}>
-                    { this.state.userType ? <Button className={styles.backButton} onClick={this.backToSwitch}><Icon name="arrow-left" size={'2x'}/></Button> : null  }
-                </div>
-                <div>
-                    {pageContent}
-                </div>
-            </div>
+            <Row className={styles.imgBackground}>
+                <Grid>
+                    <Row className={styles.header}>
+                        <Col sm={6} md={3} className={styles.logoDiv}>
+                            <img src={'../../../static/images/logo.png'}   className={styles.logo}/>
+                        </Col>
+                        <Col sm={6} md={6} lgOffset={3} className={styles.navDiv}>
+                            <div className={styles.signup}>
+                                <Link to="/register">
+                                    <Button bsSize="large" bsStyle="primary">Signup</Button>
+                                </Link>
+                            </div>
+                            <div className={styles.navList}>
+                                <ul>
+                                    <li> <Link to="#"> About </Link> </li>
+                                    <li> <Link to="/search"> Search  </Link> </li>
+                                    <li>  <Link to="/login"> Login </Link> </li>
+                                </ul>
+                            </div>
+                        </Col>
+                    </Row>
+                    <Row className={styles.registerPanel}>
+                        { this.state.userType ? <Button className={styles.backButton} onClick={this.backToSwitch}><Icon name="arrow-left" size={'2x'}/></Button> : null  }
+                        {pageContent}
+                    </Row>
+                </Grid>
+            </Row>
         );
     }
 }

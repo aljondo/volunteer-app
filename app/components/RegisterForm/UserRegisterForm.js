@@ -3,12 +3,12 @@ import styles from './register.scss'
 import { Grid, Col, Row, Input, Button, FormControls, Alert } from 'react-bootstrap'
 
 const UserRegisterForm = (props) => (
-  <Grid >
+  <Grid>
       <Row>
           <Col xsOffset={1} xs={9} className={styles.formWrapper}>
-              <div className={styles.title}>
-                  Create New Volunteer Account
-                  <span className={styles.requiredFields}>required fields</span>
+              <div className={styles.heading}>
+                  <h2>Create New Volunteer Account</h2>
+                  <h3>*required fields</h3>
               </div>
               <form className="form-horizontal" >
                   <Row>

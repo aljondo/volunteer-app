@@ -13,18 +13,27 @@
 
 .formWrapper {
   border: 2px solid black;
-  background: linear-gradient( rgba($grey-dark, .6), white 50%, rgba($grey-dark, .7) );
+  background: linear-gradient( rgba($grey-light, .6), white 50%, rgba($grey-dark, .7) );
   border-radius: 3px;
+
 }
 
-.title{
-  padding: 5px 0 10px 20px;
-  font-size: 20px;
-  .requiredFields{
+.heading {
+
+  h2 {
+    border-bottom: 1px solid $blue-dark-overlay;
+    padding: 5px 0 10px 20px;
+    color: $blue-secondary;
+    font-size: 2em;
+  }
+
+  h3{
+    text-align: right;
     margin-left: 15px;
     color: #a94442;
-    font-size: 15px;
+    font-size: 1.2em;
   }
+
 }
 
 .button {
