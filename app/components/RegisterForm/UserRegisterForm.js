@@ -3,12 +3,12 @@ import styles from './register.scss'
 import { Grid, Col, Row, Input, Button, FormControls, Alert } from 'react-bootstrap'
 
 const UserRegisterForm = (props) => (
-  <Grid >
+  <Grid>
       <Row>
           <Col xsOffset={1} xs={9} className={styles.formWrapper}>
-              <div className={styles.title}>
-                  Create New Volunteer Account
-                  <span className={styles.requiredFields}>required fields</span>
+              <div className={styles.heading}>
+                  <h2>Create New Volunteer Account</h2>
+                  <h3>*required fields</h3>
               </div>
               <form className="form-horizontal" >
                   <Row>
@@ -31,6 +31,7 @@ const UserRegisterForm = (props) => (
                           <option value="">N/A</option>
                           <option value="male">Male</option>
                           <option value="female">Female</option>
+                          <option value="other">Other</option>
                       </Input>
                       <Input type="select" label="Birth Year:" labelClassName="col-sm-3 col-xs-10 col-xs-offset-1 col-sm-offset-0" wrapperClassName="col-sm-3 col-xs-10 col-xs-offset-1 col-sm-offset-0"
                              onChange={props.birthYearChange} bsStyle={props.userData.birthdate.valid ? null : 'error'} >

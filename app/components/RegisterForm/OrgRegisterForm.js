@@ -6,9 +6,9 @@ const OrgRegisterForm = (props) => (
     <Grid>
         <Row>
             <Col xsOffset={1} xs={9} className={styles.formWrapper}>
-                <div className={styles.title}>
-                    Create New Organization
-                    <span className={styles.requiredFields}>required fields</span>
+                <div className={styles.heading}>
+                    <h2>Create New Organization Account</h2>
+                    <h3>*required fields</h3>
                 </div>
                 <form className="form-horizontal" >
                     <Row>

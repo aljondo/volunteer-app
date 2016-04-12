@@ -60,7 +60,7 @@ describe('Registration Actions', () => {
       phone: {value: "5555555555", valid: true, error: "Enter a phone number"},
       gender: {value: "male", valid: true, error: null},
       birthdate: {value: "1/12/1994", valid: true, error: null},
-      location: {value: "missionhill", valid: true, error: null},
+      location: {value: ["missionhill"], valid: true, error: null},
       education: {value: "highschool", valid: true, error: null},
       address: {value: null, valid: true, error: null},
       city: {value: null, valid: true, error: null},
@@ -87,7 +87,6 @@ describe('Registration Actions', () => {
       interests: ["health"],
       bio: "My bio",
       contact: true,
-      master: false
     };
     before(() => {
       result = actions.saveUser(data, 'volunteer');

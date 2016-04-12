@@ -17,7 +17,7 @@ class LoginFormContainer extends Component {
   }
 
   handleLogin() {
-    this.props.loginRequest({email: this.props.email, password: this.props.password})
+    this.props.loginRequest({email: this.props.email, passwordhash: this.props.password})
   }
 
   emailChange(e) {
