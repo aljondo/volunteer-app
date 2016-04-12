@@ -10,20 +10,15 @@ import { LOGIN_REQUEST,
 // Should the default empty state have a user with
 // all null fields or user: null
 // Better handle login state
-const emptyState = { user: { email: null,
-                            password: null,
-                            gender: null,
-                            age: null,
-                            location: null,
-                            skills: [],
-                            interests: [],
-                            bio: null,
-                            contact: true },
+const emptyState = { user: {
+                        email: null,
+                        password: null
+                    },
                     error: null,
                     isFetching: false,
                     isAuthenticated: false,
                     role: null,
-                    token: null }
+                    token: null };
 
 export default (state = emptyState, action) => {
   switch (action.type) {
@@ -35,7 +30,7 @@ export default (state = emptyState, action) => {
       return merge({}, state, {isFetching: true})
     case LOGIN_SUCCESS:
       // TODO ROLE should be returned from the server as well.
-      return merge({}, state, {user: action.response.user, isFetching: false, isAuthenticated: true, token: action.response.token, role: action.response.role}, {user: {password: null}})
+      return merge({}, state, {user: action.response.user, isFetching: false, isAuthenticated: true, role: action.response.user.permissions, token: action.response.token}, {user: {password: null}})
     case LOGIN_FAILURE:
       // may want to just set failed flag and define error message else where
       // may want to pass up error from middleware action.response.error

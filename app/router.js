@@ -20,14 +20,14 @@ const isAuthUser = UserAuthWrapper({
   authSelector: state => state.auth,
   failureRedirectPath: '/',
   wrapperDisplayName: 'IsAuthUser',
-  predicate: auth =>  auth.isAuthenticated & auth.role === 'user'
+  predicate: auth =>  auth.isAuthenticated & auth.role === 'volunteer'
 })
 
 const isAuthOrg = UserAuthWrapper({
   authSelector: state => state.auth,
   failureRedirectPath: '/',
   wrapperDisplayName: 'IsAuthOrg',
-  predicate: auth => auth.isAuthenticated & auth.role === 'org'
+  predicate: auth => auth.isAuthenticated & auth.role === 'organization'
 })
 
 const isAuthAdmin = UserAuthWrapper({
