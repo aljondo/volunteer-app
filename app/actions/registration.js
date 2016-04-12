@@ -173,7 +173,7 @@ export const setLocation = (location) => {
 
     return({
         type: SET_LOCATION,
-        location: {value: location, valid: true, error: null}
+        location: {value: [location], valid: true, error: null}
     })
 };
 
@@ -374,12 +374,11 @@ const buildUserObject = (userData, userType) => {
             permissions: "volunteer",
             birthdate: userData.birthdate.value,
             education: userData.education.value,
-            neighborhoods: [userData.location.value],
+            neighborhoods: userData.location.value,
             skills: userData.skills.value,
             interests: userData.interests.value,
             bio: userData.bio.value,
             contact: userData.contact.value,
-            master: false,
         };
     }
     else {

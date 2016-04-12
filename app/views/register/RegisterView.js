@@ -3,9 +3,10 @@ import styles from './register.scss'
 import {Link} from 'react-router'
 import { Button } from 'react-bootstrap'
 import RegisterSwitch from '../../components/RegisterForm/RegisterSwitch';
-import UserRegisterForm from '../../containers/UserRegisterFormContainer';
-import OrgRegisterForm from '../../containers/OrgRegisterFormContainer';
+import UserRegisterFormContainer from '../../containers/UserRegisterFormContainer';
+import OrgRegisterFormContainer from '../../containers/OrgRegisterFormContainer';
 import NavBarContainer from '../../containers/NavBarContainer';
+import Icon from 'react-fa';
 
 class RegisterView extends Component {
 
@@ -36,10 +37,10 @@ class RegisterView extends Component {
         var pageContent;
 
         if(this.state.userType == "user") {
-            pageContent = <UserRegisterForm />;
+            pageContent = <UserRegisterFormContainer />;
         }
         else if (this.state.userType == "org"){
-            pageContent = <OrgRegisterForm />
+            pageContent = <OrgRegisterFormContainer />
         }
         else {
             pageContent = <RegisterSwitch onSelection={this.handleSwitchClick}/>;
@@ -49,8 +50,7 @@ class RegisterView extends Component {
             <div className={styles.viewWrapper}>
                 <NavBarContainer/>
                 <div className={styles.header}>
-                    { this.state.userType ? <Button className={styles.backButton} onClick={this.backToSwitch}>Back</Button> : null  }
-                    { this.state.userType ? null : <div>Register</div> }
+                    { this.state.userType ? <Button className={styles.backButton} onClick={this.backToSwitch}><Icon name="arrow-left" size={'2x'}/></Button> : null  }
                 </div>
                 <div>
                     {pageContent}

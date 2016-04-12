@@ -1,7 +1,11 @@
 @import '../../styles/colors.scss';
 
 .viewWrapper {
+  padding-bottom: 50px;
   background: $grey-light;
+  @media(min-width:768px){
+    padding-bottom: 150px;
+  }
 }
 
 .header {
@@ -15,4 +19,8 @@
   color: white;
   background: $blue-primary;
   margin: 10px 0 0 20px;
+}
+
+.backButton:hover {
+  background: $blue-primary;
 }
