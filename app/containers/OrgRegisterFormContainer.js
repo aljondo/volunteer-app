@@ -8,6 +8,7 @@ import {
     setPasswordVerify,
     setPhone,
     setAddress,
+    setPoc,
     setCity,
     setState,
     setZip,
@@ -58,6 +59,10 @@ class OrgRegisterFormContainer extends Component {
         this.props.setPhone(e.target.value);
     }
 
+    pocChange(e){
+        this.props.setPoc(e.target.value);
+    }
+
     addressChange(e){
         this.props.setAddress(e.target.value);
     }
@@ -91,6 +96,7 @@ class OrgRegisterFormContainer extends Component {
                              passwordChange={this.passwordChange.bind(this)}
                              verifyPasswordChange={this.verifyPasswordChange.bind(this)}
                              phoneChange={this.phoneChange.bind(this)}
+                             pocChange={this.pocChange.bind(this)}
                              addressChange={this.addressChange.bind(this)}
                              cityChange={this.cityChange.bind(this)}
                              zipChange={this.zipChange.bind(this)}
@@ -112,6 +118,7 @@ const mapDispatchToProps = (dispatch) => (
         saveUser,
         setName,
         setPassword,
+        setPoc,
         setEmail,
         pushRoute,
         setError,
