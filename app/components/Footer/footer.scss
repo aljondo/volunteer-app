@@ -1,0 +1,53 @@
+@import '../../styles/colors';
+
+
+.wrapper {
+  width: 100%;
+  margin: 0;
+
+  .topSection {
+    height: 50px;
+    width: 100%;
+    margin: 0;
+    background-color: $white;
+    border-top: 1px solid $grey-light;
+    padding: 59px 0;
+
+    .topText {
+      font-size: 25px;
+      color: rgba($blue-secondary, 0.8);
+      font-weight: 500;
+    }
+
+
+  }
+
+  .footer {
+    height: 440px;
+    width: 100%;
+    margin: 0;
+    background-color: $blue-primary;
+
+    .content {
+      height: 325px;
+    }
+
+    .footerBar {
+      border-top: 1px solid rgba($white, 0.2);
+      height: 100px;
+      padding-top: 30px;
+
+      .copyright {
+        color: rgba($white, 0.5);
+      }
+
+      .socialmedia {
+        padding-left: 80px;
+        span {
+          color: rgba($white, 0.4);
+          padding: 0 20px;
+        }
+      }
+    }
+  }
+}

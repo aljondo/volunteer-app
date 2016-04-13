@@ -3,9 +3,12 @@ import {
     FETCH_EVENT_REQUEST,
     FETCH_EVENT_SUCCESS,
     FETCH_EVENT_FAILURE,
-    SAVE_EVENT_REQUEST,
-    SAVE_EVENT_SUCCESS,
-    SAVE_EVENT_FAILURE,
+    SIGNUP_FOR_EVENT_REQUEST,
+    SIGNUP_FOR_EVENT_SUCCESS,
+    SIGNUP_FOR_EVENT_FAILIURE,
+    UNSIGNUP_FOR_EVENT_REQUEST,
+    UNSIGNUP_FOR_EVENT_SUCCESS,
+    UNSIGNUP_FOR_EVENT_FAILIURE,
     RESET_EVENT
     } from '../../actions/events/eventActions'
 
@@ -14,7 +17,7 @@ import {
 // to specify how each action modifies the app state, will also need to add
 // additional state
 
-const emptyState = { isReq: false, event: {}};
+const emptyState = { isReq: false, event: {}, error: null, success: false};
 
 export default (state = emptyState, action) => {
     switch (action.type) {
@@ -24,12 +27,18 @@ export default (state = emptyState, action) => {
             return merge({}, state, {isReq: false, event: action.response});
         case FETCH_EVENT_FAILURE:
             return merge({}, state, {isReq: false});
-        case SAVE_EVENT_REQUEST:
+        case SIGNUP_FOR_EVENT_REQUEST:
             return merge({}, state, {isReq: true});
-        case SAVE_EVENT_SUCCESS:
-            return merge({}, state, {isReq: false});
-        case SAVE_EVENT_FAILURE:
-            return merge({}, state, {isReq: false});
+        case SIGNUP_FOR_EVENT_SUCCESS:
+            return merge({}, state, {isReq: false, success: true});
+        case SIGNUP_FOR_EVENT_FAILIURE:
+            return merge({}, state, {isReq: false, error: "error signing up for event"});
+        case UNSIGNUP_FOR_EVENT_REQUEST:
+            return merge({}, state, {isReq: true});
+        case UNSIGNUP_FOR_EVENT_SUCCESS:
+            return merge({}, state, {isReq: false, success: true});
+        case UNSIGNUP_FOR_EVENT_FAILIURE:
+            return merge({}, state, {isReq: false, error: "error un-signing up for event"});
         case RESET_EVENT:
             return merge({}, emptyState);
         default:

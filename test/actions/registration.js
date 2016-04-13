@@ -70,6 +70,7 @@ describe('Registration Actions', () => {
       interests: {value: ["health"], valid: true, error: null},
       bio: {value: "My bio", valid: true, error: null},
       mission: {value: null, valid: true, error: null},
+      poc: {value: null, valid: true, error: null},
       contact: {value: true, valid: true, error: null},
     };
 
@@ -102,11 +103,9 @@ describe('Registration Actions', () => {
     })
 
     it('creates action with endpoint "/users"', () => {
-      expect(apiObj.endpoint).to.equal('users').that.is.a('string')
+      expect(apiObj.endpoint).to.equal('user/').that.is.a('string')
     })
 
-    it('creates action with given data', () => {
-      expect(apiObj.data).to.deep.equal(resultUser)
-    })
+
   })
 })
