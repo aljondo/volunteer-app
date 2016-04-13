@@ -5,9 +5,13 @@ export const FETCH_EVENT_REQUEST = 'FETCH_EVENT_REQUEST';
 export const FETCH_EVENT_SUCCESS = 'FETCH_EVENT_SUCCESS';
 export const FETCH_EVENT_FAILURE = 'FETCH_EVENT_FAILURE';
 
-export const SAVE_EVENT_REQUEST = 'FETCH_EVENTS_REQUEST';
-export const SAVE_EVENT_SUCCESS = 'FETCH_EVENTS_SUCCESS';
-export const SAVE_EVENT_FAILURE = 'FETCH_EVENTS_FAILURE';
+export const SIGNUP_FOR_EVENT_REQUEST = 'SIGNUP_FOR_EVENT_REQUEST';
+export const SIGNUP_FOR_EVENT_SUCCESS = 'SIGNUP_FOR_EVENT_SUCCESS';
+export const SIGNUP_FOR_EVENT_FAILIURE = 'SIGNUP_FOR_EVENT_FAILURE';
+
+export const UNSIGNUP_FOR_EVENT_REQUEST = 'UNSIGNUP_FOR_EVENT_REQUEST';
+export const UNSIGNUP_FOR_EVENT_SUCCESS = 'UNSIGNUP_FOR_EVENT_SUCCESS';
+export const UNSIGNUP_FOR_EVENT_FAILIURE = 'UNSIGNUP_FOR_EVENT_FAILURE';
 
 export const RESET_EVENT = 'RESET_EVENT';
 
@@ -27,14 +31,25 @@ export function fetchEvent(id) {
     }
 }
 
-// must save event in local state and then post to backend
-export function saveEvent(data) {
+export function signUpForEvent(data) {
     return {
         [CALL_API]: {
-            types: [ SAVE_EVENT_REQUEST, SAVE_EVENT_SUCCESS, SAVE_EVENT_FAILURE ],
-            endpoint: `events`,
+            types: [ SIGNUP_FOR_EVENT_REQUEST, SIGNUP_FOR_EVENT_SUCCESS, SIGNUP_FOR_EVENT_FAILIURE ],
+            endpoint: `event/signup`,
             method: POST,
             data: data
         }
     }
 }
+
+export function unsignUpForEvent(data) {
+    return {
+        [CALL_API]: {
+            types: [ UNSIGNUP_FOR_EVENT_REQUEST, UNSIGNUP_FOR_EVENT_SUCCESS, UNSIGNUP_FOR_EVENT_FAILIURE ],
+            endpoint: `event/unsignup`,
+            method: POST,
+            data: data
+        }
+    }
+}
+

@@ -1,7 +1,7 @@
 import React, { Component, PropTypes } from 'react';
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
-import { fetchEvent } from '../actions/events/eventActions'
+import { fetchEvent, signUpForEvent, unsignUpForEvent } from '../actions/events/eventActions'
 import { push as pushRoute } from 'react-router-redux';
 import EventDetails from '../components/EventDetails/EventDetails'
 
@@ -22,8 +22,7 @@ class EventDetailsContainer extends Component {
     attendClick(){
         console.log("gets clicked");
         if (this.props.isAuthenticated){
-            console.log(this.props.user);
-            //TODO actually attend the event
+            this.props.signUpForEvent({userId: this.props.user.id, eventId: this.props.eventId});
         } else {
             this.setState({showLoginRegister: true});
         }
@@ -51,16 +50,18 @@ class EventDetailsContainer extends Component {
 EventDetailsContainer.propTypes = {
     eventId: PropTypes.string.isRequired,
     event: PropTypes.object.isRequired,
-    isAuthenticated: PropTypes.bool
+    isAuthenticated: PropTypes.bool.isRequired,
+    user: PropTypes.object.isRequired
 };
 
 const mapDispatchToProps = (dispatch) => (
-    bindActionCreators({fetchEvent, pushRoute}, dispatch)
+    bindActionCreators({fetchEvent, signUpForEvent, unsignUpForEvent,  pushRoute}, dispatch)
 );
 
 const mapStateToProps = (state) => (
     {
         event: state.event.event,
+        user: state.auth.user,
         isAuthenticated: state.auth.isAuthenticated
     }
 );

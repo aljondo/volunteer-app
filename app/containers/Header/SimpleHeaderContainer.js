@@ -1,21 +1,21 @@
 import React, { Component, PropTypes } from 'react';
 import { connect } from 'react-redux';
-import { logout } from '../actions/auth';
-import NavBar from '../components/NavBar/NavBar';
+import { logout } from '../../actions/auth';
+import SimpleHeader from '../../components/Header/SimpleHeader';
 import { bindActionCreators } from 'redux';
 import {push as pushRoute } from 'react-router-redux';
 
-class NavBarContainer extends Component {
+class SimpleHeaderContainer extends Component {
     logoutUser() {
         this.props.logout();
     }
     render() {
-        return (<NavBar isAuthenticated = {this.props.isAuthenticated}
+        return (<SimpleHeader isAuthenticated = {this.props.isAuthenticated}
                         logoutUser = {this.logoutUser.bind(this) } /> );
     }
 }
 
-NavBarContainer.propTypes = {
+SimpleHeaderContainer.propTypes = {
     isAuthenticated: PropTypes.bool.isRequired
 };
 
@@ -27,4 +27,4 @@ const mapDispatchToProps = (dispatch) => (
     bindActionCreators({logout, pushRoute}, dispatch)
 );
 
-export default connect(mapStateToProps, mapDispatchToProps)(NavBarContainer)
+export default connect(mapStateToProps, mapDispatchToProps)(SimpleHeaderContainer)

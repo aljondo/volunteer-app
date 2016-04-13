@@ -2,6 +2,7 @@ import merge from 'lodash/merge'
 import {
     SET_NAME,
     SET_EMAIL,
+    SET_POC,
     SET_PASSWORD,
     SET_PASSWORDVERIFY,
     SET_PHONE,
@@ -46,6 +47,7 @@ const emptyState =
             interests: {value: [], valid: true, error: null},
             bio: {value: null, valid: true, error: null},
             mission: {value: null, valid: true, error: null},
+            poc: {value: null, valid: true, error: null},
             contact: {value: true, valid: true, error: null},
         },
         error: null,
@@ -59,6 +61,8 @@ export default (state = emptyState, action) => {
       return merge({}, state, {user: {name: action.name}});
     case SET_EMAIL:
       return merge({}, state, {user: {email: action.email}});
+    case SET_POC:
+      return merge({}, state, {user: {poc: action.poc}});
     case SET_PASSWORD:
       return merge({}, state, {user: {password: action.password}});
     case SET_PASSWORDVERIFY:

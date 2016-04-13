@@ -13,7 +13,7 @@ const jsonHttpHeader = {'Accept': 'application/json', 'Content-Type': 'applicati
 
 // Fetches an API response
 function callApi(endpoint, method, data, token) {
-  const fullUrl = API_ROOT + endpoint
+  const fullUrl = BACK_END_API_ROOT + endpoint
 
   let authHeader = {}
 

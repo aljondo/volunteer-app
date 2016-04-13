@@ -2,6 +2,7 @@ import { CALL_API, GET, POST } from '../middleware/api'
 
 export const SET_NAME = 'SET_NAME';
 export const SET_EMAIL = 'SET_EMAIL';
+export const SET_POC = 'SET_POC';
 export const SET_PASSWORD = 'SET_PASSWORD';
 export const SET_PASSWORDVERIFY = 'SET_PASSWORDVERIFY';
 export const SET_PHONE = 'SET_PHONE';
@@ -56,6 +57,21 @@ export const setEmail = (email) => {
     return ({
         type: SET_EMAIL,
         email: {value: email, valid: valid, error: error}
+    })
+};
+
+export const setPoc = (poc) => {
+    let valid = true;
+    let error = null;
+
+    if (poc.indexOf('@') < 0 && poc.length > 0) {
+        valid = false;
+        error = "Invalid email address for primary contact";
+    }
+
+    return ({
+        type: SET_POC,
+        poc: {value: poc, valid: valid, error: error}
     })
 };
 
@@ -306,14 +322,26 @@ export const saveUser = (userData, userType) => {
         })
     } else {
         let data = buildUserObject(userData, userType);
-        return ({
-            [CALL_API]: {
-                types: [SAVE_USER_REQUEST, SAVE_USER_SUCCESS, SAVE_USER_FAILURE],
-                endpoint: `users`,
-                method: POST,
-                data: data
-            }
-        })
+        if (data.permissions == "organization") {
+            return ({
+                [CALL_API]: {
+                    types: [SAVE_USER_REQUEST, SAVE_USER_SUCCESS, SAVE_USER_FAILURE],
+                    endpoint: `organization/`,
+                    method: POST,
+                    data: data
+                }
+            })
+        } else {
+            return ({
+                [CALL_API]: {
+                    types: [SAVE_USER_REQUEST, SAVE_USER_SUCCESS, SAVE_USER_FAILURE],
+                    endpoint: `user/`,
+                    method: POST,
+                    data: data
+                }
+            })
+        }
+
     }
 };
 
@@ -353,11 +381,13 @@ const buildUserObject = (userData, userType) => {
             email: userData.email.value,
             passwordhash: userData.password.value,
             phone: userData.phone.value,
+            permissions: "organization",
             address: userData.address.value,
             city: userData.city.value,
             state: userData.state.value,
             zip: userData.zip.value,
-            missionStatement: userData.mission.value,
+            mission: userData.mission.value,
+            poc: userData.poc.value,
             master: false,
         };
     }
@@ -378,6 +408,7 @@ const buildUserObject = (userData, userType) => {
             skills: userData.skills.value,
             interests: userData.interests.value,
             bio: userData.bio.value,
+            availability: [], //TODO update form to use this info
             contact: userData.contact.value,
         };
     }

@@ -23,6 +23,7 @@ describe('Registration Reducer', () => {
       interests: {value: [], valid: true, error: null},
       bio: {value: null, valid: true, error: null},
       mission: {value: null, valid: true, error: null},
+      poc: {value: null, valid: true, error: null},
       contact: {value: true, valid: true, error: null},
     },
     error: null,
