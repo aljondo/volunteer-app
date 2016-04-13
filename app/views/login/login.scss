@@ -1,103 +1,111 @@
 @import '../../styles/colors';
 
-.imgBackground {
-  background: linear-gradient($blue-dark-overlay 10%, rgba($blue-dark-overlay, 0.75) 140%), url("../../../static/images/cover-img.jpg") no-repeat center center;
-  min-height: 800px;
-  height: 100%;
+.wrapper {
   width: 100%;
-  background-size: cover;
+  margin: 0;
+  .imgBackground {
+    background: linear-gradient($blue-dark-overlay 10%, rgba($blue-dark-overlay, 0.75) 140%), url("../../../static/images/cover-img.jpg") no-repeat center center;
+    min-height: 800px;
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    background-size: cover;
 
-  // TODO: also used on the home page, could be a mixin
-  .header {
-    .logoDiv {
-      padding-top: 40px;
-      img.logo {
-        width: 100px;
-        height: auto;
+    // TODO: also used on the home page, could be a mixin
+    .header {
+      .logoDiv {
+        padding-top: 40px;
+        img.logo {
+          width: 100px;
+          height: auto;
+        }
+      }
+
+      .navDiv {
+        .navList {
+          float: right;
+          display: block;
+          width: 320px;
+          padding: 50px 0 0 0;
+
+          li {
+            display: inline;
+            list-style: none;
+            margin-left: 30px;
+            color: $white;
+            font-size: 1.3em;
+            padding: 0 2px 4px 4px;
+
+            a {
+              color: inherit;
+              text-decoration: none;
+            }
+
+            &:hover {
+              border-bottom: 3px solid $blue-accent;
+              cursor: pointer;
+            }
+          }
+
+        }
+        .signup {
+          float: right;
+          display: block;
+          width: 100px;
+          padding: 43px 0 0 0;
+
+          button {
+            background-color: $green-accent;
+            width: 130px;
+            border: none;
+            font-weight: 500;
+          }
+
+        }
       }
     }
 
-    .navDiv {
-      .navList {
-        float: right;
-        display: block;
-        width: 320px;
-        padding: 50px 0 0 0;
+    .loginRow {
+      padding-bottom: 75px;
+      .loginPanel {
+        margin-top: 50px;
+        background-color: $white;
+        height: 490px;
+        border-radius: 5px;
+        border: 1px solid $blue-secondary;
+        padding: 40px 35px 15px 35px;
+        box-shadow: 0px 0px 15px 3px darken($blue-dark-overlay, 6);
 
-        li {
-          display:inline;
-          list-style:none;
-          margin-left:30px;
-          color: $white;
-          font-size: 1.3em;
-					padding: 0 2px 4px 4px;
+        .heading {
 
-					a {
-							color: inherit;
-							text-decoration: none;
-						}
+          h2 {
+            border-bottom: 1px solid $grey-light;
+            padding-bottom: 15px;
+            color: $blue-secondary;
+            font-size: 2.7em;
+          }
 
-					&:hover {
-						border-bottom: 3px solid $blue-accent;
-						cursor: pointer;
-					}
+        }
+
+        .subHeading {
+          color: rgba($blue-secondary, 0.6);
+          font-size: 1.2em;
+          font-weight: 300;
+        }
+
+        .needAccount {
+          color: rgba($blue-secondary, 0.6);
+          font-size: 1em;
+          font-weight: 300;
+          margin-top: 40px;
+        }
+
+        .loginForm {
+          margin-top: 40px;
+          padding: 0 5px;
         }
 
       }
-      .signup {
-        float: right;
-        display: block;
-        width: 100px;
-        padding: 43px 0 0 0;
-
-        button {
-          background-color: $green-accent;
-          width: 130px;
-          border: none;
-					font-weight: 500;
-        }
-
-      }
     }
-  }
-
-  .loginPanel {
-    margin-top: 50px;
-    background-color: $white;
-    height: 490px;
-    border-radius: 5px;
-    border: 1px solid $blue-secondary;
-    padding: 40px 35px 15px 35px;
-    box-shadow: 0px 0px 15px 3px darken($blue-dark-overlay, 6);
-
-    .heading {
-
-      h2 {
-        border-bottom: 1px solid $grey-light;
-        padding-bottom: 15px;
-        color: $blue-secondary;
-        font-size: 2.7em;
-      }
-
-    }
-
-    .subHeading {
-      color: rgba($blue-secondary, 0.6);
-      font-size: 1.2em;
-      font-weight: 300;
-    }
-
-    .needAccount {
-      color: rgba($blue-secondary, 0.6);
-      font-size: 1em;
-      font-weight: 300;
-      margin-top: 40px;
-    }
-
-    .loginForm {
-      margin-top: 40px;
-      padding: 0 5px;
-    }
-
   }
 }

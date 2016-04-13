@@ -2,14 +2,16 @@ import React, { Component } from 'react';
 import {Link} from 'react-router';
 import styles from './eventdetails.scss'
 import EventDetailsContainer from '../../containers/EventDetailsContainer';
-import NavBar from '../../containers/NavBarContainer';
+import SimpleHeaderContainer from '../../containers/Header/SimpleHeaderContainer'
+import FooterContainer from '../../containers/FooterContainer'
 
 class EventDetailsView extends Component {
     render() {
         return (
             <div className={styles.viewWrapper}>
-                <NavBar />
+                <SimpleHeaderContainer />
                 <EventDetailsContainer eventId={this.props.params.eventId}/>
+                <FooterContainer />
             </div>
         );
     }
