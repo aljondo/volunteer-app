@@ -9,6 +9,7 @@ import HoursView from 'views/hours/HoursView'
 import LoginView from 'views/login/LoginView'
 import RegisterView from 'views/register/RegisterView'
 import ApprovalView from 'views/approval/ApprovalView'
+import EventDetailsView from 'views/eventDetails/EventDetailsView'
 import External_Profile_View from 'views/organization/External_Profile_View'
 import Internal_Profile_View from 'views/organization/Internal_Profile_View'
 
@@ -45,6 +46,7 @@ const routes = (
         <Route path="login" component={LoginView}/>
         <Route path="register" component={RegisterView}/>
         <Route path="approval" component={ApprovalView}/>
+        <Route path="event/:eventId" component={EventDetailsView}/>
         <Route path="organization/:orgId" component={External_Profile_View}/>
         <Route path="InternalOrg" component={isAuthOrg(Internal_Profile_View)}/>
     </Route>

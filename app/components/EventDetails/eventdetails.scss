@@ -1,0 +1,160 @@
+@import '../../styles/colors';
+
+.wrapper {
+  margin: 0;
+  width: 100%;
+  background: $blue-secondary;
+  -webkit-font-smoothing: antialiased;
+
+  .detailsBanner {
+    background: linear-gradient($blue-dark-overlay 10%, rgba($blue-dark-overlay, 0.75) 140%), url("../../../static/images/swirl_pattern.jpg") repeat center center;
+    width: 100%;
+    padding: 0 30px 0 30px;
+    .header {
+      margin: 50px 0 50px 0;
+      background: linear-gradient(90deg, rgba($grey-light, .6), $white 30%, $white 70%, rgba($grey-light, .6));
+      min-height: 75px;
+      border-radius: 5px;
+      border: 1px solid $blue-secondary;
+      box-shadow: 0px 0px 15px 3px darken($blue-dark-overlay, 6);
+      text-align: center;
+      h2 {
+        color: $blue-secondary;
+        font-size: 2.9em;
+      }
+    }
+  }
+  /** LEFT SIDE OF PAGE */
+
+  .leftSide {
+    background: $blue-secondary;
+    color: $white-light;
+
+    .eventName {
+      padding-top: 10px;
+      .nameLabel {
+        font-size: 2.5em;
+        font-weight: 500;
+      }
+      .nameValue {
+        font-size: 1.9em;
+        text-align: center;
+        padding-bottom: 10px;
+        border-bottom: 2px solid $grey-dark;
+      }
+    }
+
+    .dateContainer {
+      margin-top: 10px;
+      .dateLabel {
+        display: inline-block;
+        font-size: 1.5em;
+        font-weight: 400;
+      }
+      .dateValue {
+        margin-left: 5px;
+        display: inline-block;
+        font-size: 1.2em;
+      }
+    }
+
+    .descriptionContainer {
+      margin-top: 10px;
+      .descriptionLabel {
+        font-size: 1.5em;
+        font-weight: 400;
+      }
+      .descriptionValue {
+        font-size: 1.2em;
+        text-align: center;
+      }
+    }
+
+    .skillsContainer {
+      margin-top: 10px;
+      .skillsLabel {
+        font-size: 1.5em;
+        font-weight: 400;
+      }
+      .skillsValue {
+        font-size: 1.2em;
+        text-align: center;
+      }
+    }
+  }
+
+  /** RIGHT SIDE OF PAGE */
+
+  .rightSide {
+    background: $grey-light;
+
+    .locationContainer {
+      color: $blue-primary;
+      padding-top: 10px;
+      padding-bottom: 15px;
+      .locationLabel {
+        font-size: 2.5em;
+        font-weight: 500;
+      }
+      .locationValue {
+        text-align: center;
+        font-size: 1.9em;
+      }
+    }
+    .mapContainer {
+      width: 500px;
+      height: 300px;
+      margin: auto;
+    }
+
+    .loginWarning {
+      text-align: center;
+      padding-top: 20px;
+      font-size: 1.7em;
+      color: $blue-primary;
+    }
+
+    .attendButtonContainer {
+      text-align: center;
+      padding: 20px 0 20px 0;
+      .attendButton {
+        font-size: 2em;
+        background: $green-accent;
+        width: 125px;
+        height: 75px;
+        color: $white;
+      }
+    }
+
+    .contactContainer {
+      margin: 10px auto 50px auto;
+      width: 75%;
+      background: linear-gradient(90deg, rgba($grey-light, .6), $white 30%, $white 70%, rgba($grey-light, .6));
+      min-height: 75px;
+      border-radius: 5px;
+      border: 1px solid $blue-secondary;
+      box-shadow: 0px 0px 15px 3px darken($blue-dark-overlay, 6);
+      .contactLabel {
+        padding: 5px 0 0 10px;
+        color: $blue-primary;
+        font-size: 1.9em;
+      }
+      .introValueWrapper {
+        margin-bottom: 10px;
+        text-align: center;
+        .contactIntro {
+          padding-left: 10px;
+          display: inline-block;
+          color: $blue-primary;
+          font-size: 1.5em;
+        }
+        .contactValue {
+          margin-left: 10px;
+          display: inline-block;
+          color: $blue-accent;
+          font-size: 1.5em;
+        }
+      }
+    }
+  }
+}
