@@ -1,0 +1,11 @@
+@import '../../styles/colors';
+
+.section {
+  height: 100%;
+}
+
+.container {
+  height: 100%;
+  border-radius: 25%;
+  border: 5px dotted $blue-primary;
+}
