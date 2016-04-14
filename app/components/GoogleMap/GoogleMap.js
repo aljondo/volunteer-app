@@ -1,16 +1,18 @@
 import React from 'react'
 import {GoogleMapLoader, GoogleMap, Marker} from "react-google-maps";
+import styles from './googlemap.scss';
 
 const GoogleMapComponent = (props) => (
-    <section style={{height: "100%"}}>
+    <section className={styles.section}>
         <GoogleMapLoader
             containerElement={
-                <div style={{height: "100%"}}></div>
+                <div className={styles.container}></div>
             }
             googleMapElement={
                 <GoogleMap
                     defaultZoom={13}
-                    defaultCenter={{lat: props.lat, lng: props.lng}}>
+                    defaultCenter={{lat: props.lat, lng: props.lng}}
+                    options={{disableDefaultUI: true}}>
                     <Marker position={{lat: props.lat, lng: props.lng}}/>
                 </GoogleMap>
             }

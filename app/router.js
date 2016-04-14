@@ -9,24 +9,17 @@ import HoursView from 'views/hours/HoursView'
 import LoginView from 'views/login/LoginView'
 import RegisterView from 'views/register/RegisterView'
 import ApprovalView from 'views/approval/ApprovalView'
-import External_Profile_View from 'views/organization/External_Profile_View'
-import Internal_Profile_View from 'views/organization/Internal_Profile_View'
+import EventDetailsView from 'views/eventDetails/EventDetailsView'
+import OrganizationView from 'views/organization/OrganizationView'
 
 // Authentication Wrappers
 // in the future these may need to be nested, and we may want to provide
 // additional functionality when a user is redirected (errors, etc)
-const isAuthUser = UserAuthWrapper({
+const isAuth = UserAuthWrapper({
   authSelector: state => state.auth,
   failureRedirectPath: '/',
-  wrapperDisplayName: 'IsAuthUser',
-  predicate: auth =>  auth.isAuthenticated & auth.role === 'user'
-})
-
-const isAuthOrg = UserAuthWrapper({
-  authSelector: state => state.auth,
-  failureRedirectPath: '/',
-  wrapperDisplayName: 'IsAuthOrg',
-  predicate: auth => auth.isAuthenticated & auth.role === 'org'
+  wrapperDisplayName: 'IsAuth',
+  predicate: auth =>  auth.isAuthenticated & (auth.role === 'volunteer' || auth.role === 'organization')
 })
 
 const isAuthAdmin = UserAuthWrapper({
@@ -39,14 +32,14 @@ const isAuthAdmin = UserAuthWrapper({
 const routes = (
     <Route path="/" component={App}>
         <IndexRoute component={HomeView}/>
-        <Route path="profile" component={isAuthUser(ProfileView)}/>
+        <Route path="profile" component={isAuth(ProfileView)}/>
         <Route path="hours" component={HoursView}/>
         <Route path="search" component={SearchView}/>
         <Route path="login" component={LoginView}/>
         <Route path="register" component={RegisterView}/>
         <Route path="approval" component={ApprovalView}/>
-        <Route path="organization/:orgId" component={External_Profile_View}/>
-        <Route path="InternalOrg" component={isAuthOrg(Internal_Profile_View)}/>
+        <Route path="event/:eventId" component={EventDetailsView}/>
+        <Route path="organization/:orgId" component={OrganizationView}/>
     </Route>
 );
 

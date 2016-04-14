@@ -1,12 +1,16 @@
 [
     {
       "id": 100,
-      "role": "user",
+      "permissions": "volunteer",
       "name": "Alexander Hamilton",
       "password": "pass",
       "email": "user@mail.com",
       "bio": "This is not my bio",
       "skills": [
+        "teaching",
+        "sports"
+      ],
+      "interests": [
         "teaching",
         "sports"
       ],
@@ -20,7 +24,7 @@
     },
     {
       "id": 10,
-      "role": "org",
+      "permissions": "organization",
       "name": "Margaret",
       "password": "pass",
       "email": "org@gmail.com",
@@ -35,7 +39,7 @@
     },
     {
       "id": 42,
-      "role": "admin",
+      "permissions": "admin",
       "name": "Susan",
       "password": "pass",
       "email": "admin@mail.com",

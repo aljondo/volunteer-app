@@ -1,34 +1,52 @@
+@import '../../styles/colors';
+
+
+.form {
+  padding: 50px 0 50px 0;
+}
+
+.buttonWrapper {
+  background: $white;
+  box-shadow: 0px 0px 15px 3px darken($blue-dark-overlay, 6);
+  border-radius: 5px;
+}
 
 .userButton {
-  background-color: #339933;
-  border: 2px solid #b37700;
-  height: 200px;
+  background: linear-gradient($grey-dark 10%, rgba($grey-dark, 0.6) 140%), url("../../../static/images/register-switch-vol.jpg") no-repeat center center;
+  background-size: 100% 100%;
+  border: 3px solid $blue-primary;
+  height: 350px;
   border-radius: 10px;
-  font-size: 25px;
-  color: #ffffff;
+  font-size: 30px;
+  color: $blue-primary;
   padding: 50px;
   margin: 20px 0 20px 0;
   white-space: normal;
 }
 
 .userButton:hover {
-  background-color: #339933;
-  color: black;
+  color: $blue-accent;
+  border: 3px solid $blue-primary;
+  background-color: $blue-accent;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 .orgButton {
-  background-color: #b37700;
-  border: 2px solid #339933;
-  height: 200px;
+  background: linear-gradient(rgba($blue-dark-overlay, 1) 10%, rgba($blue-dark-overlay, 0.6) 140%), url("../../../static/images/register-switch-org.jpg") no-repeat center center;
+  background-size: 100% 100%;
+  border: 3px solid $grey-dark;
+  height: 350px;
   border-radius: 10px;
-  font-size: 25px;
-  color: #ffffff;
+  font-size: 30px;
+  color: $grey-dark;
   padding: 50px;
   margin: 20px 0 20px 0;
   white-space: normal;
 }
 
 .orgButton:hover {
-  background-color: #b37700;
-  color: black;
+  color: $blue-accent;
+  border: 3px solid $grey-dark;
+  background-color: $blue-accent;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }

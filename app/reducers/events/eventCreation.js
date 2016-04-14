@@ -1,4 +1,4 @@
-import merge from '../../../node_modules/sass-graph/node_modules/lodash/merge'
+import merge from 'lodash/merge'
 import { SET_NAME,
     SET_ADDRESS,
     SET_ZIPCODE,

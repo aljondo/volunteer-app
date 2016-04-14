@@ -1,7 +1,8 @@
 import 'isomorphic-fetch'
 
 //move to dev enviroment and set production in env vars
-const API_ROOT = 'http://localhost:3004/'
+const API_ROOT = 'http://54.173.153.77:3004/'
+const BACK_END_API_ROOT = 'http://52.91.55.136:5000/';
 
 //Supported HTTP Methods
 export const GET = 'GET'
@@ -12,7 +13,7 @@ const jsonHttpHeader = {'Accept': 'application/json', 'Content-Type': 'applicati
 
 // Fetches an API response
 function callApi(endpoint, method, data, token) {
-  const fullUrl = API_ROOT + endpoint
+  const fullUrl = BACK_END_API_ROOT + endpoint
 
   let authHeader = {}
 
