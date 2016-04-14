@@ -10,6 +10,7 @@ class SearchView extends Component {
             <div>
                 <EventSearchContainer />
                 <Link to="/event/1111">Event Details Example Link</Link>
+                <Link to="/organization/5432">External Org Example Link</Link>
             </div>
         );
     }

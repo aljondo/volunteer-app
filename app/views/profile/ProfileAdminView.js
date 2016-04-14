@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import UsersHello from '../../containers/UsersHello'
-import './divBox.css'
 import {Link} from 'react-router';
 import AboutMe from '../../components/aboutMe/AboutMe';
 import ProfileAdminViewButtons from '../../components/ProfileAdminViewButtons/ProfileAdminViewButtons';
