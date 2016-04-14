@@ -29,10 +29,10 @@ function generateToken(email, password) {
 }
 
 server.post('/login', (req, res) => {
-  const { email, password } = req.body;
+  const { email, passwordhash } = req.body;
   const user = users.filter((user) => (user.email === email))[0]
-  if (password === user.password) {
-    const token = generateToken(email, password);
+  if (passwordhash === user.password) {
+    const token = generateToken(email, passwordhash);
     const role = user.role;
     res.send({ token, user, role });
   } else {

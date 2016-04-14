@@ -1,20 +1,128 @@
-.home {
-  .buttons {
-  	float: right;
+@import '../../styles/colors';
+// @import '../../styles/fonts.scss';
+
+* {
+	padding: 0;
+	margin: 0;
+	text-decoration: none;
+}
+
+.homeView {
+	-webkit-font-smoothing: antialiased;
+}
+
+.sectionOne {
+  background: linear-gradient($blue-dark-overlay 10%, rgba($blue-dark-overlay, 0.75) 140%), url("../../../static/images/cover-img.jpg") no-repeat center center;
+  height: 475px;
+  width: 100%;
+  background-size: cover;
+
+
+
+  .heading  h1 {
+		color: $white;
+		font-weight: 600;
+		font-size: 4em;
+		text-align: center;
+		padding-top: 20px;
   }
-  .homeblurb {
-  	padding-top: 20vh;
-  	margin-right: auto;
-  	margin-left: auto;
-  	width: 40vw;
-  	.prompt {
-  	  .clprompt {
-  	  	display: inline-block;
-  	  	padding-right: 4px;
-  	  }
-  	  .searchbutton {
-  	  	display: inline-block;
-  	  }
-  	}
+
+  .subHeading h3 {
+		color: $white;
+		font-size: 1.3em;
+		text-align: center;
+		font-weight: 300;
+		letter-spacing: 0.5px;
+		line-height: 1.4em;
   }
+
+
+
+}
+
+.sectionTwo {
+  height: 600px;
+  width: 100%;
+  background-color: $white-light;
+
+	.search {
+		background-color: $green-accent;
+		height: 86px;
+		margin-top: -45px;
+		border-radius: 10px;
+		padding-left: 30px;
+	}
+
+	.goSearch {
+		background-color: rgba($blue-secondary, 0.16);
+		height: 86px;
+    float: right;
+    width: 100px;
+    margin-right: -30px;
+    border-radius: 0 10px 10px 0;
+		border-left: 1px solid rgba($blue-secondary, 0.1);
+
+		&:hover{
+			cursor: pointer;
+			background-color: rgba($blue-secondary, 0.12);
+		}
+
+		.arrow {
+			color: rgba($blue-secondary, 0.25);
+			margin: 20px 35px;
+		}
+	}
+
+}
+
+.sectionThree {
+  height: 175px;
+  width: 100%;
+  background-color: $white;
+  border-top: 1px solid $grey-light;
+	padding: 59px 0;
+
+	.orgbutton {
+		background-color: $green-accent;
+		border: none;
+		font-weight: 500;
+		padding: 16px;
+    width: 252px;
+	}
+
+	.orgtext {
+		font-size: 25px;
+		color: rgba($blue-secondary, 0.8);
+		font-weight: 500;
+		margin-top: 10px;
+	}
+
+}
+
+.footer {
+  height: 440px;
+  width: 100%;
+  background-color: $blue-primary;
+
+	.content {
+		height: 325px;
+	}
+
+	.footerBar {
+		border-top: 1px solid rgba($white, 0.2);
+		height: 100px;
+		padding-top: 30px;
+
+		.copyright {
+			color: rgba($white, 0.5);
+		}
+
+		.socialmedia {
+			padding-left: 80px;
+			span {
+				color: rgba($white, 0.4);
+				padding: 0 20px;
+			}
+		}
+	}
 }

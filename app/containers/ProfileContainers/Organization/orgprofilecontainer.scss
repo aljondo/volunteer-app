@@ -1,0 +1,11 @@
+@import '../../../styles/colors';
+
+.wrapper {
+  width: 100%;
+  margin: 0;
+
+  .aboutMe {
+    background: $blue-secondary;
+  }
+
+}

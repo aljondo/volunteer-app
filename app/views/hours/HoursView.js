@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
 import {Link} from 'react-router';
-import AboutMe from '../../components/Volunteer/AboutMe';
 import HoursFilterContainer from '../../containers/HoursFilterContainer';
-import ProfileChart from '../../components/Volunteer/ProfileChart';
+import ProfileChart from '../../components/ProfileComponents/Volunteer/ProfileChart';
 
 class HoursView extends Component {
     render() {

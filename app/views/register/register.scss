@@ -1,11 +1,83 @@
-.header {
-  text-align: center;
-  font-size: 30px;
-  margin: 10px 0 10px 0;
+@import '../../styles/colors.scss';
+
+@import '../../styles/colors';
+
+.imgBackground {
+  background: linear-gradient($blue-dark-overlay 10%, rgba($blue-dark-overlay, 0.75) 140%), url("../../../static/images/cover-img.jpg") no-repeat center center;
+  min-height: 800px;
+  height: 100%;
+  width: 100%;
+  background-size: cover;
+  margin: 0;
+
+  // TODO: also used on the home page, could be a mixin
+  .header {
+    .logoDiv {
+      padding-top: 40px;
+      img.logo {
+        width: 100px;
+        height: auto;
+      }
+    }
+
+    .navDiv {
+      .navList {
+        float: right;
+        display: block;
+        width: 320px;
+        padding: 50px 0 0 0;
+
+        li {
+          display:inline;
+          list-style:none;
+          margin-left:30px;
+          color: $white;
+          font-size: 1.3em;
+          padding: 0 2px 4px 4px;
+
+          a {
+            color: inherit;
+            text-decoration: none;
+          }
+
+          &:hover {
+            border-bottom: 3px solid $blue-accent;
+            cursor: pointer;
+          }
+        }
+
+      }
+      .signup {
+        float: right;
+        display: block;
+        width: 100px;
+        padding: 43px 0 0 0;
+
+        button {
+          background-color: $green-accent;
+          width: 130px;
+          border: none;
+          font-weight: 500;
+        }
+
+      }
+    }
+  }
+
+  .registerPanel {
+    margin-top: 50px;
+    padding: 20px 0 50px 0;
+  }
 }
+
 
 .backButton {
   float: left;
-  background: #a3a3c2;
+  color: white;
+  background: $green-accent;
   margin: 10px 0 0 20px;
+}
+
+.backButton:hover {
+  background: $green-accent;
 }

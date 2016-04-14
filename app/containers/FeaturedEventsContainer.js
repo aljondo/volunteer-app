@@ -20,6 +20,10 @@ FeaturedEventsContainer.propTypes = {
   events: PropTypes.array.isRequired
 };
 
+FeaturedEventsContainer.defaultProps = {
+  events: []
+};
+
 const mapStateToProps = (state) => ({events: state.featuredEvents.events});
 
 export default connect(mapStateToProps)(FeaturedEventsContainer)
