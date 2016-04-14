@@ -1,17 +1,17 @@
 import { CALL_API, GET, POST } from '../middleware/api'
 
 //action types
-export const FETCH_ORGS_REQUEST = 'FETCH_ORGS_REQUEST'
-export const FETCH_ORGS_SUCCESS = 'FETCH_ORGS_SUCCESS'
-export const FETCH_ORGS_FAILURE = 'FETCH_ORGS_FAILURE'
+export const FETCH_ORGS_REQUEST = 'FETCH_ORGS_REQUEST';
+export const FETCH_ORGS_SUCCESS = 'FETCH_ORGS_SUCCESS';
+export const FETCH_ORGS_FAILURE = 'FETCH_ORGS_FAILURE';
 
-export const FETCH_ORG_REQUEST = 'FETCH_ORGS_REQUEST'
-export const FETCH_ORG_SUCCESS = 'FETCH_ORGS_SUCCESS'
-export const FETCH_ORG_FAILURE = 'FETCH_ORGS_FAILURE'
+export const FETCH_ORG_REQUEST = 'FETCH_ORG_REQUEST';
+export const FETCH_ORG_SUCCESS = 'FETCH_ORG_SUCCESS';
+export const FETCH_ORG_FAILURE = 'FETCH_ORG_FAILURE';
 
-export const SAVE_ORG_REQUEST = 'FETCH_ORGS_REQUEST'
-export const SAVE_ORG_SUCCESS = 'FETCH_ORGS_SUCCESS'
-export const SAVE_ORG_FAILURE = 'FETCH_ORGS_FAILURE'
+export const SAVE_ORG_REQUEST = 'SAVE_ORG_REQUEST';
+export const SAVE_ORG_SUCCESS = 'SAVE_ORG_SUCCESS';
+export const SAVE_ORG_FAILURE = 'SAVE_ORG_FAILURE';
 
 export function fetchOrgs() {
   return {
@@ -22,7 +22,7 @@ export function fetchOrgs() {
     }
   }
 }
-7
+
 export function fetchOrg(id) {
   return {
     [CALL_API]: {

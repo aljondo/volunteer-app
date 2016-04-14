@@ -14,7 +14,8 @@ import { FETCH_ORGS_REQUEST,
 // to specify how each action modifies the app state, will also need to add
 // addtional state
 const emptyState = { isReq: false,
-                     orgs: []}
+                      orgs: [],
+                     organization: {}}
 
 export default (state = emptyState, action) => {
   switch (action.type) {
@@ -27,7 +28,7 @@ export default (state = emptyState, action) => {
     case FETCH_ORG_REQUEST:
       return merge({}, state, {isReq: true})
     case FETCH_ORG_SUCCESS:
-      return merge({}, state, {isReq: false})
+      return merge({}, state, {isReq: false, organization: action.response})
     case FETCH_ORG_FAILURE:
       return merge({}, state, {isReq: false})
     case SAVE_ORG_REQUEST:
