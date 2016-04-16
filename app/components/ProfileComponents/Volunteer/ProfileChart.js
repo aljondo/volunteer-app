@@ -139,9 +139,6 @@ class ProfileChart extends Component {
                 <div>
                     <PieChart data={data2} options={options2}/>
                     <LineChart data={data} options={options}/>
-                    <Link to="/hours">
-                        <Button bsStyle="primary">More Details</Button>
-                    </Link>
                 </div>
                
             </div>
