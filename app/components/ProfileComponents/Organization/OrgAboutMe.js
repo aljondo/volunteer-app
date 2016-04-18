@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import {Col, Button,  Input} from 'react-bootstrap';
-import EventManipulationContainer from '../../../../containers/EventManipulationContainer';
+import EventManipulationContainer from '../../../containers/ProfileContainers/Organization/EventManipulationContainer';
 
 //TODO Go through all available user fields and add them to this. Follow the same general formatting
 //TODO Format this nicer, using scss, but probably wait for Zach to draw up how it should look
@@ -29,7 +29,7 @@ const OrgAboutMe = (props) => {
             <Button bsStyle='primary' onClick={props.openEdit}>Edit</Button>
             </div>
             <div>
-                <EventManipulationContainer />
+                <EventManipulationContainer buttonText={"Create Event"} newEvent={true}/>
             </div>
         </div>
     );

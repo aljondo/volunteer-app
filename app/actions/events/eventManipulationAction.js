@@ -122,15 +122,6 @@ export const updateEvent = (eventData) => {
     }
 };
 
-export const manipulateEvent = (event) => {
-
-    if(event != null) {
-        saveEvent(event);
-    }
-    else {
-        updateEvent(event);
-    }
-    };
 
 const checkData = (eventData) => {
 

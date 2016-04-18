@@ -39,7 +39,6 @@ server.post('/login', (req, res) => {
     res.sendStatus(401);
   }
 });
-
 const jsonPath = path.join(__dirname, 'db.json');
 var router = jsonServer.router(jsonPath)
 server.use(router)

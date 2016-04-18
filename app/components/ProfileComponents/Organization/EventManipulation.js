@@ -5,7 +5,7 @@ import DateTimeField from 'react-bootstrap-datetimepicker';
 const EventCreation = (props) => (
     <div>
         <Button bsStyle="primary" bsSize="small" onClick={props.openModal}>
-            Create Event
+            {props.buttonText}
         </Button>
         <Modal show={props.isEditing} onHide={props.closeModal}>
             <Modal.Header closeButton>
@@ -102,7 +102,7 @@ const EventCreation = (props) => (
                             <option value="legal"> Legal </option>
                             <option value="management"> Management </option>
                             <option value="handiwork"> Handiwork </option>
-                            <opytion value="arts"> Fine Arts </option>
+                            <option value="arts"> Fine Arts </option>
                             <option value="language"> Foreign Language </option>
                             <option value="tefl"> TEFL / TESOL </option>
                             <option value="writing">Writing / Editing </option>

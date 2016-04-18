@@ -2,7 +2,6 @@ import React, { Component, PropTypes } from 'react';
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
 import { setName,
-    setAddress,
     setMonth,
     setDay,
     setYear,
@@ -14,11 +13,12 @@ import { setName,
     setError,
     removeError,
     reset,
-    manipulateEvent,
+    saveEvent,
+    updateEvent,
     openModal,
-    closeModal } from '../actions/events/eventManipulationAction';
+    closeModal } from '../../../actions/events/eventManipulationAction';
 import { push as pushRoute} from 'react-router-redux';
-import EventCreation from '../components/EventCreation/EventCreation.js'
+import EventCreation from '../../../components/ProfileComponents/Organization/EventManipulation'
 
 
 class EventCreationContainer extends Component {
@@ -73,7 +73,12 @@ class EventCreationContainer extends Component {
 
     handleCreation() {
         if (this.checkForm()) {
-            this.props.manipulateEvent(this.props.event)
+            if (this.props.newEvent) {
+                this.props.saveEvent(this.props.event)
+            }
+            else{
+                this.props.updateEvent(this.props.event)
+            }
         }
     }
 
@@ -138,11 +143,13 @@ class EventCreationContainer extends Component {
 EventCreationContainer.propTypes = {
     event: PropTypes.object,
     isEditing: PropTypes.bool.isRequired,
-    error: PropTypes.string
+    error: PropTypes.string,
+    buttonText: PropTypes.string.isRequired,
+    newEvent: PropTypes.bool.isRequired
 }
 
 const mapDispatchToProps = (dispatch) => (
-    bindActionCreators({ manipulateEvent, setName, setDate, setAddress, pushRoute, setError, reset, setZipcode, setManager, openModal, closeModal}, dispatch)
+    bindActionCreators({ saveEvent, updateEvent, setName, setDate, setAddress, pushRoute, setError, reset, setZipcode, setManager, openModal, closeModal}, dispatch)
 )
 
 const mapStateToProps = (state) => (
