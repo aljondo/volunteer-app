@@ -34,7 +34,7 @@ const FullHeader = (props) => (
             </div>
         </Col>
         <Col xs={6} sm={2} className={styles.logoDiv}>
-            <img src={'/images/logo.jpg'} className={styles.logo}/>
+            <img src={'/images/logo.png'} className={styles.logo}/>
         </Col>
         <Col xs={6} sm={4} className={styles.rightText}>
             <p>Americorps Boston</p>
