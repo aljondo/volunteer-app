@@ -1,7 +1,7 @@
 import React, { PropTypes, Component } from 'react'
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
-import { updateName, updateEmail, clearUpdateFields, updateUser } from '../../../actions/editUser'
+import { updateName, updateEmail, updatePhone, updateBio, clearUpdateFields, updateUser } from '../../../actions/editUser'
 import UserAboutMe from "../../../components/ProfileComponents/Volunteer/UserAboutMe"
 import EditingUserAboutMe from "../../../components/ProfileComponents/Volunteer/EditingUserAboutMe"
 
@@ -39,11 +39,19 @@ class UserAboutMeContainer extends Component {
     }
 
     updateName(e){
-       this.props.updateName(e.target.value);
+        this.props.updateName(e.target.value);
     }
 
     updateEmail(e){
         this.props.updateEmail(e.target.value);
+    }
+
+    updatePhone(e){
+        this.props.updatePhone(e.target.value);
+    }
+
+    updateBio(e) {
+        this.props.updateBio(e.target.value);
     }
 
     render() {
@@ -55,7 +63,9 @@ class UserAboutMeContainer extends Component {
                                       applyUpdates={this.applyUpdates.bind(this)}
                                       closeEdit={this.closeEdit.bind(this)}
                                       updateName={this.updateName.bind(this)}
-                                      updateEmail={this.updateEmail.bind(this)}/>;
+                                      updateEmail={this.updateEmail.bind(this)}
+                                      updatePhone={this.updatePhone.bind(this)}
+                                      updateBio={this.updateBio.bind(this)} />;
         }
 
         return ( content )
@@ -68,7 +78,7 @@ UserAboutMeContainer.propTypes = {
 };
 
 const mapDispatchToProps = (dispatch) => (
-    bindActionCreators({ updateName, updateEmail, clearUpdateFields, updateUser }, dispatch)
+    bindActionCreators({ updateName, updateEmail, updatePhone, updateBio, clearUpdateFields, updateUser }, dispatch)
 );
 
 const mapStateToProps = (state) => (
