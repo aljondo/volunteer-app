@@ -3,14 +3,21 @@ import {
     FETCH_EVENTS_REQUEST,
     FETCH_EVENTS_SUCCESS,
     FETCH_EVENTS_FAILURE,
-    RESET_SEARCH_EVENTS
+    RESET_SEARCH_EVENTS,
+    SET_CATEGORY,
+    SET_NEIGHBORHOOD,
     } from '../../actions/events/searchEventsActions'
 
 // this is a template, currently returns same state for for each action, will have
 // to specify how each action modifies the app state, will also need to add
 // additional state
 
-const emptyState = { isReq: false, events: []};
+const emptyState = {
+    isReq: false,
+    category: {value: null, valid: true, error: null},
+    neighborhood: {value: null, valid: true, error: null},
+    events: []
+};
 
 export default (state = emptyState, action) => {
     switch (action.type) {
@@ -22,6 +29,10 @@ export default (state = emptyState, action) => {
             return merge({}, state, {isReq: false});
         case RESET_SEARCH_EVENTS:
             return merge({}, emptyState);
+        case SET_CATEGORY:
+            return merge({}, state, {category: action.category});
+        case SET_NEIGHBORHOOD:
+            return merge({}, state, {neighborhood: action.neighborhood});
         default:
             return state
     }

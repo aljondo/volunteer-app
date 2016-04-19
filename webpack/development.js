@@ -10,7 +10,7 @@ const config = {
   dir_app    : 'app',
   dir_dist   : 'static/dist',
   dir_test   : 'tests',
-}
+};
 
 module.exports = {
   devtool: process.env.WEBPACK_DEVTOOL || 'source-map',
@@ -59,6 +59,6 @@ module.exports = {
           //'resolve-url',
           'sass?sourceMap'
         ]}
-    ],
+    ]
   }
-}
+};

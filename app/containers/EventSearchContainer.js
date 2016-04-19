@@ -2,7 +2,11 @@ import React, { Component, PropTypes } from 'react';
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
 import { Button, Col, Row, Grid } from 'react-bootstrap'
-import { fetchSearchEvents, resetSearchEvents } from "../actions/events/searchEventsActions";
+import {
+    fetchSearchEvents,
+    resetSearchEvents,
+    setCategory,
+    setNeighborhood } from "../actions/events/searchEventsActions";
 import { push as pushRoute } from 'react-router-redux';
 import EventSearchForm from '../components/EventSearchForm/EventSearchForm'
 import AdvancedSearch from '../components/AdvancedSearch/AdvancedSearch'
@@ -41,6 +45,14 @@ class EventSearchContainer extends Component {
         }
     }
 
+    categoryChange(e) {
+        this.props.setCategory(e.target.value);
+    }
+
+    neighborhoodChange(e){
+        this.props.setNeighborhood(e.target.value);
+    }
+
     render() {
         return (
             <Grid id="grid">
@@ -50,7 +62,8 @@ class EventSearchContainer extends Component {
                     </Col>
                     <Col xs={12}>
                         <div>
-                            <EventSearchForm />
+                            <EventSearchForm categoryChange={this.categoryChange.bind(this)}
+                                             neighborhoodChange={this.neighborhoodChange.bind(this)}/>
                         </div>
                     </Col>
                     <Col xs={12}>
@@ -72,19 +85,26 @@ class EventSearchContainer extends Component {
 }
 
 EventSearchContainer.propTypes = {
-    events: PropTypes.array.isRequired
-};
-
-EventSearchContainer.defaultProps = {
-    events: []
+    events: PropTypes.array.isRequired,
+    category: PropTypes.object,
+    neighborhood: PropTypes.object
 };
 
 const mapDispatchToProps = (dispatch) => (
-    bindActionCreators({ fetchSearchEvents, resetSearchEvents, pushRoute }, dispatch)
+    bindActionCreators({
+        fetchSearchEvents,
+        resetSearchEvents,
+        setCategory,
+        setNeighborhood,
+        pushRoute }, dispatch)
 );
 
 const mapStateToProps = (state) => (
-    {events: state.searchEvents.events}
+    {
+        events: state.searchEvents.events,
+        category: state.searchEvents.category,
+        neighborhood: state.searchEvents.neighborhood
+    }
 );
 
 export default connect(mapStateToProps, mapDispatchToProps)(EventSearchContainer)

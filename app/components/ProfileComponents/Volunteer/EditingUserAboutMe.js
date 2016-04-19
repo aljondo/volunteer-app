@@ -19,6 +19,7 @@ const EditingUserAboutMe = (props) =>  {
                 type="text"
                 defaultValue={props.user.phone}
                 placeholder="The phone number that you can be reached"
+                onChange={props.updatePhone}
                 label="Phone"
             />
             <Input
@@ -32,8 +33,10 @@ const EditingUserAboutMe = (props) =>  {
                 type="textarea"
                 defaultValue={props.user.bio}
                 placeholder="A short description of yourself"
+                onChange={props.updateBio}
                 label="About me"
             />
+
             <Button bsStyle='primary' onClick={props.closeEdit}>Cancel</Button>
             <Button bsStyle='primary' onClick={props.applyUpdates}>Update</Button>
         </div>
