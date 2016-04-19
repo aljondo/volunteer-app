@@ -14,20 +14,43 @@ const Footer = (props) => (
         <Row className={styles.footer}>
             <Grid>
                 <Row className={styles.content}>
-                    <Col sm={6} md={3}>
-
+                    <Col sm={4} xs={12}>
+                        <img src={'../../../static/images/logo.png'} className={styles.logo}/>
                     </Col>
-                </Row>
-                <Row className={styles.footerBar}>
-                    <Col sm={6} md={3}>
-                        <p className={styles.copyright}>
-                            &copy; Copyright 2016 - Americorps Boston
-                        </p>
+                    <Col sm={8} xs={12} className={styles.text}>
+                        <Col xs={12} className={styles.title}>
+                            Take the Americorps Pledge Today
+                        </Col>
+                        <Col xs={12} className={styles.pledge}>
+                            "I will get things done for America - to make our people safer, smarter, and healthier.
+                            I will bring Americans together to strengthen our communities.
+                            Faced with apathy, I will take action.
+                            Faced with conflict, I will seek common ground.
+                            Faced with adversity, I will persevere.
+                            I will carry this commitment with me this year and beyond.
+                            I am an AmeriCorps member, and I will get things done."
+                        </Col>
                     </Col>
-                    <Col sm={12} md={3} lgOffset={6} className={styles.socialmedia}>
-                        <Icon name="facebook-square" size={'2x'}/>
-                        <Icon name="twitter" size={'2x'}/>
-                        <Icon name="instagram" size={'2x'}/>
+                    <Col xs={12} className={styles.footerBar}>
+                        <Col xs={12} sm={5}>
+                            <p className={styles.copyright}>
+                                &copy; Copyright 2016 - Americorps Boston
+                            </p>
+                        </Col>
+                        <Col xs={12} sm={7} className={styles.socialmedia}>
+                            <a href="https://www.facebook.com/americorps/">
+                                <Icon name="facebook-square" size={'2x'}/>
+                            </a>
+                            <a href="https://twitter.com/americorps?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor">
+                                <Icon name="twitter-square" size={'2x'}/>
+                            </a>
+                            <a href="https://www.youtube.com/user/nationalservice">
+                                <Icon name="youtube-square" size={'2x'}/>
+                            </a>
+                            <a href="https://www.linkedin.com/company/americorps">
+                                <Icon name="linkedin-square" size={'2x'}/>
+                            </a>
+                        </Col>
                     </Col>
                 </Row>
             </Grid>

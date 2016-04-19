@@ -1,7 +1,7 @@
 @import '../../styles/colors';
 
 .header {
-  height: 80px;
+  min-height: 80px;
   background: $white;
   border-bottom: 1px solid $grey-dark;
 
@@ -9,6 +9,9 @@
     .navList {
       float: left;
       width: 600px;
+      .activeLink {
+        border-bottom: 2px solid $blue-accent
+      }
       li {
         display:inline;
         list-style:none;
