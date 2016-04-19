@@ -89,7 +89,9 @@ const HomePage = () => (
             <p> Are you an organization looking for volunteers?</p>
           </Col>
           <Col sm={12} md={3}>
-              <Button bsSize="large" bsStyle="primary" className={styles.orgbutton}>Register Organization</Button>
+              <Link to="/register">
+                  <Button bsSize="large" bsStyle="primary" className={styles.orgbutton}>Sign Up</Button>
+              </Link>
           </Col>
       </Grid>
     </Row>
