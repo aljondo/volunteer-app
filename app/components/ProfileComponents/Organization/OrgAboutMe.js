@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import {Col, Button,  Input} from 'react-bootstrap';
+import EventManipulationContainer from '../../../containers/ProfileContainers/Organization/EventManipulationContainer';
 
 //TODO Go through all available user fields and add them to this. Follow the same general formatting
 //TODO Format this nicer, using scss, but probably wait for Zach to draw up how it should look
@@ -7,6 +8,7 @@ import {Col, Button,  Input} from 'react-bootstrap';
 const OrgAboutMe = (props) => {
     return (
         <div>
+            <div>
             <img src={'https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcSEKgew92pwh3t6IaIj3PazmaN3yia21164I6mvCkFTTr96s5mG'}  alt="user" className="img-responsive"/>
             <h1>{props.user.name}</h1>
             <div>
@@ -25,8 +27,11 @@ const OrgAboutMe = (props) => {
             </div>
             <br/>
             <Button bsStyle='primary' onClick={props.openEdit}>Edit</Button>
+            </div>
+            <div>
+                <EventManipulationContainer buttonText={"Create Event"} newEvent={true}/>
+            </div>
         </div>
-
     );
 
 };
