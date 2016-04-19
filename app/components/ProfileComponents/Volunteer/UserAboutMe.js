@@ -16,7 +16,7 @@ const AboutMe = (props) => {
                 <strong>Skills</strong>
                 <ul>
                     {props.user.skills.map(function(skill, index){
-                        return <li key={ index }>{skill}</li>;
+                       return <li key={ index }>{skill}</li>;
                     })}
                 </ul>
                 <p>

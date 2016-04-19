@@ -1,19 +1,17 @@
 import React, { Component } from 'react';
 import {Link} from 'react-router';
-import HoursFilterContainer from '../../containers/HoursFilterContainer';
-import ProfileChart from '../../components/ProfileComponents/Volunteer/ProfileChart';
+import { Button, Grid, Row, Col, Panel } from 'react-bootstrap'
+import HoursFilterContainer from '../../containers/HoursFilterContainer/HoursFilterContainer';
+import FullHeaderContainer from '../../containers/Header/FullHeaderContainer'
+import FooterContainer from '../../containers/FooterContainer'
 
 class HoursView extends Component {
     render() {
         return (
-            <div id="outer">
-                <div className="col-sm-6 col-xs-12">
-                    <ProfileChart/>
-                    <h3>whats supposed to go here?</h3>
-                </div>
-                <div className="col-sm-6 col-xs-12">
-                    <HoursFilterContainer />
-                </div>
+            <div>
+            <FullHeaderContainer />
+            <HoursFilterContainer />
+            <FooterContainer />
             </div>
         );
     }

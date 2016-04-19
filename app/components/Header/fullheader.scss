@@ -1,16 +1,17 @@
 @import '../../styles/colors';
 
 .header {
-  height: 75px;
-  background: $grey-light;
-  border-bottom: 1px solid $blue-primary;
+  min-height: 80px;
+  background: $white;
+  border-bottom: 1px solid $grey-dark;
 
   .navDiv {
     .navList {
       float: left;
-      display: block;
       width: 600px;
-
+      .activeLink {
+        border-bottom: 2px solid $blue-accent
+      }
       li {
         display:inline;
         list-style:none;
@@ -18,6 +19,8 @@
         color: $blue-primary;
         font-size: 1.3em;
         padding: 0 2px 4px 4px;
+        height: 80px;
+        line-height: 80px;
 
         a {
           color: inherit;
@@ -35,8 +38,16 @@
 
   .logoDiv {
     img.logo {
+      padding-top: 7px;
       width: 60px;
       height: auto;
+      float: right;
     }
+  }
+  .rightText {
+    font-weight: 500;
+    font-size: 1.3em;
+    height: 80px;
+    line-height: 80px;
   }
 }

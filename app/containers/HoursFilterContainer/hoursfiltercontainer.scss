@@ -1,0 +1,57 @@
+@import '../../styles/colors';
+
+.wrapper {
+  margin: 0;
+  width: 100%;
+  background: $white;
+  -webkit-font-smoothing: antialiased;
+
+  .detailsBanner {
+    width: 100%;
+    padding: 0 30px 0 30px;
+    .header {
+      margin: 50px 0 50px 0;
+      min-height: 75px;
+      text-align: center;
+      h2 {
+        color: $blue-secondary;
+        font-size: 2.9em;
+      }
+    }
+  }
+  /** LEFT SIDE OF PAGE */
+
+  .hoursSection {
+    height: 600px;
+    .leftSide {
+      background: $white;
+      .leftTitle {
+        color: $blue-primary;
+        font-size: 1.5em;
+        font-weight: 500;
+        text-align: center;
+      }
+    }
+    
+
+    /** RIGHT SIDE OF PAGE */
+
+    .rightSide {
+      background: $white;
+      border-left-style: solid;
+      border-color: $grey-light;
+      .filterSelect {
+        padding-bottom: 10px;
+      }
+      .filterButton {
+        background: $green-accent;
+        color: $white;
+        border: none;
+        font-weight: 500;
+      }
+    }
+    .filterResults {
+      height: 400px;
+    }
+  }
+}

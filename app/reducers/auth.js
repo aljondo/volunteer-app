@@ -12,6 +12,8 @@ import { UPDATE_USER_REQUEST,
     UPDATE_USER_FAILURE,
     UPDATE_EMAIL,
     UPDATE_NAME,
+    UPDATE_PHONE,
+    UPDATE_BIO,
     CLEAR_UPDATE_FIELDS,
     REMOVE_UPDATE_ERROR,
     SET_UPDATE_ERROR } from '../actions/editUser'
@@ -57,6 +59,10 @@ export default (state = emptyState, action) => {
         return merge({}, state, {update: {fields: {email: action.email}}});
     case UPDATE_NAME:
         return merge({}, state, {update: {fields: {name: action.name}}});
+    case UPDATE_PHONE:
+        return merge({}, state, {update: {fields: {phone: action.phone}}});
+    case UPDATE_BIO:
+        return merge({}, state, {update: {fields: {bio: action.bio}}});
     case CLEAR_UPDATE_FIELDS:
         return extend({}, state, {update: {fields: {}}});
     case REMOVE_UPDATE_ERROR:

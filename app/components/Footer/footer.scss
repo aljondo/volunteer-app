@@ -23,20 +23,44 @@
   }
 
   .footer {
-    height: 440px;
     width: 100%;
     margin: 0;
     background-color: $blue-primary;
 
     .content {
-      height: 325px;
+      @media(min-width:768px) {
+        position: relative;
+      }
+      min-height: 400px;
+      .logo {
+        height: 200px;
+        margin-top: 30px;
+      }
+      .text {
+        margin-top: 20px;
+        .title {
+          text-align: center;
+          color: $grey-light;
+          font-size: 2.2em;
+          margin-bottom: 10px;
+        }
+        .pledge {
+          color: $grey-dark;
+          font-size: 1.3em;
+          text-align: justify;
+        }
+      }
     }
 
     .footerBar {
+      margin-top: 40px;
       border-top: 1px solid rgba($white, 0.2);
-      height: 100px;
+      min-height: 75px;
       padding-top: 30px;
-
+      @media(min-width:768px) {
+        position: absolute;
+        bottom: 0;
+      }
       .copyright {
         color: rgba($white, 0.5);
       }

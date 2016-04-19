@@ -10,8 +10,10 @@ class FullHeaderContainer extends Component {
         this.props.logout();
     }
     render() {
+        console.log(this.props.route);
         return (<FullHeader isAuthenticated = {this.props.isAuthenticated}
-                              logoutUser = {this.logoutUser.bind(this) } /> );
+                            logoutUser = {this.logoutUser.bind(this) }
+                            route={this.props.route}/>);
     }
 }
 
@@ -20,7 +22,8 @@ FullHeaderContainer.propTypes = {
 };
 
 const mapStateToProps = (state) => ({
-    isAuthenticated: state.auth.isAuthenticated
+    isAuthenticated: state.auth.isAuthenticated,
+    route: state.router.locationBeforeTransitions.pathname
 });
 
 const mapDispatchToProps = (dispatch) => (

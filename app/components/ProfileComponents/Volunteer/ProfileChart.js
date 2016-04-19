@@ -130,6 +130,25 @@ var options2 = {
 
     //String - A legend template
     legendTemplate : "<ul class=\"<%=name.toLowerCase()%>-legend\"><% for (var i=0; i<segments.length; i++){%><li><span style=\"background-color:<%=segments[i].fillColor%>\"></span><%if(segments[i].label){%><%=segments[i].label%><%}%></li><%}%></ul>"
+<<<<<<< HEAD
+=======
+
+}
+class ProfileChart extends Component {
+
+
+    render() {
+        return (
+            <div>
+                <div>
+                    <PieChart data={data2} options={options2}/>
+                    <LineChart data={data} options={options}/>
+                </div>
+               
+            </div>
+        );
+    }
+>>>>>>> 7839d798712dd85c5efa61ef66302d135983af58
 }
 // class ProfileChart extends Component {
 //

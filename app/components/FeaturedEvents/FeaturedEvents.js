@@ -5,7 +5,7 @@ const FeaturedEvents = (props) => (
         <thead>
             <tr>
               <th>
-                  <h3>Featured Event</h3>
+                  <h3>Featured Events</h3>
               </th>
             </tr>
         </thead>
