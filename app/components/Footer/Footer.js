@@ -15,7 +15,7 @@ const Footer = (props) => (
             <Grid>
                 <Row className={styles.content}>
                     <Col sm={4} xs={12}>
-                        <img src={'../../../static/images/logo.png'} className={styles.logo}/>
+                        <img src={'../../../static/images/logo.jpg'} className={styles.logo}/>
                     </Col>
                     <Col sm={8} xs={12} className={styles.text}>
                         <Col xs={12} className={styles.title}>
