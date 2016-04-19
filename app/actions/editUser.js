@@ -2,6 +2,8 @@ import { CALL_API, GET, POST } from '../middleware/api'
 
 export const UPDATE_NAME = 'UPDATE_NAME';
 export const UPDATE_EMAIL = 'UPDATE_EMAIL';
+export const UPDATE_PHONE = 'UPDATE_PHONE';
+export const UPDATE_BIO = 'UPDATE_BIO';
 //export const SET_POC = 'SET_POC';
 //export const SET_PASSWORD = 'SET_PASSWORD';
 //export const SET_PASSWORDVERIFY = 'SET_PASSWORDVERIFY';
@@ -57,6 +59,41 @@ export const updateEmail = (email) => {
     return ({
         type: UPDATE_EMAIL,
         email: {value: email, valid: valid, error: error}
+    })
+};
+
+export const updatePhone = (phone) => {
+    let valid = false;
+    let error = null;
+
+    let re = /^(?:(?:\+?1\s*(?:[.-]\s*)?)?(?:\(\s*([2-9]1[02-9]|[2-9][02-8]1|[2-9][02-8][02-9])\s*\)|([2-9]1[02-9]|[2-9][02-8]1|[2-9][02-8][02-9]))\s*(?:[.-]\s*)?)?([2-9]1[02-9]|[2-9][02-9]1|[2-9][02-9]{2})\s*(?:[.-]\s*)?([0-9]{4})(?:\s*(?:#|x\.?|ext\.?|extension)\s*(\d+))?$/;
+
+
+    if (phone.match(re)) {
+        valid = true;
+    } else {
+        error = "Invalid phone number."
+    }
+
+    return ({
+        type: UPDATE_PHONE,
+        phone: {value: phone, valid: valid, error: error}
+    })
+};
+
+export const updateBio = (bio) => {
+    let valid = false;
+    let error = null;
+
+    if (bio.length > 256) {
+        valid = true;
+    } else {
+        error = "Bio too long."
+    }
+
+    return ({
+        type: UPDATE_BIO,
+        phone: {value: bio, valid: valid, error: error}
     })
 };
 //
