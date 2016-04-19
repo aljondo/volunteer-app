@@ -12,7 +12,7 @@ class HourVerificationContainer extends Component {
         );
     }
 
-    confirmHours(index) {
+        confirmHours(index) {
         console.log("confirmed hours for user at index: " + index);
     }
 
