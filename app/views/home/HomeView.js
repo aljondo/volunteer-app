@@ -43,7 +43,7 @@ const HomePage = () => (
     <Row className={styles.sectionTwo}>
       <Grid>
         <Row className={styles.search}>
-          <EventSearchContainer homePage={true} icon="arrow-right"/>\
+          <EventSearchContainer homePage={true} icon={"arrow-right"}/>\
         </Row>
         <Row >
           <Col sm={12} md={6} className={styles.leftpanel}>

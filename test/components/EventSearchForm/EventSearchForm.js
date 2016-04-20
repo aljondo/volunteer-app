@@ -9,7 +9,7 @@ import TestUtils from "react-addons-test-utils"
 describe('EventSearchForm Component', () => {
     const renderedComponent = TestUtils.renderIntoDocument(
         <div>
-            <EventSearchForm />
+            <EventSearchForm icon={"search"}/>
         </div>
     );
 
