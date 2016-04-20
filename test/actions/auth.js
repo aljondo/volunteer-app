@@ -27,6 +27,7 @@ describe('Auth Actions', () => {
       expect(apiObj.endpoint).to.equal('login').that.is.a('string')
     })
 
+
     it('creates action with given data', () => {
       expect(apiObj.data).to.deep.equal(data)
     })
