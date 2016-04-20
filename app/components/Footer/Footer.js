@@ -7,7 +7,7 @@ const Footer = (props) => (
     <Row className={styles.wrapper}>
         {props.addTopSection ?
         <Row className={styles.topSection}>
-            <Col sm={12} md={7} lgOffset={4} smOffset={3} className={styles.topText}>
+            <Col sm={12} md={9} lgOffset={3} smOffset={2} className={styles.topText}>
                 <p>Americorps, helping the world one volunteer at a time.</p>
             </Col>
         </Row> : null}

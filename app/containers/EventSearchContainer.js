@@ -29,11 +29,16 @@ class EventSearchContainer extends Component {
     }
 
     componentWillUnmount(){
-        this.props.resetSearchEvents();
+        if (!this.props.homePage) {
+            this.props.resetSearchEvents();
+        }
     }
 
     searchForEvents() {
         this.props.fetchSearchEvents();
+        if (this.props.homePage) {
+            this.props.pushRoute("/search");
+        }
     }
 
     onAdvancedClick() {
@@ -55,39 +60,35 @@ class EventSearchContainer extends Component {
 
     render() {
         return (
-            <Grid id="grid">
+            <Row>
                 <Row>
-                    <Col xs={12}>
-                        <h1>Find an Event</h1>
-                    </Col>
-                    <Col xs={12}>
+                    <Col xs={10} xsOffset={1}>
                         <div>
-                            <EventSearchForm categoryChange={this.categoryChange.bind(this)}
-                                             neighborhoodChange={this.neighborhoodChange.bind(this)}/>
-                        </div>
-                    </Col>
-                    <Col xs={12}>
-                        <a onClick={this.onAdvancedClick.bind(this)}>Advanced Search Options</a>
-                        { this.state.advancedSearch ? <AdvancedSearch /> : null }
-                    </Col>
-                    <Col xs={12}>
-                        <div>
-                            <Button onClick={this.searchForEvents.bind(this)} bsStyle="primary">Search</Button>
+                            <EventSearchForm category={this.props.category}
+                                             neighborhood={this.props.neighborhood}
+                                             categoryChange={this.categoryChange.bind(this)}
+                                             neighborhoodChange={this.neighborhoodChange.bind(this)}
+                                             searchClick={this.searchForEvents.bind(this)}
+                                             icon={this.props.icon}/>
                         </div>
                     </Col>
                 </Row>
-                <Row>
-                    <EventSearchResults events={this.props.events} />
-                </Row>
-            </Grid>
+                {this.props.homePage ? null :
+                    <Row>
+                        <EventSearchResults events={this.props.events}/>
+                    </Row>
+                }
+            </Row>
         );
     }
 }
 
 EventSearchContainer.propTypes = {
     events: PropTypes.array.isRequired,
-    category: PropTypes.object,
-    neighborhood: PropTypes.object
+    category: PropTypes.string,
+    neighborhood: PropTypes.string,
+    homePage: PropTypes.bool,
+    icon: PropTypes.string.isRequired,
 };
 
 const mapDispatchToProps = (dispatch) => (
