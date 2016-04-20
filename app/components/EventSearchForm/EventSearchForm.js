@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Input, Grid, Row, Col } from 'react-bootstrap'
+import Icon from 'react-fa';
 import styles from './eventsearchform.scss'
 
 const CategoryLocationForm = (props) => {
@@ -50,18 +51,33 @@ const CategoryLocationForm = (props) => {
         {key: "greater", value: "Greater Boston Area/Outside City"}
         ];
     return(
-            <Row>
-                <Col md={12} className={styles.search}>
-                    <form>
-                        <h3>I want to help with</h3>
-                        <Input onChange={props.categoryChange} type="select" placeholder="Category">
-                          {genCategoryDropdown(categories)}
-                        </Input>
-                        <h3> in </h3>
-                        <Input onChange={props.neighborhoodChange} type="select" placeholder="Neighborhood">
-                          {genNeighborhoodDropdown(neighborhoods)}
-                        </Input>
-                    </form>
+            <Row className={styles.wrapper}>
+                <Col md={10} xs={12} className={styles.formCol}>
+                    <Col md={4} xs={5} className={styles.formCol}>
+                        <h3 className={styles.formItem}>I want to help with</h3>
+                    </Col>
+                    <Col md={3} xs={7} className={styles.formCol}>
+                        <div className={styles.formItem}>
+                            <Input onChange={props.categoryChange} type="select" placeholder="Category">
+                              {genCategoryDropdown(categories)}
+                            </Input>
+                        </div>
+                    </Col>
+                    <Col md={1} xs={5} className={styles.formCol}>
+                        <h3 className={styles.formItem}>in</h3>
+                    </Col>
+                    <Col md={4} xs={7} className={styles.formCol}>
+                        <div className={styles.formItem}>
+                            <Input onChange={props.neighborhoodChange} type="select" placeholder="Neighborhood">
+                              {genNeighborhoodDropdown(neighborhoods)}
+                            </Input>
+                        </div>
+                    </Col>
+                </Col>
+                <Col md={2} xs={12} className={styles.goSearchCol}>
+                    <div className={styles.goSearch} onClick={props.searchClick}>
+                        <Icon name="arrow-right" size={'3x'} className={styles.icon}/>
+                    </div>
                 </Col>
             </Row>
     )

@@ -41,38 +41,15 @@
 }
 
 .sectionTwo {
-  height: 600px;
   width: 100%;
-  background-color: $white-light;
+  background-color: $grey-light;
 
 	.search {
-		background-color: $green-accent;
-		height: 86px;
-		margin-top: -45px;
-		border-radius: 10px;
-		padding-left: 30px;
+	  	margin-top: -45px;
 	}
 
-	.goSearch {
-		background-color: rgba($blue-secondary, 0.16);
-		height: 86px;
-    float: right;
-    width: 100px;
-    margin-right: -30px;
-    border-radius: 0 10px 10px 0;
-		border-left: 1px solid rgba($blue-secondary, 0.1);
-
-		&:hover{
-			cursor: pointer;
-			background-color: rgba($blue-secondary, 0.12);
-		}
-
-		.arrow {
-			color: rgba($blue-secondary, 0.25);
-			margin: 20px 35px;
-		}
-	}
   .holdinfo {
+    background: #ffffff;
 	align-items: center;
 	border: solid thick $green-accent ;
 	margin: 20px 35px;
