@@ -4,11 +4,10 @@
 import React, { Component } from 'react';
 import {Link} from 'react-router'
 import HomeBlurb from '../../components/HomeBlurb/HomeBlurb'
-import EventSearchContainer from '../../containers/EventSearchcontainer'
+import EventSearchContainer from '../../containers/EventSearchContainer'
 import HomeButtons from '../../components/HomeButtons/HomeButtons'
 import SimpleHeaderContainer from '../../containers/Header/SimpleHeaderContainer'
 import FooterContainer from '../../containers/FooterContainer'
-import EventSearchHomeContainer from '../../containers/EventSearchHome'
 import styles from './homeview.scss'
 import FeaturedEventsContainer from '../../containers/FeaturedEventsContainer'
 import { Grid, Col, Row, Button  } from 'react-bootstrap'
@@ -44,7 +43,7 @@ const HomePage = () => (
     <Row className={styles.sectionTwo}>
       <Grid>
         <Row className={styles.search}>
-          <EventSearchContainer homePage={true}/>\
+          <EventSearchContainer homePage={true} icon="arrow-right"/>\
         </Row>
         <Row >
           <Col sm={12} md={6} className={styles.leftpanel}>

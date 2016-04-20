@@ -29,7 +29,9 @@ class EventSearchContainer extends Component {
     }
 
     componentWillUnmount(){
-        this.props.resetSearchEvents();
+        if (!this.props.homePage) {
+            this.props.resetSearchEvents();
+        }
     }
 
     searchForEvents() {
@@ -62,9 +64,12 @@ class EventSearchContainer extends Component {
                 <Row>
                     <Col xs={10} xsOffset={1}>
                         <div>
-                            <EventSearchForm categoryChange={this.categoryChange.bind(this)}
+                            <EventSearchForm category={this.props.category}
+                                             neighborhood={this.props.neighborhood}
+                                             categoryChange={this.categoryChange.bind(this)}
                                              neighborhoodChange={this.neighborhoodChange.bind(this)}
-                                             searchClick={this.searchForEvents.bind(this)}/>
+                                             searchClick={this.searchForEvents.bind(this)}
+                                             icon={this.props.icon}/>
                         </div>
                     </Col>
                 </Row>
@@ -80,9 +85,10 @@ class EventSearchContainer extends Component {
 
 EventSearchContainer.propTypes = {
     events: PropTypes.array.isRequired,
-    category: PropTypes.object,
-    neighborhood: PropTypes.object,
-    homePage: PropTypes.bool
+    category: PropTypes.string,
+    neighborhood: PropTypes.string,
+    homePage: PropTypes.bool,
+    icon: PropTypes.string.isRequired,
 };
 
 const mapDispatchToProps = (dispatch) => (

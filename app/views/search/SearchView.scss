@@ -1,7 +1,23 @@
+@import '../../styles/colors';
 
 .searchGrid {
 	width: 100%;
 	margin: 0;
 	padding: 0;
 
+	.title {
+		border-top: 2px solid $grey-dark;
+		border-bottom: 2px solid $grey-dark;
+		color: $grey-light;
+		background: linear-gradient($blue-primary, $grey-dark 50%);
+		min-height: 150px;
+		.text {
+			margin-left: 15px;
+		}
+	}
+
+	.search {
+		width: 100%;
+		margin-top: -45px;
+	}
 }

@@ -13,12 +13,14 @@ class SearchView extends Component {
         return (
             <Grid className={styles.searchGrid}>
                 <FullHeaderContainer />
-                <Row>
+                <Row className={styles.title}>
                     <Col xs={12}>
-                        <h1>Find an Event</h1>
+                        <h1 className={styles.text}>What are you interested in?</h1>
                     </Col>
                 </Row>
-                <EventSearchContainer />
+                <Row className={styles.search}>
+                    <EventSearchContainer icon="search"/>
+                </Row>
                 <Link to="/event/1111">Event Details Example Link</Link>
                 <Link to="/organization/5432">External Org Example Link</Link>
                 <FooterContainer />

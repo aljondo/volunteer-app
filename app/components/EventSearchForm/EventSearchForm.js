@@ -5,7 +5,6 @@ import styles from './eventsearchform.scss'
 
 const CategoryLocationForm = (props) => {
     const categories = [
-        {key: "first", value: "Category"},
         {key: "youth", value: "Youth"},
         {key: "seniors", value: "Seniors"},
         {key: "education", value: "Education"},
@@ -24,7 +23,6 @@ const CategoryLocationForm = (props) => {
         {key: "disabilities", value: "People with Disabilities"}
         ];
     const neighborhoods = [
-        {key: "first", value: "Neighborhood"},
         {key: "allston", value: "Allston"},
         {key: "backbay", value: "Back Bay"},
         {key: "bayvillage", value: "Bay Village"},
@@ -59,7 +57,8 @@ const CategoryLocationForm = (props) => {
                     <Col md={3} xs={7} className={styles.formCol}>
                         <div className={styles.formItem}>
                             <Input onChange={props.categoryChange} type="select" placeholder="Category">
-                              {genCategoryDropdown(categories)}
+                                <option value="">All Categories</option>
+                                {genCategoryDropdown(categories, props.category)}
                             </Input>
                         </div>
                     </Col>
@@ -69,29 +68,47 @@ const CategoryLocationForm = (props) => {
                     <Col md={4} xs={7} className={styles.formCol}>
                         <div className={styles.formItem}>
                             <Input onChange={props.neighborhoodChange} type="select" placeholder="Neighborhood">
-                              {genNeighborhoodDropdown(neighborhoods)}
+                                <option value="">Every Neighborhood</option>
+                                {genNeighborhoodDropdown(neighborhoods, props.neighborhood)}
                             </Input>
                         </div>
                     </Col>
                 </Col>
                 <Col md={2} xs={12} className={styles.goSearchCol}>
                     <div className={styles.goSearch} onClick={props.searchClick}>
-                        <Icon name="arrow-right" size={'3x'} className={styles.icon}/>
+                        <Icon name={props.icon} size={'3x'} className={styles.icon}/>
                     </div>
                 </Col>
             </Row>
     )
 };
 
-const genCategoryDropdown = (categories) => (
-    categories.map((category, index) => (
-        <option value={category.key} key={category.key}>{category.value}</option>
-    ))
+const genCategoryDropdown = (categories, selectedCategory) => (
+    categories.map(function(category, index) {
+        if (category.key == selectedCategory) {
+            return(
+                <option value={category.key} key={category.key} selected>{category.value}</option>
+            )
+        } else {
+            return (
+                <option value={category.key} key={category.key}>{category.value}</option>
+            )
+        }
+    })
 );
-const genNeighborhoodDropdown = (neighborhoods) => (
-    neighborhoods.map((neighborhood, index) => (
-        <option value={neighborhood.key} key={neighborhood.key}>{neighborhood.value}</option>
-    ))
+
+const genNeighborhoodDropdown = (neighborhoods, selectedNeighborhood) => (
+    neighborhoods.map(function(neighborhood, index) {
+        if (neighborhood.key == selectedNeighborhood) {
+            return (
+                <option value={neighborhood.key} key={neighborhood.key} selected>{neighborhood.value}</option>
+            )
+        } else {
+            return (
+                <option value={neighborhood.key} key={neighborhood.key}>{neighborhood.value}</option>
+            )
+        }
+    })
 );
 
 export default CategoryLocationForm

@@ -17,16 +17,22 @@ export function resetSearchEvents() {
 }
 
 export const setCategory = (category) => {
+    if (category.length == 0){
+        category = null;
+    }
     return ({
         type: SET_CATEGORY,
-        category: {value: category, valid: true, error: null}
+        category: category
     })
 };
 
 export const setNeighborhood = (neighborhood) => {
+    if (neighborhood.length == 0){
+        neighborhood = null;
+    }
     return ({
         type: SET_NEIGHBORHOOD,
-        neighborhood: {value: neighborhood, valid: true, error: null}
+        neighborhood: neighborhood
     })
 };
 
