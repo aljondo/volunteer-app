@@ -8,10 +8,11 @@ import EventSearchForm from '../../components/EventSearchForm/EventSearchForm'
 import HomeButtons from '../../components/HomeButtons/HomeButtons'
 import SimpleHeaderContainer from '../../containers/Header/SimpleHeaderContainer'
 import FooterContainer from '../../containers/FooterContainer'
+import EventSearchHomeContainer from '../../containers/EventSearchHome'
 import styles from './homeview.scss'
 import FeaturedEventsContainer from '../../containers/FeaturedEventsContainer'
 import { Grid, Col, Row, Button  } from 'react-bootstrap'
-import Icon from 'react-fa';
+
 
 //The twitter feed must be personalized via settings -> widgets in the twitter profile current size @ 400px
 const Twitter = () => (
@@ -43,16 +44,7 @@ const HomePage = () => (
     <Row className={styles.sectionTwo}>
       <Grid>
         <Row>
-          <Col xs={12} md={10} mdOffset={1} lg={8} lgOffset={2} className={styles.search}>
-            <Col xs={11}>
-              <EventSearchForm />
-            </Col>
-            <Col xs={1}>
-              <div className={styles.goSearch}>
-               <Icon name="arrow-right" size={'3x'} className={styles.arrow}/>
-              </div>
-            </Col>
-          </Col>
+            <EventSearchHomeContainer />
         </Row>
         <Row >
           <Col sm={12} md={6} className={styles.leftpanel}>
