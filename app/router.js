@@ -28,7 +28,7 @@ const isAuthAdmin = UserAuthWrapper({
   wrapperDisplayName: 'IsAuthAdmin',
   predicate: auth => auth.isAuthenticated & auth.role === 'admin'
 })
-/**isAuth(ProfileView)*/
+
 const routes = (
     <Route path="/" component={App}>
         <IndexRoute component={HomeView}/>

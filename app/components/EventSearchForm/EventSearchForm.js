@@ -4,6 +4,7 @@ import styles from './eventsearchform.scss'
 
 const CategoryLocationForm = (props) => {
     const categories = [
+        {key: "first", value: "Category"},
         {key: "youth", value: "Youth"},
         {key: "seniors", value: "Seniors"},
         {key: "education", value: "Education"},
@@ -22,6 +23,7 @@ const CategoryLocationForm = (props) => {
         {key: "disabilities", value: "People with Disabilities"}
         ];
     const neighborhoods = [
+        {key: "first", value: "Neighborhood"},
         {key: "allston", value: "Allston"},
         {key: "backbay", value: "Back Bay"},
         {key: "bayvillage", value: "Bay Village"},
