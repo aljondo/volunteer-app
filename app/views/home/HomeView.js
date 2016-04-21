@@ -24,7 +24,7 @@ const Twitter = () => (
     </a>
 )
 const HomePage = () => (
-  <Row className={styles.homeView}>
+  <div className={styles.homeView}>
     <Row className={styles.sectionOne}>
       <Grid>
         <SimpleHeaderContainer />
@@ -71,7 +71,7 @@ const HomePage = () => (
       </Grid>
     </Row>
     <FooterContainer />
-  </Row>
+  </div>
 );
 
 export default HomePage

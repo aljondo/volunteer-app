@@ -8,62 +8,74 @@ import UpcomingEvents from '../../../components/ProfileComponents/Volunteer/Even
 import EventHistory from '../../../components/ProfileComponents/Volunteer/EventDashboard/EventHistory'
 import FeaturedEventsContainer from '../../FeaturedEventsContainer'
 import ProfileChart from '../../../components/ProfileComponents/Volunteer/ProfileChart'
+import Icon from 'react-fa';
 
 class UserProfileContainer extends Component {
 
-    componentDidMount() {
-        //TODO maybe use this
+    //TODO: Move to our state container, no props are passed
+    constructor(props) {
+      super(props);
+      this.state = {
+          toggle: "upcoming"
+      };
     }
 
+    // toggle switches to other binary state
+    toggleEvents(state) {
+      this.setState({toggle: state});
+    }
+
+    // TODO: For the most part there should be not templating/jsx here, should
+    // go into a stateless component. Each panel could be a component.
     render() {
         return (
-            <Grid className={styles.wrapper}>
-                <Row>
-                    <Col xs={12} sm={3} className={styles.aboutMe}>
+                <Row className={styles.profileContainer}>
+
+                    <Col xs={12} lg={3} className={styles.aboutPanel}>
                         <AboutMeContainer />
                     </Col>
-                    <Col xs={12} sm={6}>
-                        <h2> Hello there, {this.props.user.name} </h2>
-                        <div>
-                            <div>
-                                <h1> Upcoming Events</h1>
-                                <UpcomingEvents />
-                            </div>
+
+
+                    <Col xs={12} lg={6}  className={styles.eventsPanel}>
+
+
+                        <div className={styles.eventToggle}>
+                          {/* wrap in function to evaluate later*/}
+                          <div  className={(this.state.toggle === 'upcoming') ? styles.accent : styles.item} onClick={()=>(this.toggleEvents("upcoming"))}>  Upcoming Events</div>
+                          <div  className={(this.state.toggle === 'history') ? styles.accent : styles.item} onClick={()=>(this.toggleEvents("history"))}>  Past Events </div>
                         </div>
-                        <div></div>
+
                         <div>
-                            <h1> Past Events </h1>
-                            <EventHistory />
+                          {(this.state.toggle === 'upcoming') ? <UpcomingEvents /> : <EventHistory /> }
                         </div>
+
                     </Col>
-                    <Col xs={12} sm={3}>
-                        <br/>
+
+
+                    {/* TODO: hours not connected */}
+                    <Col xs={12} lg={3} className={styles.rightPanel}>
                         <FeaturedEventsContainer />
-                        <h3>Hours</h3>
-                        <br/>
-                        <h3>All Time: 32</h3>
-                        <br/>
-                        <h3> Last Month: 6</h3>
-                        <ProfileChart />
+                        <div className={styles.hours}>
+                          <h3 className={styles.title}> <Icon name="clock-o" size={'1x'} /> Hours</h3>
+                          <p><bold>All Time:</bold> 32</p>
+                          <p><bold>Last Month:</bold>  6</p>
+                        </div>
+                        <ProfileChart className={styles.chart} />
                         <Link to="/hours">
                             <Button bsStyle="primary">More details</Button>
                         </Link>
                     </Col>
                 </Row>
-            </Grid>
         )
     }
 }
 
 UserProfileContainer.propTypes = {
-    user: PropTypes.object.isRequired
+    toggle: PropTypes.string.isRequired
 };
 
+UserProfileContainer.defaultProps = {
+    toggle: "upcoming"
+};
 
-const mapStateToProps = (state) => (
-{
-    user: state.auth.user
-}
-);
-
-export default connect(mapStateToProps)(UserProfileContainer)
+export default UserProfileContainer
