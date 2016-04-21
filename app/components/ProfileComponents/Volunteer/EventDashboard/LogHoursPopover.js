@@ -7,10 +7,10 @@ const LogHoursPopover = (props) => (
     <Popover id="hourspop" title="Log Hours">
         <div>
             <form className="form-horizontal">
-                <Input type="text" label="Start Time:" labelClassName="col-xs-2" wrapperClassName="col-xs-5"/>
-                <Input type="text" label="End Time:" labelClassName="col-xs-2" wrapperClassName="col-xs-5"/>
+                <Input type="text" label="Start Time:" onChange={props.startChange} labelClassName="col-xs-2" wrapperClassName="col-xs-5"/>
+                <Input type="text" label="End Time:" onChange={props.endChange} labelClassName="col-xs-2" wrapperClassName="col-xs-5"/>
             </form>
-            <Button> Submit </Button>
+            <Button onClick={props.submitHours}> Submit </Button>
         </div>
     </Popover>
 );
