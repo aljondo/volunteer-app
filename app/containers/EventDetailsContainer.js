@@ -54,12 +54,6 @@ EventDetailsContainer.propTypes = {
     user: PropTypes.object.isRequired
 };
 
-EventDetails.defaultProps = {
-    event: {
-        start_at: "",
-    }
-};
-
 const mapDispatchToProps = (dispatch) => (
     bindActionCreators({fetchEvent, signUpForEvent, unsignUpForEvent,  pushRoute}, dispatch)
 );
