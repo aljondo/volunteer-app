@@ -9,7 +9,7 @@
 		border-top: 2px solid $grey-dark;
 		border-bottom: 2px solid $grey-dark;
 		color: $grey-light;
-		background: linear-gradient($blue-primary, $grey-dark 90%);
+		background: linear-gradient($blue-dark-overlay 10%, rgba($blue-dark-overlay, 0.75) 140%), url("../../../static/dist/images/swirl_pattern.jpg") repeat center center;
 		min-height: 150px;
 		.text {
 			margin-left: 15px;

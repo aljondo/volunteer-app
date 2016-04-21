@@ -34,7 +34,7 @@ const HomePage = () => (
               <h1> Volunteer Today </h1>
               </Row>
               <Row className={styles.subHeading}>
-                <h3> Lorem ipsum dolor sit amet, consectetur adipiscing elit vestibulum. Sed a sapien imperdiet metus mattis dictum vel vitae felis sagittis.</h3>
+                <h3> We are a civil society program supported by the U.S. federal government, foundations, and other donors engaging adults in involved public service work with a goal of helping others and the community.</h3>
                 </Row>
           </Col>
         </Row>

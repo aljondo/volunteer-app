@@ -11,6 +11,9 @@
 
   .navDiv {
     .navList {
+      .activeLink {
+        border-bottom: 2px solid $blue-accent
+      }
       float: right;
       display: block;
       width: 450px;
