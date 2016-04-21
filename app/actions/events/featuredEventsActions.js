@@ -17,7 +17,7 @@ export function fetchFeaturedEvents() {
     return {
         [CALL_API]: {
             types: [ FETCH_FEATURED_EVENTS_REQUEST, FETCH_FEATURED_EVENTS_SUCCESS, FETCH_FEATURED_EVENTS_FAILURE ],
-            endpoint: `featured-events`,
+            endpoint: `event/featured`,
             method: GET
         }
     }

@@ -1,4 +1,6 @@
 import React from 'react'
+import { Link } from 'react-router'
+
 
 const FeaturedEvents = (props) => (
     <table className = "table">
@@ -19,7 +21,9 @@ const genEventList = (events) => (
     events.map((event, index) => (
         <tr key={ index }>
             <td>
-                <a href="#">{event.name}</a>
+                <Link to={'/event/'+ event.id}>
+                {event.name}
+                </Link>
                 <strong>{event.date}</strong>
             </td>
         </tr>
