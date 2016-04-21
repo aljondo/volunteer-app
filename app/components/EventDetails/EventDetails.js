@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import styles from './eventdetails.scss'
 import { Button, Grid, Row, Col, Panel } from 'react-bootstrap'
 import GoogleMapContainer from '../../containers/GoogleMapContainer'
+import { Link } from 'react-router'
 
 
 const EventDetails = (props) => (
@@ -9,7 +10,9 @@ const EventDetails = (props) => (
         <Row className={styles.row}>
             <Col xs={12} className={styles.detailsBanner}>
                 <div className={styles.header}>
+                    <Link to={'/organization/'+ props.event.org}>
                     <h2>Organization name could go here</h2>
+                     </Link>
                 </div>
             </Col>
             <Col xs={12} sm={6} className={styles.leftSide}>
