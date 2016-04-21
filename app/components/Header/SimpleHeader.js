@@ -27,6 +27,9 @@ const SimpleHeader = (props) => (
                             <Link to="/login"> Login </Link>
                         </li> }
                     {props.isAuthenticated ? <li> <Link onClick={props.logoutUser} to="/"> Logout </Link> </li> : null }
+                    <li>
+                        <Link to="/faq"> FAQ </Link>
+                    </li>
                     <li><a href="http://www.nationalservice.gov/programs/americorps/americorps-pledge"> About </a></li>
                 </ul>
             </div>

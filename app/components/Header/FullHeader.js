@@ -27,6 +27,9 @@ const FullHeader = (props) => (
                         <li>
                             <Link onClick={props.logoutUser} to="/"> Logout </Link>
                         </li> : null }
+                    <li className={props.route == "/faq" ? styles.activeLink : ""}>
+                        <Link to="/faq"> FAQ </Link>
+                    </li>
                     <li className={props.route == "/about" ? styles.activeLink : ""}>
                         <a href="http://www.nationalservice.gov/programs/americorps/americorps-pledge"> About </a>
                     </li>
