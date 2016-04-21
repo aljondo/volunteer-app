@@ -17,7 +17,7 @@ const EventSearchResults = (props) => (
                             </Col>
                             <Col xs={6} className={styles.date}>
                                 <div className={styles.text}>
-                                    {event.start_at.split(/[ \-\:]+/).splice(0,3).reverse().join("/")}
+                                    {event.start_at ? event.start_at.split(/[ \-\:]+/).splice(0,3).reverse().join("/") : null}
                                 </div>
                             </Col>
                             <Col xs={12} className={styles.about}>
