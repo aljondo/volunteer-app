@@ -1,6 +1,7 @@
 import React, { PropTypes, Component } from 'react'
 import FeaturedEvents from "../components/FeaturedEvents/FeaturedEvents";
 import { fetchFeaturedEvents } from "../actions/events/featuredEventsActions";
+import { Row } from 'react-bootstrap'
 import { connect } from 'react-redux'
 
 class FeaturedEventsContainer extends Component {
@@ -12,7 +13,11 @@ class FeaturedEventsContainer extends Component {
   }
 
   render() {
-    return <FeaturedEvents events={this.props.events}/>
+    return (
+        <Row>
+          <FeaturedEvents events={this.props.events}/>
+        </Row>
+    )
   }
 }
 

@@ -8,6 +8,7 @@ import SearchView from 'views/search/SearchView'
 import HoursView from 'views/hours/HoursView'
 import LoginView from 'views/login/LoginView'
 import RegisterView from 'views/register/RegisterView'
+import FaqView from 'views/faq/FaqView'
 import ApprovalView from 'views/approval/ApprovalView'
 import EventDetailsView from 'views/eventDetails/EventDetailsView'
 import OrganizationView from 'views/organization/OrganizationView'
@@ -37,6 +38,7 @@ const routes = (
         <Route path="search" component={SearchView}/>
         <Route path="login" component={LoginView}/>
         <Route path="register" component={RegisterView}/>
+        <Route path="faq" component={FaqView}/>
         <Route path="approval" component={ApprovalView}/>
         <Route path="event/:eventId" component={EventDetailsView}/>
         <Route path="organization" component={OrganizationView}/>

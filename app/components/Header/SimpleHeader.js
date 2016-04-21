@@ -8,7 +8,7 @@ const SimpleHeader = (props) => (
         <Col sm={4} md={3} className={styles.logoDiv}>
             <img src={'/images/logo.png'}   className={styles.logo}/>
         </Col>
-        <Col sm={8} md={7} mdOffset={2} className={styles.navDiv}>
+        <Col sm={8} md={8} mdOffset={1} className={styles.navDiv}>
             {props.isAuthenticated ? null :
             <div className={styles.signup}>
                 <Link to="/register">
