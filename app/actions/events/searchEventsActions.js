@@ -40,7 +40,7 @@ export function fetchSearchEvents() {
     return {
         [CALL_API]: {
             types: [ FETCH_EVENTS_REQUEST, FETCH_EVENTS_SUCCESS, FETCH_EVENTS_FAILURE ],
-            endpoint: `event`,
+            endpoint: `event/get_all`,
             method: GET
         }
     }
