@@ -17,12 +17,17 @@ const SimpleHeader = (props) => (
             </div> }
             <div className={styles.navList}>
                 <ul>
-                    <li> <Link to="/"> Home </Link> </li>
+                    <li className={props.route == "/" ? styles.activeLink : ""}>
+                        <Link to="/"> Home </Link>
+                    </li>
                     {props.isAuthenticated ? <li> <Link to="/profile"> Profile </Link> </li> : null }
-                    <li> <Link to="#"> About </Link> </li>
                     <li> <Link to="/search"> Search  </Link> </li>
-                    {props.isAuthenticated ? null : <li> <Link to="/login"> Login </Link> </li> }
+                    {props.isAuthenticated ? null :
+                        <li className={props.route == "/login" ? styles.activeLink : ""}>
+                            <Link to="/login"> Login </Link>
+                        </li> }
                     {props.isAuthenticated ? <li> <Link onClick={props.logoutUser} to="/"> Logout </Link> </li> : null }
+                    <li><a href="http://www.nationalservice.gov/programs/americorps/americorps-pledge"> About </a></li>
                 </ul>
             </div>
         </Col>

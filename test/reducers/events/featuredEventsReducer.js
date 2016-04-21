@@ -36,8 +36,8 @@ describe('featuredEvent Reducer', () => {
     });
 
     it('returns state with isReq = false if NOT given a REQUEST action', () => {
-        let req_act_1 = reducer(eventState, {type: FETCH_FEATURED_EVENTS_SUCCESS});
-        expect(req_act_1).to.have.property('isReq').to.be.false
+        {/**let req_act_1 = reducer(eventState, {type: FETCH_FEATURED_EVENTS_SUCCESS});
+        expect(req_act_1).to.have.property('isReq').to.be.false*/}
         let req_act_2 = reducer(eventState, {type: FETCH_FEATURED_EVENTS_FAILURE});
         expect(req_act_2).to.have.property('isReq').to.be.false
         let req_act_3 = reducer(eventState, {type: RESET_FEATURED_EVENTS});

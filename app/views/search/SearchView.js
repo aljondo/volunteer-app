@@ -21,8 +21,6 @@ class SearchView extends Component {
                 <Row className={styles.search}>
                     <EventSearchContainer icon={"search"}/>
                 </Row>
-                <Link to="/event/1111">Event Details Example Link</Link>
-                <Link to="/organization/5432">External Org Example Link</Link>
                 <FooterContainer />
             </Grid>
         );
