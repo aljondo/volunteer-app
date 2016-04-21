@@ -6,6 +6,8 @@
 	padding: 0;
 
 	.title {
+		width: 100%;
+		margin: 0;
 		border-top: 2px solid $grey-dark;
 		border-bottom: 2px solid $grey-dark;
 		color: $grey-light;
@@ -18,6 +20,6 @@
 
 	.search {
 		width: 100%;
-		margin-top: -45px;
+		margin: -45px 0 0 0;
 	}
 }

@@ -14,16 +14,16 @@ class GoogleMapContainer extends Component {
     }
 
     componentDidMount() {
-        this.updateMap(this.props.address);
+        this.updateMap(this.props.address, this.props.city, this.props.state);
     }
 
     // Sometimes the props are empty the first time this component is called
     componentWillReceiveProps(nextProps){
-        this.updateMap(nextProps.address);
+        this.updateMap(nextProps.address , nextProps.city, nextProps.state);
     }
 
-    updateMap(address){
-        geocoder.geocode({"address": address}, function(results) {
+    updateMap(address, city, state){
+        geocoder.geocode({"address": address + " " + city + " " + state}, function(results) {
             if (results[0]) {
                 this.setState({
                     display: <GoogleMap
@@ -44,11 +44,15 @@ class GoogleMapContainer extends Component {
 }
 
 GoogleMapContainer.propTypes = {
-    address: PropTypes.string.isRequired
+    address: PropTypes.string.isRequired,
+    city: PropTypes.string,
+    state: PropTypes.string
 };
 
 GoogleMapContainer.defaultProps = {
-    address: ""
+    address: "",
+    city: "",
+    state: ""
 };
 
 export default connect()(GoogleMapContainer)

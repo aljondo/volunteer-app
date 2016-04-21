@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import styles from './eventdetails.scss'
 import { Button, Grid, Row, Col, Panel } from 'react-bootstrap'
+import Icon from 'react-fa';
 import GoogleMapContainer from '../../containers/GoogleMapContainer'
 import { Link } from 'react-router'
 
@@ -11,7 +12,8 @@ const EventDetails = (props) => (
             <Col xs={12} className={styles.detailsBanner}>
                 <div className={styles.header}>
                     <Link to={'/organization/'+ props.event.org}>
-                    <h2>Organization name could go here</h2>
+                        <h2>Organization name could go here</h2>
+                        <Icon className={styles.icon} name='arrow-right' size={'3x'}/>
                      </Link>
                 </div>
             </Col>
@@ -23,27 +25,27 @@ const EventDetails = (props) => (
                     </Col>
                     <Col xs={12} className={styles.dateContainer}>
                        <div className={styles.dateLabel}>When:</div>
-                       <div className={styles.dateValue}>{props.event.date}</div>
+                       <div className={styles.dateValue}>{props.event.start_at ? props.event.start_at.split(/[ \-\:]+/).splice(0,3).reverse().join("/") : null}</div>
                     </Col>
                     <Col xs={12} className={styles.descriptionContainer}>
                         <div className={styles.descriptionLabel}>Description:</div>
-                        <div className={styles.descriptionValue}>This is where the event description will go</div>
+                        <div className={styles.descriptionValue}>{props.event.about}</div>
                     </Col>
-                    <Col xs={12} className={styles.skillsContainer}>
+                    {/** <Col xs={12} className={styles.skillsContainer}>
                         <div className={styles.skillsLabel}>Relevant skills/Interests:</div>
-                        <div className={styles.skillsValue}>{props.event.details}</div>
-                    </Col>
+                        <div className={styles.skillsValue}></div>
+                    </Col> */}
                 </Row>
             </Col>
             <Col xs={12} sm={6} className={styles.rightSide}>
                 <Row>
                     <Col xs={12} className={styles.locationContainer}>
                         <div className={styles.locationLabel}>Location</div>
-                        <div className={styles.locationValue}>{props.event.location}</div>
+                        <div className={styles.locationValue}>{props.event.address} {props.event.city}, {props.event.state}</div>
                     </Col>
                     <Col xs={12}>
                         <div className={styles.mapContainer}>
-                            <GoogleMapContainer address={props.event.location}/>
+                            <GoogleMapContainer address={props.event.address} city={props.event.city} state={props.event.state}/>
                         </div>
                     </Col>
                     <Col xs={12}>

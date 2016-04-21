@@ -60,7 +60,7 @@ class EventSearchContainer extends Component {
 
     render() {
         return (
-            <Row styles={{width: "100%"}}>
+            <Row style={{width: "100%", margin: "0"}}>
                     <Col xs={10} xsOffset={1}>
                         <div>
                             <EventSearchForm category={this.props.category}
@@ -72,7 +72,7 @@ class EventSearchContainer extends Component {
                         </div>
                     </Col>
                 {this.props.homePage ? null :
-                    <Row>
+                    <Row style={{"width": "100%", "margin": "0"}}>
                         <EventSearchResults events={this.props.events}/>
                     </Row>
                 }
