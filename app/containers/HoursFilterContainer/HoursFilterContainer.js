@@ -3,6 +3,7 @@ import {Link} from 'react-router'
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
 import { fetchSearchEvents, resetSearchEvents } from "../../actions/events/searchEventsActions";
+import { fetchUsers } from '../../actions/users'
 import { push as pushRoute } from 'react-router-redux';
 import EventSearchResults from '../../components/EventSearchResults/EventSearchResults'
 import ProfileChart from '../../components/ProfileComponents/Volunteer/ProfileChart';
