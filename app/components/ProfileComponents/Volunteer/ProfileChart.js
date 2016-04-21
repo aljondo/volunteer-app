@@ -1,56 +1,58 @@
-﻿import React, { Component } from 'react';
+﻿/**
+ * Created by Shiyu on 4/2/2016.
+ */
+import React, { Component } from 'react';
 import {Link} from 'react-router';
-import {Button} from 'react-bootstrap'
-require('bootstrap/dist/css/bootstrap.css');
 var LineChart = require("react-chartjs").Line;
 var PieChart = require("react-chartjs").Pie;
 
-var data = {
-    labels: ["January", "February", "March", "April", "May", "June", "July"],
-    datasets: [
-        {
-            label: "My First dataset",
-            fillColor: "rgba(220,220,220,0.2)",
-            strokeColor: "rgba(220,220,220,1)",
-            pointColor: "rgba(220,220,220,1)",
-            pointStrokeColor: "#fff",
-            pointHighlightFill: "#fff",
-            pointHighlightStroke: "rgba(220,220,220,1)",
-            data: [65, 59, 80, 81, 56, 55, 40]
-        },
-        {
-            label: "My Second dataset",
-            fillColor: "rgba(151,187,205,0.2)",
-            strokeColor: "rgba(151,187,205,1)",
-            pointColor: "rgba(151,187,205,1)",
-            pointStrokeColor: "#fff",
-            pointHighlightFill: "#fff",
-            pointHighlightStroke: "rgba(151,187,205,1)",
-            data: [28, 48, 40, 19, 86, 27, 90]
-        }
-    ]
-};
+/* fake data
+ var data = {
+ labels: ["January", "February", "March", "April", "May", "June", "July"],
+ datasets: [
+ {
+ label: "My First dataset",
+ fillColor: "rgba(220,220,220,0.2)",
+ strokeColor: "rgba(220,220,220,1)",
+ pointColor: "rgba(220,220,220,1)",
+ pointStrokeColor: "#fff",
+ pointHighlightFill: "#fff",
+ pointHighlightStroke: "rgba(220,220,220,1)",
+ data: [65, 59, 80, 81, 56, 55, 40]
+ },
+ {
+ label: "My Second dataset",
+ fillColor: "rgba(151,187,205,0.2)",
+ strokeColor: "rgba(151,187,205,1)",
+ pointColor: "rgba(151,187,205,1)",
+ pointStrokeColor: "#fff",
+ pointHighlightFill: "#fff",
+ pointHighlightStroke: "rgba(151,187,205,1)",
+ data: [28, 48, 40, 19, 86, 27, 90]
+ }
+ ]
+ };
 
-var data2 = [
-    {
-        value: 300,
-        color:"#F7464A",
-        highlight: "#FF5A5E",
-        label: "Red"
-    },
-    {
-        value: 50,
-        color: "#46BFBD",
-        highlight: "#5AD3D1",
-        label: "Green"
-    },
-    {
-        value: 100,
-        color: "#FDB45C",
-        highlight: "#FFC870",
-        label: "Yellow"
-    }
-]
+ var data2 = [
+ {
+ value: 300,
+ color:"#F7464A",
+ highlight: "#FF5A5E",
+ label: "Red"
+ },
+ {
+ value: 50,
+ color: "#46BFBD",
+ highlight: "#5AD3D1",
+ label: "Green"
+ },
+ {
+ value: 100,
+ color: "#FDB45C",
+ highlight: "#FFC870",
+ label: "Yellow"
+ }
+ ]*/
 
 var options = {
 
@@ -128,22 +130,30 @@ var options2 = {
 
     //String - A legend template
     legendTemplate : "<ul class=\"<%=name.toLowerCase()%>-legend\"><% for (var i=0; i<segments.length; i++){%><li><span style=\"background-color:<%=segments[i].fillColor%>\"></span><%if(segments[i].label){%><%=segments[i].label%><%}%></li><%}%></ul>"
-
 }
-class ProfileChart extends Component {
+// class ProfileChart extends Component {
+//
+//
+//     render() {
+//         return (
+//             <div>
+//                 <div>
+//                     <PieChart data={data2} options={options2}/>
+//                     <LineChart data={data} options={options}/>
+//                 </div>
+//
+//             </div>
+//         );
+//     }
+// }
 
-
-    render() {
-        return (
-            <div>
-                <div>
-                    <PieChart data={data2} options={options2}/>
-                    <LineChart data={data} options={options}/>
-                </div>
-               
-            </div>
-        );
-    }
-}
+const ProfileChart = (props) => (
+    <div>
+        <div>
+            <PieChart data={props.data2} options={options2}/>
+            <LineChart data={props.data} options={options}/>
+        </div>
+    </div>
+);
 
 export default ProfileChart

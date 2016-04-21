@@ -57,8 +57,7 @@ class UserProfileContainer extends Component {
                         <FeaturedEventsContainer />
                         <div className={styles.hours}>
                           <h3 className={styles.title}> <Icon name="clock-o" size={'1x'} /> Hours</h3>
-                          <p><bold>All Time:</bold> 32</p>
-                          <p><bold>Last Month:</bold>  6</p>
+                          <p><bold>All Time:</bold>{this.props.user.vhours}</p>
                         </div>
                         <ProfileChart className={styles.chart} />
                         <Link to="/hours">

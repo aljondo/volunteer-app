@@ -41,7 +41,7 @@ const routes = (
         <Route path="faq" component={FaqView}/>
         <Route path="approval" component={ApprovalView}/>
         <Route path="event/:eventId" component={EventDetailsView}/>
-        <Route path="organization/:orgId" component={OrganizationView}/>
+        <Route path="organization" component={OrganizationView}/>
     </Route>
 );
 
