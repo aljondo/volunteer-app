@@ -118,9 +118,9 @@ const UserRegisterForm = (props) => (
                           <FormControls.Static label="Skills:"/>
                       </Col>
                       <Col xs={3} smOffset={0} xsOffset={2}>
-                          <Input type="checkbox" onChange={props.skillsChange} value="public" label="Public Relations / Speaking"/>
-                          <Input type="checkbox" onChange={props.skillsChange} value="teaching" label="Teaching / Tutoring"/>
-                          <Input type="checkbox" onChange={props.skillsChange} value="it" label="IT / Computer"/>
+                          <Input type="checkbox" onChange={props.skillsChange} value="public" label="Public Relations/Speaking"/>
+                          <Input type="checkbox" onChange={props.skillsChange} value="teaching" label="Teaching/Tutoring"/>
+                          <Input type="checkbox" onChange={props.skillsChange} value="it" label="IT/Computer"/>
                           <Input type="checkbox" onChange={props.skillsChange} value="administrative" label="Administrative"/>
                           <Input type="checkbox" onChange={props.skillsChange} value="legal" label="Legal"/>
                           <Input type="checkbox" onChange={props.skillsChange} value="management" label="Management"/>
@@ -129,10 +129,10 @@ const UserRegisterForm = (props) => (
                           <Input type="checkbox" onChange={props.skillsChange} value="handiwork" label="Handiwork"/>
                           <Input type="checkbox" onChange={props.skillsChange} value="arts" label="Fine Arts"/>
                           <Input type="checkbox" onChange={props.skillsChange} value="language" label="Foreign Language"/>
-                          <Input type="checkbox" onChange={props.skillsChange} value="tefl" label="TEFL / TESOL"/>
-                          <Input type="checkbox" onChange={props.skillsChange} value="writing" label="Writing / Editing"/>
+                          <Input type="checkbox" onChange={props.skillsChange} value="tefl" label="TEFL/TESOL"/>
+                          <Input type="checkbox" onChange={props.skillsChange} value="writing" label="Writing/Editing"/>
                           <Input type="checkbox" onChange={props.skillsChange} value="event" label="Event Planning"/>
-                          <Input type="checkbox" onChange={props.skillsChange} value="sports" label="Sports / Recreation"/>
+                          <Input type="checkbox" onChange={props.skillsChange} value="sports" label="Sports/Recreation"/>
                       </Col>
                       {/* Interests checkboxes */}
                       <Col sm={3} xs={10} xsOffset={1} smOffset={0} className={styles.checkboxLabel}>
@@ -153,10 +153,10 @@ const UserRegisterForm = (props) => (
                           <Input type="checkbox" onChange={props.interestsChange} value="disabilities" label="People with Disabilities"/>
                           <Input type="checkbox" onChange={props.interestsChange} value="hunger" label="Hunger"/>
                           <Input type="checkbox" onChange={props.interestsChange} value="lgbt" label="Lesbian, gay, bisexual, transgender"/>
-                          <Input type="checkbox" onChange={props.interestsChange} value="homeless" label="Homeless / Housing"/>
+                          <Input type="checkbox" onChange={props.interestsChange} value="homeless" label="Homeless/Housing"/>
                           <Input type="checkbox" onChange={props.interestsChange} value="immigration" label="Immigration"/>
                           <Input type="checkbox" onChange={props.interestsChange} value="veterans" label="Veterans"/>
-                          <Input type="checkbox" onChange={props.interestsChange} value="environment" label="Environment / Sustainability"/>
+                          <Input type="checkbox" onChange={props.interestsChange} value="environment" label="Environment/Sustainability"/>
                       </Col>
                       <Input type="textarea" label="Bio:" placeholder="Enter bio" labelClassName="col-sm-3 col-xs-10 col-xs-offset-1 col-sm-offset-0" wrapperClassName="col-sm-6 col-xs-10 col-xs-offset-1 col-sm-offset-0"
                              onBlur={props.bioChange}/>
