@@ -33,9 +33,9 @@ const AboutMe = (props) => {
                 <div className={styles.skills}>
                 <p className={styles.title}>Skills:</p>
                 <ul>
-                    {props.user.skills.map(function(skill, index){
+                    {props.user.skills ? props.user.skills.map(function(skill, index){
                        return <li key={ index }>{skill}</li>;
-                    })}
+                    }) : null}
                 </ul>
                 </div>
             </div>

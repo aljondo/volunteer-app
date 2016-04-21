@@ -21,6 +21,12 @@
       h2 {
         color: $blue-secondary;
         font-size: 2.9em;
+        display: inline-block;
+      }
+      .icon {
+        display: inline-block;
+        margin-left: 20px;
+        color: $blue-secondary;
       }
     }
   }
