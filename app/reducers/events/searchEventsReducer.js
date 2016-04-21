@@ -14,8 +14,8 @@ import {
 
 const emptyState = {
     isReq: false,
-    category: {value: null, valid: true, error: null},
-    neighborhood: {value: null, valid: true, error: null},
+    category: null,
+    neighborhood: null,
     events: []
 };
 

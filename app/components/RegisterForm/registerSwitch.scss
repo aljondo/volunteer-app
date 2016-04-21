@@ -12,7 +12,7 @@
 }
 
 .userButton {
-  background: linear-gradient($grey-dark 10%, rgba($grey-dark, 0.6) 140%), url("../../../static/images/register-switch-vol.jpg") no-repeat center center;
+  background: linear-gradient($grey-dark 10%, rgba($grey-dark, 0.6) 140%), url("../../../static/dist/images/register-switch-vol.jpg") no-repeat center center;
   background-size: 100% 100%;
   border: 3px solid $blue-primary;
   height: 350px;
@@ -32,7 +32,7 @@
 }
 
 .orgButton {
-  background: linear-gradient(rgba($blue-dark-overlay, 1) 10%, rgba($blue-dark-overlay, 0.6) 140%), url("../../../static/images/register-switch-org.jpg") no-repeat center center;
+  background: linear-gradient(rgba($blue-dark-overlay, 1) 10%, rgba($blue-dark-overlay, 0.6) 140%), url("../../../static/dist/images/register-switch-org.jpg") no-repeat center center;
   background-size: 100% 100%;
   border: 3px solid $grey-dark;
   height: 350px;

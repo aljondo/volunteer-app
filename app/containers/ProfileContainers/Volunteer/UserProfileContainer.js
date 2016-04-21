@@ -1,6 +1,7 @@
 import React, { PropTypes, Component } from 'react'
-import { Grid, Row, Col } from 'react-bootstrap'
+import { Grid, Row, Col, Button } from 'react-bootstrap'
 import { connect } from 'react-redux'
+import {Link} from 'react-router';
 import styles from './userprofilecontainer.scss'
 import AboutMeContainer from './UserAboutMeContainer'
 import UpcomingEvents from '../../../components/ProfileComponents/Volunteer/EventDashboard/UpcomingEvents'
@@ -42,6 +43,9 @@ class UserProfileContainer extends Component {
                         <br/>
                         <h3>All Time: {this.props.user.vhours}</h3>
                         <ProfileChart />
+                        <Link to="/hours">
+                            <Button bsStyle="primary">More details</Button>
+                        </Link>
                     </Col>
                 </Row>
             </Grid>

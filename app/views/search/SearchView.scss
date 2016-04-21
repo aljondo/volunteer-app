@@ -1,18 +1,23 @@
-.search {
-	margin-right: auto;
-	margin-left: auto;
-	width: 60vw;
+@import '../../styles/colors';
+
+.searchGrid {
+	width: 100%;
+	margin: 0;
+	padding: 0;
+
 	.title {
-		text-align: center;
-	}
-	.clprompt {
-		margin-right: auto;
-		margin-left: auto;
-		width: 80%;
-		.prompt {
-			display: inline-block;
-			padding-right: 4px;
+		border-top: 2px solid $grey-dark;
+		border-bottom: 2px solid $grey-dark;
+		color: $grey-light;
+		background: linear-gradient($blue-primary, $grey-dark 90%);
+		min-height: 150px;
+		.text {
+			margin-left: 15px;
 		}
 	}
-	
+
+	.search {
+		width: 100%;
+		margin-top: -45px;
+	}
 }

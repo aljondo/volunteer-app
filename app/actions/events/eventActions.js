@@ -25,7 +25,7 @@ export function fetchEvent(id) {
     return {
         [CALL_API]: {
             types: [ FETCH_EVENT_REQUEST, FETCH_EVENT_SUCCESS, FETCH_EVENT_FAILURE ],
-            endpoint: `events/${id}`,
+            endpoint: `event/${id}`,
             method: GET
         }
     }

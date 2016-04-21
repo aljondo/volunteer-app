@@ -10,7 +10,6 @@ class FullHeaderContainer extends Component {
         this.props.logout();
     }
     render() {
-        console.log(this.props.route);
         return (<FullHeader isAuthenticated = {this.props.isAuthenticated}
                             logoutUser = {this.logoutUser.bind(this) }
                             route={this.props.route}/>);
