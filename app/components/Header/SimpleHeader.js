@@ -6,7 +6,7 @@ import styles from './simpleheader.scss'
 const SimpleHeader = (props) => (
     <Row className={styles.header}>
         <Col sm={4} md={3} className={styles.logoDiv}>
-            <img src={'../../../static/images/logo.png'}   className={styles.logo}/>
+            <img src={'/images/logo.png'}   className={styles.logo}/>
         </Col>
         <Col sm={8} md={7} mdOffset={2} className={styles.navDiv}>
             {props.isAuthenticated ? null :

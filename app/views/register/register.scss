@@ -3,7 +3,7 @@
 @import '../../styles/colors';
 
 .imgBackground {
-  background: linear-gradient($blue-dark-overlay 10%, rgba($blue-dark-overlay, 0.75) 140%), url("../../../static/images/cover-img.jpg") no-repeat center center;
+  background: linear-gradient($blue-dark-overlay 10%, rgba($blue-dark-overlay, 0.75) 140%), url("../../../static/dist/images/cover-img.jpg") no-repeat center center;
   min-height: 800px;
   height: 100%;
   width: 100%;

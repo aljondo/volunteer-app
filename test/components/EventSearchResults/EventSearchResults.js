@@ -1,7 +1,6 @@
 // add paths from route not relative
 import React from 'react';
 import ReactDOM from 'react-dom';
-import EventSearchResults from '../../../app/components/EventSearchResults/EventSearchResults';
 import { assert }  from "chai";
 import TestUtils from "react-addons-test-utils"
 
@@ -9,7 +8,7 @@ import TestUtils from "react-addons-test-utils"
 describe('EventSearchResults Component', () => {
     const renderedComponent = TestUtils.renderIntoDocument(
         <div>
-            <EventSearchResults events={[{name: "test", id: "12"}]}/>
+            Temp
         </div>
     );
 

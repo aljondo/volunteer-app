@@ -7,7 +7,7 @@ const Footer = (props) => (
     <Row className={styles.wrapper}>
         {props.addTopSection ?
         <Row className={styles.topSection}>
-            <Col sm={12} md={7} lgOffset={4} smOffset={3} className={styles.topText}>
+            <Col sm={12} md={9} lgOffset={3} smOffset={2} className={styles.topText}>
                 <p>Americorps, helping the world one volunteer at a time.</p>
             </Col>
         </Row> : null}
@@ -15,7 +15,7 @@ const Footer = (props) => (
             <Grid>
                 <Row className={styles.content}>
                     <Col sm={4} xs={12}>
-                        <img src={'../../../static/images/logo.png'} className={styles.logo}/>
+                        <img src={'/images/logo.png'} className={styles.logo}/>
                     </Col>
                     <Col sm={8} xs={12} className={styles.text}>
                         <Col xs={12} className={styles.title}>

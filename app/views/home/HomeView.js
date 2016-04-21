@@ -4,14 +4,14 @@
 import React, { Component } from 'react';
 import {Link} from 'react-router'
 import HomeBlurb from '../../components/HomeBlurb/HomeBlurb'
-import EventSearchForm from '../../components/EventSearchForm/EventSearchForm'
+import EventSearchContainer from '../../containers/EventSearchContainer'
 import HomeButtons from '../../components/HomeButtons/HomeButtons'
 import SimpleHeaderContainer from '../../containers/Header/SimpleHeaderContainer'
 import FooterContainer from '../../containers/FooterContainer'
 import styles from './homeview.scss'
 import FeaturedEventsContainer from '../../containers/FeaturedEventsContainer'
 import { Grid, Col, Row, Button  } from 'react-bootstrap'
-import Icon from 'react-fa';
+
 
 //The twitter feed must be personalized via settings -> widgets in the twitter profile current size @ 400px
 const Twitter = () => (
@@ -42,17 +42,8 @@ const HomePage = () => (
     </Row>
     <Row className={styles.sectionTwo}>
       <Grid>
-        <Row>
-          <Col xs={12} md={10} mdOffset={1} lg={8} lgOffset={2} className={styles.search}>
-            <Col xs={11}>
-              <EventSearchForm />
-            </Col>
-            <Col xs={1}>
-              <div className={styles.goSearch}>
-               <Icon name="arrow-right" size={'3x'} className={styles.arrow}/>
-              </div>
-            </Col>
-          </Col>
+        <Row className={styles.search}>
+          <EventSearchContainer homePage={true} icon={"arrow-right"}/>
         </Row>
         <Row >
           <Col sm={12} md={6} className={styles.leftpanel}>
@@ -89,7 +80,9 @@ const HomePage = () => (
             <p> Are you an organization looking for volunteers?</p>
           </Col>
           <Col sm={12} md={3}>
-              <Button bsSize="large" bsStyle="primary" className={styles.orgbutton}>Register Organization</Button>
+              <Link to="/register">
+                  <Button bsSize="large" bsStyle="primary" className={styles.orgbutton}>Sign Up</Button>
+              </Link>
           </Col>
       </Grid>
     </Row>

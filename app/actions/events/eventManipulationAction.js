@@ -93,7 +93,7 @@ export const saveEvent = (eventData) => {
         return ({
             [CALL_API]: {
                 types: [SAVE_EVENT_REQUEST, SAVE_EVENT_SUCCESS, SAVE_EVENT_FAILURE],
-                endpoint: `events`,
+                endpoint: `event`,
                 method: POST,
                 data: eventData
             }

@@ -17,16 +17,22 @@ export function resetSearchEvents() {
 }
 
 export const setCategory = (category) => {
+    if (category.length == 0){
+        category = null;
+    }
     return ({
         type: SET_CATEGORY,
-        category: {value: category, valid: true, error: null}
+        category: category
     })
 };
 
 export const setNeighborhood = (neighborhood) => {
+    if (neighborhood.length == 0){
+        neighborhood = null;
+    }
     return ({
         type: SET_NEIGHBORHOOD,
-        neighborhood: {value: neighborhood, valid: true, error: null}
+        neighborhood: neighborhood
     })
 };
 
@@ -34,7 +40,7 @@ export function fetchSearchEvents() {
     return {
         [CALL_API]: {
             types: [ FETCH_EVENTS_REQUEST, FETCH_EVENTS_SUCCESS, FETCH_EVENTS_FAILURE ],
-            endpoint: `events`,
+            endpoint: `event/get_all`,
             method: GET
         }
     }

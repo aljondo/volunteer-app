@@ -22,8 +22,8 @@ describe('Event Actions', () => {
             expect(apiObj.method).to.equal(GET)
         });
 
-        it('creates action with endpoint "/events"', () => {
-            expect(apiObj.endpoint).to.equal('events').that.is.a('string')
+        it('creates action with endpoint "/event"', () => {
+            expect(apiObj.endpoint).to.equal('event/get_all').that.is.a('string')
         })
     });
 
