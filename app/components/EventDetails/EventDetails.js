@@ -12,7 +12,7 @@ const EventDetails = (props) => (
             <Col xs={12} className={styles.detailsBanner}>
                 <div className={styles.header}>
                     <Link to={'/organization/'+ props.event.org}>
-                        <h2>Organization name could go here</h2>
+                        <h2>{props.event.org_name ? props.event.org_name : "Organization name"}</h2>
                         <Icon className={styles.icon} name='arrow-right' size={'3x'}/>
                      </Link>
                 </div>
