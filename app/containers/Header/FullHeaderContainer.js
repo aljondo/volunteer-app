@@ -8,6 +8,7 @@ import {push as pushRoute } from 'react-router-redux';
 class FullHeaderContainer extends Component {
     logoutUser() {
         this.props.logout();
+        this.props.pushRoute("/");
     }
     render() {
         return (<FullHeader isAuthenticated = {this.props.isAuthenticated}
