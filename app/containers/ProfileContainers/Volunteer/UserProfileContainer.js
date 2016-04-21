@@ -55,19 +55,11 @@ class UserProfileContainer extends Component {
                     {/* TODO: hours not connected */}
                     <Col xs={12} lg={3} className={styles.rightPanel}>
                         <FeaturedEventsContainer />
-<<<<<<< HEAD
-                        <h3>Hours</h3>
-                        <br/>
-                        <h3>All Time: {this.props.user.vhours}</h3>
-                        <ProfileChart />
-=======
                         <div className={styles.hours}>
                           <h3 className={styles.title}> <Icon name="clock-o" size={'1x'} /> Hours</h3>
-                          <p><bold>All Time:</bold> 32</p>
-                          <p><bold>Last Month:</bold>  6</p>
+                          <p><bold>All Time:</bold>{this.props.user.vhours}</p>
                         </div>
                         <ProfileChart className={styles.chart} />
->>>>>>> 5089ddaaff10c8de345c86d1da557bbfb4e18e7f
                         <Link to="/hours">
                             <Button bsStyle="primary">More details</Button>
                         </Link>
