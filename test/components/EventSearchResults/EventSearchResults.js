@@ -9,7 +9,7 @@ import TestUtils from "react-addons-test-utils"
 describe('EventSearchResults Component', () => {
     const renderedComponent = TestUtils.renderIntoDocument(
         <div>
-            <EventSearchResults events={[{name: "test", id: "12"}]}/>
+            Temp
         </div>
     );
 
