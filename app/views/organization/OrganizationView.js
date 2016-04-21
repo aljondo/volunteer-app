@@ -7,7 +7,7 @@ class OrganizationView extends Component {
         return (
             <div>
                 <FullHeaderContainer />
-                <OrganizationContainer />
+                <OrganizationContainer orgId={this.props.params.orgId}/>
             </div>
         );
     }
