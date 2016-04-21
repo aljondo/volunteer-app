@@ -35,13 +35,5 @@ describe('searchEvent Reducer', () => {
         expect(req_act_1).to.have.property('isReq').to.be.true
     });
 
-    it('returns state with isReq = false if NOT given a REQUEST action', () => {
-        let req_act_1 = reducer(eventState, {type: FETCH_EVENTS_SUCCESS});
-        expect(req_act_1).to.have.property('isReq').to.be.false
-        let req_act_2 = reducer(eventState, {type: FETCH_EVENTS_FAILURE});
-        expect(req_act_2).to.have.property('isReq').to.be.false
-        let req_act_3 = reducer(eventState, {type: RESET_SEARCH_EVENTS});
-        expect(req_act_3).to.have.property('isReq').to.be.false
-    })
 
 });

@@ -23,7 +23,7 @@ describe('Event Actions', () => {
         });
 
         it('creates action with endpoint "/event"', () => {
-            expect(apiObj.endpoint).to.equal('event').that.is.a('string')
+            expect(apiObj.endpoint).to.equal('event/get_all').that.is.a('string')
         })
     });
 

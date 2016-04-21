@@ -24,7 +24,7 @@ export default (state = emptyState, action) => {
         case FETCH_EVENTS_REQUEST:
             return merge({}, state, {isReq: true});
         case FETCH_EVENTS_SUCCESS:
-            return merge({}, state, {isReq: false, events: action.response});
+            return merge({}, state, {isReq: false, events: action.response.results});
         case FETCH_EVENTS_FAILURE:
             return merge({}, state, {isReq: false});
         case RESET_SEARCH_EVENTS:
