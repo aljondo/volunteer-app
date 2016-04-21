@@ -1,7 +1,6 @@
 // add paths from route not relative
 import React from 'react';
 import ReactDOM from 'react-dom';
-import EventSearchResults from '../../../app/components/EventSearchResults/EventSearchResults';
 import { assert }  from "chai";
 import TestUtils from "react-addons-test-utils"
 
