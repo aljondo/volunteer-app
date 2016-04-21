@@ -9,6 +9,7 @@ import orgs from './orgs'
 import registration from './registration'
 import auth from './auth'
 import eventcreation from './events/eventManipulationReducer'
+import hours from './hours'
 
 //add an error reducer as well with actions ADD_ERROR, REMOVE_ERROR
 
@@ -22,5 +23,6 @@ export default combineReducers({
   orgs,
   registration,
   auth,
-  eventcreation
+  eventcreation,
+  hours
 })
