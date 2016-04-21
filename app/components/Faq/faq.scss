@@ -1,0 +1,22 @@
+@import '../../styles/colors';
+
+.wrapper {
+	font-size: 1em;
+	font-weight: 400;
+	padding-left: 8vw;
+	padding-right: 8vw;
+	.questions {
+		width: 75%;
+		margin-left: auto;
+		margin-right: auto;
+		.left {
+			border-right-style: solid;
+			border-color: $grey-light;
+		}
+	}
+	.questionheader {
+		padding-top: 2vh;
+		font-size: 1em;
+		font-weight: bold;
+	}
+}
