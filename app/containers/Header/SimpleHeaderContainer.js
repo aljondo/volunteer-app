@@ -8,6 +8,7 @@ import {push as pushRoute } from 'react-router-redux';
 class SimpleHeaderContainer extends Component {
     logoutUser() {
         this.props.logout();
+        this.props.pushRoute("/");
     }
     render() {
         return (<SimpleHeader isAuthenticated = {this.props.isAuthenticated}
