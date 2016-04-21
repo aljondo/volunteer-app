@@ -15,6 +15,7 @@
   background: linear-gradient($blue-dark-overlay 10%, rgba($blue-dark-overlay, 0.75) 140%), url("../../../static/dist/images/cover-img.jpg") no-repeat center center;
   height: 475px;
   width: 100%;
+  margin: 0;
   background-size: cover;
 
 
@@ -42,19 +43,31 @@
 
 .sectionTwo {
   width: 100%;
+  margin: 0;
   background-color: $grey-light;
 
 	.search {
+		width: 100%;
+		margin-right: 0;
 	  	margin-top: -45px;
 	}
 
-  .holdinfo {
-    background: #ffffff;
-	align-items: center;
-	border: solid thick $green-accent ;
-	margin: 20px 35px;
-    height: 500px;
-  }
+	.dashboard {
+		width: 100%;
+		.holdinfo {
+			background: #ffffff;
+			margin-top: 30px;
+			margin-bottom: 30px;
+			border: solid thick $green-accent;
+			border-radius: 5px;
+			height: 500px;
+			overflow: auto;
+
+			.twitterTitle {
+				border-bottom: 1px solid $grey-dark;
+			}
+		}
+	}
 
 }
 

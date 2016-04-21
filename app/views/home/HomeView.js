@@ -41,38 +41,22 @@ const HomePage = () => (
       </Grid>
     </Row>
     <Row className={styles.sectionTwo}>
-      <Grid>
         <Row className={styles.search}>
           <EventSearchContainer homePage={true} icon={"arrow-right"}/>
         </Row>
-        <Row >
-          <Col sm={12} md={6} className={styles.leftpanel}>
-            <div className={styles.holdinfo}>
+        <Row className={styles.dashboard}>
+          <Col xs={10} xsOffset={1} md={5} mdOffset={1} className={styles.holdinfo}>
               <FeaturedEventsContainer />
-            </div>
           </Col>
-          <Col sm={12} md={6} className={styles.rightpanel}>
-              <div className={styles.holdinfo}>
-                  <table className = "table">
-                      <thead>
-                      <tr>
-                          <th>
-                              <h3>Tweet Tweet</h3>
-                          </th>
-                      </tr>
-                      </thead>
-                      <tbody>
-                      </tbody>
-                  </table>
-                  <a className="twitter-timeline"
-                     href="https://twitter.com/exampleid2"
-                     data-widget-id="722277701743194112"
-                     data-chrome="transparent noborders nofooter noheader"></a>
-                  <Twitter/>
-              </div>
+          <Col xs={10} xsOffset={1} md={4} mdOffset={1} className={styles.holdinfo}>
+              <h3 className={styles.twitterTitle}>Tweet Tweet</h3>
+              <a className="twitter-timeline"
+                 href="https://twitter.com/exampleid2"
+                 data-widget-id="722277701743194112"
+                 data-chrome="transparent noborders nofooter noheader"></a>
+              <Twitter/>
           </Col>
         </Row>
-      </Grid>
     </Row>
     <Row className={styles.sectionThree}>
       <Grid>
