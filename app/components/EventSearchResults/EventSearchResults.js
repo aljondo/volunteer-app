@@ -29,7 +29,7 @@ const EventSearchResults = (props) => (
                         </Col>
                         <Col md={2} xs={12} className={styles.detailsBtnCol}>
                             <Link className={styles.detailsBtnLink}to={"/event/" + event.id}>
-                                <Icon className={styles.detailsBtn} name='arrow-right' size={'3x'}/>
+                                <Icon className={styles.detailsBtn} name='arrow-right' size={'5x'}/>
                             </Link>
                         </Col>
                     </Col>
