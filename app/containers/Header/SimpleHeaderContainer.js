@@ -11,7 +11,8 @@ class SimpleHeaderContainer extends Component {
     }
     render() {
         return (<SimpleHeader isAuthenticated = {this.props.isAuthenticated}
-                        logoutUser = {this.logoutUser.bind(this) } /> );
+                              route={this.props.route}
+                              logoutUser = {this.logoutUser.bind(this) } /> );
     }
 }
 
@@ -20,7 +21,9 @@ SimpleHeaderContainer.propTypes = {
 };
 
 const mapStateToProps = (state) => ({
-    isAuthenticated: state.auth.isAuthenticated
+    isAuthenticated: state.auth.isAuthenticated,
+    route: state.router.locationBeforeTransitions.pathname
+
 });
 
 const mapDispatchToProps = (dispatch) => (
