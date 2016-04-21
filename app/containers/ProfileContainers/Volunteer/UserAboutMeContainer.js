@@ -35,7 +35,15 @@ class UserAboutMeContainer extends Component {
     }
 
     applyUpdates(){
-        this.props.updateUser(this.props.updateFields, this.props.user.id);
+        this.props.updateUser(this.props.updateFields, this.props.user.id)
+            .then(function(response){
+                for (var field in this.props.updateFields) {
+                    this.props.user[field] = this.props.updateFields[field].value;
+                    this.setState({
+                        editing: false
+                    });
+                }
+            }.bind(this));
     }
 
     updateName(e){
