@@ -64,18 +64,25 @@ export const updateEmail = (email) => {
 
 export const updatePhone = (phone) => {
     let valid = false;
+    let isNum = /^\d+$/.test(phone);
     let error = null;
 
-    let re = /^(?:(?:\+?1\s*(?:[.-]\s*)?)?(?:\(\s*([2-9]1[02-9]|[2-9][02-8]1|[2-9][02-8][02-9])\s*\)|([2-9]1[02-9]|[2-9][02-8]1|[2-9][02-8][02-9]))\s*(?:[.-]\s*)?)?([2-9]1[02-9]|[2-9][02-9]1|[2-9][02-9]{2})\s*(?:[.-]\s*)?([0-9]{4})(?:\s*(?:#|x\.?|ext\.?|extension)\s*(\d+))?$/;
+    phone = phone.replace(/\D/g,'');
 
-
-    if (phone.match(re)) {
+    if (phone.length == 10 && isNum) {
         valid = true;
-    } else {
-        error = "Invalid phone number."
+    }
+    else if (!isNum) {
+        error = "Phone number must only contain numbers";
+    }
+    else if (phone.length == 0) {
+        error = "Enter a phone number";
+    }
+    else {
+        error = "Phone number must be 10 digits";
     }
 
-    return ({
+    return({
         type: UPDATE_PHONE,
         phone: {value: phone, valid: valid, error: error}
     })
@@ -349,8 +356,9 @@ export const clearUpdateFields = () => (
 { type: CLEAR_UPDATE_FIELDS}
 );
 
-export const updateUser = (userData, userType) => {
+export const updateUser = (userData, id) => {
     let error = checkData(userData);
+    let data = formatData(userData);
 
     if (error) {
         return ({
@@ -358,27 +366,29 @@ export const updateUser = (userData, userType) => {
             error: error
         })
     } else {
-        if (userType == "organization") {
+
             return ({
                 [CALL_API]: {
                     types: [UPDATE_USER_REQUEST, UPDATE_USER_SUCCESS, UPDATE_USER_FAILURE],
-                    endpoint: `organization/update`, //TODO this is a fake endpoint.probably add id
+                    endpoint: `user/${id}`,
                     method: POST,
-                    data: userData
-                }
-            })
-        } else {
-            return ({
-                [CALL_API]: {
-                    types: [UPDATE_USER_REQUEST, UPDATE_USER_SUCCESS, UPDATE_USER_FAILURE],
-                    endpoint: `user/update`, //TODO this is a fake endpoint. probably add id later
-                    method: POST,
-                    data: userData
+                    data: data
                 }
             })
         }
+};
 
+const formatData = (userData) => {
+    console.log("userData " + userData);
+    var results = {};
+    for (var entry in userData) {
+        console.log("key " + entry);
+        console.log("value " + userData[entry].value);
+        results[entry] = userData[entry].value;
+        console.log(results);
+        console.log("results value "+ results[entry]);
     }
+    return results;
 };
 
 const checkData = (userData) => {
