@@ -40,9 +40,7 @@ class UserProfileContainer extends Component {
                         <FeaturedEventsContainer />
                         <h3>Hours</h3>
                         <br/>
-                        <h3>All Time: 32</h3>
-                        <br/>
-                        <h3> Last Month: 6</h3>
+                        <h3>All Time: {this.props.user.vhours}</h3>
                         <ProfileChart />
                     </Col>
                 </Row>
